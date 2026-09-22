@@ -134,6 +134,18 @@ class SimulationRunState:
     twitter_completed: bool = False
     reddit_completed: bool = False
     
+    # 所有"已启用"的平台都已完成（按 actions.jsonl 判定启用，与
+    # _check_all_platforms_completed 一致；单平台模拟不会被误判为未完成）
+    all_platforms_completed: bool = False
+    
+    # 图谱写入收尾状态：pending / draining / completed / failed / skipped
+    # 该维度与"进程是否退出"解耦：模拟脚本跑完轮次后仍会常驻以响应采访命令，
+    # 进程不会退出，但报告生成只需要图谱可查，因此平台跑完即触发收尾。
+    graph_ingestion_status: str = "pending"
+    graph_ingestion_error: Optional[str] = None
+    graph_ingestion_started_at: Optional[str] = None
+    graph_ingestion_completed_at: Optional[str] = None
+    
     # 每轮摘要
     rounds: List[RoundSummary] = field(default_factory=list)
     
@@ -151,6 +163,23 @@ class SimulationRunState:
     
     # 进程ID（用于停止）
     process_pid: Optional[int] = None
+    
+    @property
+    def graph_ingestion_ready(self) -> bool:
+        """图谱写入是否已经没有待处理数据。"""
+        return self.graph_ingestion_status in ("completed", "skipped")
+    
+    def is_report_ready(self) -> bool:
+        """是否可以生成报告。
+        
+        两种成立方式，缺一不可地覆盖"图谱可查":
+        1. runner_status 已是成功终态 —— 该终态只在图谱排空后才发布；
+        2. 所有启用平台已完成，且图谱写入收尾已完成 —— 覆盖模拟进程仍常驻
+           （等待采访命令）的情形。
+        """
+        if self.runner_status in (RunnerStatus.COMPLETED, RunnerStatus.STOPPED):
+            return True
+        return self.all_platforms_completed and self.graph_ingestion_ready
     
     def add_action(self, action: AgentAction):
         """添加动作到最近动作列表"""
@@ -183,6 +212,12 @@ class SimulationRunState:
             "reddit_running": self.reddit_running,
             "twitter_completed": self.twitter_completed,
             "reddit_completed": self.reddit_completed,
+            "all_platforms_completed": self.all_platforms_completed,
+            "graph_ingestion_status": self.graph_ingestion_status,
+            "graph_ingestion_error": self.graph_ingestion_error,
+            "graph_ingestion_started_at": self.graph_ingestion_started_at,
+            "graph_ingestion_completed_at": self.graph_ingestion_completed_at,
+            "report_ready": self.is_report_ready(),
             "twitter_actions_count": self.twitter_actions_count,
             "reddit_actions_count": self.reddit_actions_count,
             "total_actions_count": self.twitter_actions_count + self.reddit_actions_count,
@@ -237,6 +272,10 @@ class SimulationRunner:
     _finalization_locks: Dict[str, threading.Lock] = {}
     _finalization_locks_guard = threading.Lock()
     _manual_stop_requests: set[str] = set()
+    
+    # 已触发图谱写入收尾的模拟（防止重复触发；失败时会移除以允许重试）
+    _ingestion_finalizers: set[str] = set()
+    _ingestion_guard = threading.Lock()
 
     @classmethod
     def _finalization_lock(cls, simulation_id: str) -> threading.Lock:
@@ -324,6 +363,26 @@ class SimulationRunner:
                 reddit_running=data.get("reddit_running", False),
                 twitter_completed=data.get("twitter_completed", False),
                 reddit_completed=data.get("reddit_completed", False),
+                all_platforms_completed=data.get(
+                    "all_platforms_completed",
+                    # 兼容旧文件：没有该字段时，用平台完成标记回退推导
+                    bool(
+                        data.get("twitter_completed", False)
+                        and data.get("reddit_completed", False)
+                    ),
+                ),
+                graph_ingestion_status=data.get(
+                    "graph_ingestion_status",
+                    # 兼容旧文件：已是成功终态说明当时已排空
+                    "completed"
+                    if data.get("runner_status") in ("completed", "stopped")
+                    else "pending",
+                ),
+                graph_ingestion_error=data.get("graph_ingestion_error"),
+                graph_ingestion_started_at=data.get("graph_ingestion_started_at"),
+                graph_ingestion_completed_at=data.get(
+                    "graph_ingestion_completed_at"
+                ),
                 twitter_actions_count=data.get("twitter_actions_count", 0),
                 reddit_actions_count=data.get("reddit_actions_count", 0),
                 started_at=data.get("started_at"),
@@ -720,6 +779,14 @@ class SimulationRunner:
                         try:
                             ZepGraphMemoryManager.stop_updater(simulation_id)
                             cls._graph_memory_enabled.pop(simulation_id, None)
+                            if state.graph_ingestion_status not in (
+                                "completed",
+                                "skipped",
+                            ):
+                                state.graph_ingestion_status = "completed"
+                                state.graph_ingestion_completed_at = (
+                                    datetime.now().isoformat()
+                                )
                             logger.info(
                                 "已停止图谱记忆更新: simulation_id=%s",
                                 simulation_id,
@@ -728,6 +795,14 @@ class SimulationRunner:
                             logger.error(f"停止图谱记忆更新器失败: {error}")
                             desired_status = RunnerStatus.FAILED
                             error_message = f"Zep图谱写入未完整完成: {error}"
+                            state.graph_ingestion_status = "failed"
+                            state.graph_ingestion_error = error_message
+                    elif state.graph_ingestion_status == "pending":
+                        # 未启用图谱记忆写入，没有待排空数据
+                        state.graph_ingestion_status = "skipped"
+                        state.graph_ingestion_completed_at = (
+                            datetime.now().isoformat()
+                        )
 
                     state.runner_status = desired_status
                     state.error = error_message
@@ -818,14 +893,20 @@ class SimulationRunner:
                                     # 如果运行了两个平台，需要两个都完成
                                     all_completed = cls._check_all_platforms_completed(state)
                                     if all_completed:
+                                        state.all_platforms_completed = True
                                         # Platform completion is only an input
-                                        # signal. The monitor publishes the
+                                        # signal: the monitor publishes the
                                         # terminal status after the process has
                                         # exited and Zep ingestion has drained.
+                                        # 但模拟脚本跑完轮次后会常驻以响应采访命令，
+                                        # 进程不会自己退出，所以这里必须主动把图谱
+                                        # 写入的尾巴排空，否则报告会永远卡住。
                                         logger.info(
-                                            f"所有平台已结束，等待进程与图谱写入完成: "
+                                            f"所有平台已结束，开始收尾图谱写入: "
                                             f"{state.simulation_id}"
                                         )
+                                        cls._ensure_graph_ingestion(state.simulation_id)
+                                        cls._save_run_state(state)
                                 
                                 # 更新轮次信息（从 round_end 事件）
                                 elif event_type == "round_end":
@@ -904,6 +985,118 @@ class SimulationRunner:
         
         # 至少有一个平台被启用且已完成
         return twitter_enabled or reddit_enabled
+    
+    @classmethod
+    def _ensure_graph_ingestion(cls, simulation_id: str) -> None:
+        """平台跑完后触发一次图谱写入收尾（幂等，非阻塞）。
+        
+        模拟脚本默认以"等待命令模式"运行（--no-wait 未传），跑完轮次后会常驻
+        以响应采访命令，进程不会退出；而 monitor 的收尾逻辑挂在"进程退出"上，
+        因此图谱 updater 会一直留着未排空的 episode，报告生成被永久卡住。
+        这里在平台完成时就主动排空写入尾巴，且不终止模拟进程（保留采访能力）。
+        """
+        if not cls._graph_memory_enabled.get(simulation_id, False):
+            # 没有开启图谱记忆写入，没有待排空数据
+            state = cls.get_run_state(simulation_id)
+            if state is not None and state.graph_ingestion_status in (
+                "pending",
+                "draining",
+            ):
+                state.graph_ingestion_status = "skipped"
+                state.graph_ingestion_completed_at = datetime.now().isoformat()
+                cls._save_run_state(state)
+            return
+        
+        with cls._ingestion_guard:
+            if simulation_id in cls._ingestion_finalizers:
+                return
+            cls._ingestion_finalizers.add(simulation_id)
+        
+        thread = threading.Thread(
+            target=cls._finalize_graph_ingestion,
+            args=(simulation_id,),
+            daemon=True,
+        )
+        thread.start()
+    
+    @classmethod
+    def is_ingestion_finalizing(cls, simulation_id: str) -> bool:
+        """图谱写入收尾是否正在进行（供报告闸门判断该不该继续等）。"""
+        return simulation_id in cls._ingestion_finalizers
+    
+    @classmethod
+    def retry_graph_ingestion(cls, simulation_id: str) -> bool:
+        """重试图谱写入收尾（写入失败后的恢复路径）。
+        
+        Returns:
+            True 表示已重新触发收尾，False 表示已无可排空的写入器。
+        """
+        state = cls.get_run_state(simulation_id)
+        if state is not None and state.graph_ingestion_status == "failed":
+            state.graph_ingestion_status = "pending"
+            state.graph_ingestion_error = None
+            cls._save_run_state(state)
+        
+        cls._ingestion_finalizers.discard(simulation_id)
+        
+        if ZepGraphMemoryManager.get_updater(simulation_id) is None:
+            # updater 已消失：要么已排空，要么被清理，没有可重试的对象
+            if state is not None and state.graph_ingestion_status == "pending":
+                state.graph_ingestion_status = "completed"
+                state.graph_ingestion_completed_at = datetime.now().isoformat()
+                cls._save_run_state(state)
+            return False
+        
+        cls._graph_memory_enabled[simulation_id] = True
+        cls._ensure_graph_ingestion(simulation_id)
+        return True
+    
+    @classmethod
+    def _finalize_graph_ingestion(cls, simulation_id: str) -> None:
+        """排空 Zep 写入尾巴并记录结果；失败时保留 updater 以便重试。"""
+        state = cls.get_run_state(simulation_id)
+        if state is None:
+            cls._ingestion_finalizers.discard(simulation_id)
+            return
+        
+        state.graph_ingestion_status = "draining"
+        state.graph_ingestion_started_at = datetime.now().isoformat()
+        state.graph_ingestion_error = None
+        cls._save_run_state(state)
+        
+        failed = False
+        try:
+            ZepGraphMemoryManager.stop_updater(simulation_id)
+            cls._graph_memory_enabled.pop(simulation_id, None)
+        except Exception as error:
+            if ZepGraphMemoryManager.get_updater(simulation_id) is None:
+                # 另一条收尾路径（monitor 退出或手动停止）已经排空并移除了
+                # 写入器，此时不应把"已完成"覆盖成"失败"。
+                state.graph_ingestion_status = "completed"
+                state.graph_ingestion_completed_at = datetime.now().isoformat()
+                state.graph_ingestion_error = None
+                logger.info(
+                    "图谱写入已由其他收尾路径完成: simulation_id=%s",
+                    simulation_id,
+                )
+            else:
+                failed = True
+                state.graph_ingestion_status = "failed"
+                state.graph_ingestion_error = f"Zep图谱写入未完整完成: {error}"
+                logger.error(
+                    "图谱写入收尾失败: simulation_id=%s, error=%s",
+                    simulation_id,
+                    error,
+                )
+        else:
+            state.graph_ingestion_status = "completed"
+            state.graph_ingestion_completed_at = datetime.now().isoformat()
+            logger.info(f"图谱写入已就绪: simulation_id={simulation_id}")
+        finally:
+            cls._save_run_state(state)
+            if failed:
+                # 允许通过重试接口再次尝试
+                cls._ingestion_finalizers.discard(simulation_id)
     
     @classmethod
     def _terminate_process(cls, process: subprocess.Popen, simulation_id: str, timeout: int = 10):
@@ -1047,12 +1240,19 @@ class SimulationRunner:
                     try:
                         ZepGraphMemoryManager.stop_updater(simulation_id)
                         cls._graph_memory_enabled.pop(simulation_id, None)
+                        state.graph_ingestion_status = "completed"
+                        state.graph_ingestion_completed_at = (
+                            datetime.now().isoformat()
+                        )
+                        state.graph_ingestion_error = None
                     except Exception as error:
                         state.runner_status = RunnerStatus.FAILED
                         state.twitter_running = False
                         state.reddit_running = False
                         state.completed_at = datetime.now().isoformat()
                         state.error = f"Zep图谱写入未完整完成: {error}"
+                        state.graph_ingestion_status = "failed"
+                        state.graph_ingestion_error = state.error
                         cls._save_run_state(state)
                         cls._sync_simulation_status(
                             simulation_id,
@@ -1060,6 +1260,9 @@ class SimulationRunner:
                             state.error,
                         )
                         raise RuntimeError(state.error) from error
+                elif state.graph_ingestion_status == "pending":
+                    state.graph_ingestion_status = "skipped"
+                    state.graph_ingestion_completed_at = datetime.now().isoformat()
                 state.runner_status = RunnerStatus.STOPPED
                 state.twitter_running = False
                 state.reddit_running = False
@@ -1390,6 +1593,10 @@ class SimulationRunner:
         
         if not os.path.exists(sim_dir):
             return {"success": True, "message": "模拟目录不存在，无需清理"}
+        
+        # 新一轮运行会重置 run_state.json，图谱收尾标记也要一并解除，
+        # 否则新运行会被上一轮的"已收尾"状态挡住。
+        cls._ingestion_finalizers.discard(simulation_id)
         
         cleaned_files = []
         errors = []

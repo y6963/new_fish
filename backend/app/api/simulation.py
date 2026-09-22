@@ -27,6 +27,39 @@ from ..models.project import ProjectManager
 logger = get_logger('mirofish.api.simulation')
 
 
+def _resolve_graph_status(run_state, updater, graph_stats) -> str:
+    """把图谱写入状态映射成前端可展示的单一状态值。
+
+    与报告生成闸门同源：以 run_state 记录的收尾状态为准，计数只用于展示
+    "还要等多少"，不承担判定职责。
+
+    Returns:
+        completed / processing / uploading / failed / idle
+    """
+    if run_state is None:
+        return "idle"
+    
+    ingestion = getattr(run_state, "graph_ingestion_status", "pending")
+    if ingestion == "failed":
+        return "failed"
+    if ingestion in ("completed", "skipped"):
+        return "completed"
+    if ingestion == "draining":
+        return "processing"
+    
+    # pending：还没进入收尾，按实际积压情况展示
+    if updater is None:
+        return "idle"
+    if graph_stats:
+        if graph_stats.get("queue_size", 0) > 0:
+            return "uploading"
+        if graph_stats.get("failed_count", 0) > 0:
+            return "failed"
+        if graph_stats.get("pending_episode_count", 0) > 0:
+            return "processing"
+    return "processing"
+
+
 def _get_default_platform(simulation_id: str) -> str:
     """
     根据模拟配置返回默认平台
@@ -1891,6 +1924,17 @@ def get_run_status(simulation_id: str):
     try:
         run_state = SimulationRunner.get_run_state(simulation_id)
         
+        # 图谱更新器状态（仅用于展示剩余量）
+        updater = ZepGraphMemoryManager.get_updater(simulation_id)
+        graph_stats = None
+        if updater is not None:
+            try:
+                graph_stats = updater.get_stats()
+            except Exception as e:
+                logger.warning(f"获取图谱更新器状态失败: {e}")
+        
+        graph_status = _resolve_graph_status(run_state, updater, graph_stats)
+        
         if not run_state:
             return jsonify({
                 "success": True,
@@ -1903,16 +1947,111 @@ def get_run_status(simulation_id: str):
                     "twitter_actions_count": 0,
                     "reddit_actions_count": 0,
                     "total_actions_count": 0,
+                    "graph_status": graph_status,
                 }
             })
         
+        # 添加图谱状态到返回数据
+        result = run_state.to_dict()
+        result["graph_status"] = graph_status
+        if graph_stats is not None:
+            result["graph_stats"] = graph_stats
+        
         return jsonify({
             "success": True,
-            "data": run_state.to_dict()
+            "data": result
         })
         
     except Exception as e:
         logger.error(f"获取运行状态失败: {str(e)}")
+        return jsonify({
+            "success": False,
+            "error": str(e),
+            "traceback": traceback.format_exc()
+        }), 500
+
+
+@simulation_bp.route('/<simulation_id>/graph-ingestion/retry', methods=['POST'])
+def retry_graph_ingestion(simulation_id: str):
+    """
+    重试图谱写入收尾
+    
+    使用场景：模拟已结束，但 Zep 写入收尾失败（run_state.graph_ingestion_status
+    为 failed，通常是等待云端处理超时）。该接口会重新排空写入尾巴，成功后即可
+    生成报告，无需重跑整个模拟。
+    
+    返回：
+        {
+            "success": true,
+            "data": {
+                "simulation_id": "sim_xxxx",
+                "graph_ingestion_status": "draining",
+                "retrying": true
+            }
+        }
+    """
+    try:
+        manager = SimulationManager()
+        state = manager.get_simulation(simulation_id)
+        if not state:
+            return jsonify({
+                "success": False,
+                "error": t('api.simulationNotFound', id=simulation_id)
+            }), 404
+        
+        run_state = SimulationRunner.get_run_state(simulation_id)
+        if run_state is None:
+            return jsonify({
+                "success": False,
+                "error": "Simulation state not found",
+            }), 404
+        
+        if run_state.runner_status in (
+            RunnerStatus.STARTING,
+            RunnerStatus.RUNNING,
+            RunnerStatus.PAUSED,
+        ) and not getattr(run_state, "all_platforms_completed", False):
+            return jsonify({
+                "success": False,
+                "error": (
+                    "Simulation is still running; graph ingestion retry is "
+                    "available after all platforms complete"
+                ),
+                "runner_status": run_state.runner_status.value,
+            }), 409
+        
+        if getattr(run_state, "graph_ingestion_status", None) == "completed":
+            return jsonify({
+                "success": True,
+                "data": {
+                    "simulation_id": simulation_id,
+                    "graph_ingestion_status": "completed",
+                    "retrying": False,
+                    "message": "Graph ingestion already completed",
+                }
+            })
+        
+        retriggered = SimulationRunner.retry_graph_ingestion(simulation_id)
+        refreshed = SimulationRunner.get_run_state(simulation_id) or run_state
+        
+        return jsonify({
+            "success": True,
+            "data": {
+                "simulation_id": simulation_id,
+                "graph_ingestion_status": getattr(
+                    refreshed, "graph_ingestion_status", None
+                ),
+                "retrying": retriggered,
+                "message": (
+                    "Graph ingestion retry started"
+                    if retriggered
+                    else "No pending graph ingestion writer to retry"
+                ),
+            }
+        }), 202 if retriggered else 200
+        
+    except Exception as e:
+        logger.error(f"重试图谱写入失败: {str(e)}")
         return jsonify({
             "success": False,
             "error": str(e),

@@ -27,6 +27,108 @@ from ..utils.zep_lifecycle import (
 logger = get_logger('mirofish.api.report')
 
 
+def _report_readiness_barrier(run_state, updater):
+    """报告生成的状态闸门（外层校验与锁内复检共用同一实现）。
+
+    "就绪"的定义见 ``SimulationRunState.is_report_ready()``：
+    runner_status 已是成功终态，或"所有启用平台已完成 + 图谱写入收尾完成"。
+
+    返回 ``(response, status_code)`` 表示被拦截；返回 ``None`` 表示可以继续。
+    """
+    if run_state is None:
+        return jsonify({
+            "success": False,
+            "error": "Simulation state not found",
+        }), 404
+
+    ingestion_status = getattr(run_state, "graph_ingestion_status", None)
+    if ingestion_status == "failed":
+        detail = getattr(run_state, "graph_ingestion_error", None) or "unknown error"
+        return jsonify({
+            "success": False,
+            "error": f"Graph ingestion failed: {detail}",
+            "ingestion_failed": True,
+            "simulation_id": getattr(run_state, "simulation_id", None),
+        }), 409
+
+    if hasattr(run_state, "is_report_ready"):
+        is_ready = run_state.is_report_ready()
+    else:
+        # 兼容不完整的 state 对象（如测试桩）
+        is_ready = run_state.runner_status in (
+            RunnerStatus.COMPLETED,
+            RunnerStatus.STOPPED,
+        )
+    if is_ready:
+        return None
+
+    if updater is not None:
+        try:
+            queue_size = updater._activity_queue.qsize()
+            pending_count = len(updater._pending_episode_uuids)
+        except Exception as exc:
+            logger.warning(f"获取图谱状态失败: {exc}")
+            queue_size = 0
+            pending_count = 0
+
+        if queue_size > 0:
+            return jsonify({
+                "success": False,
+                "error": "Zep graph ingestion still in progress",
+                "ingestion_pending": True,
+                "queue_size": queue_size,
+            }), 409
+
+        if pending_count > 0:
+            return jsonify({
+                "success": False,
+                "error": (
+                    f"Zep cloud processing in progress ({pending_count} episodes "
+                    "pending)"
+                ),
+                "ingestion_pending": True,
+                "pending_count": pending_count,
+            }), 409
+
+        # updater 仍存活、计数暂时为 0：仍处于收尾窗口内（缓冲区可能尚未入队）
+        return jsonify({
+            "success": False,
+            "error": "Zep graph ingestion is still finalizing",
+            "ingestion_pending": True,
+        }), 409
+
+    if ingestion_status in ("pending", "draining") and updater is None:
+        simulation_id = getattr(run_state, "simulation_id", None)
+        finalizing = SimulationRunner.is_ingestion_finalizing(simulation_id)
+        platforms_done = getattr(run_state, "all_platforms_completed", False)
+
+        # 既没有写入器、也没有收尾线程在跑：已经没有待排空的数据。
+        # （后端重启会丢掉内存中的写入队列；收尾完成的记账也可能来不及落盘）
+        # 此时永久阻塞没有意义，收敛为"无待排空"并让状态记账保持一致。
+        if not finalizing and (platforms_done or ingestion_status == "draining"):
+            if simulation_id:
+                SimulationRunner.retry_graph_ingestion(simulation_id)
+            logger.warning(
+                "无图谱写入器且收尾未在运行，按无待排空数据处理: simulation_id=%s",
+                simulation_id,
+            )
+            return None
+
+        return jsonify({
+            "success": False,
+            "error": "Zep graph ingestion is still finalizing",
+            "ingestion_pending": True,
+        }), 409
+
+    return jsonify({
+        "success": False,
+        "error": (
+            "A successfully completed or stopped simulation is required "
+            "before generating a report"
+        ),
+    }), 409
+
+
 # ============== 报告生成接口 ==============
 
 @report_bp.route('/generate', methods=['POST'])
@@ -83,38 +185,10 @@ def generate_report():
 
         run_state = SimulationRunner.get_run_state(simulation_id)
         updater = ZepGraphMemoryManager.get_updater(simulation_id)
-        active_statuses = {
-            RunnerStatus.STARTING,
-            RunnerStatus.RUNNING,
-            RunnerStatus.PAUSED,
-            RunnerStatus.STOPPING,
-        }
-        if updater is not None or (
-            run_state is not None and run_state.runner_status in active_statuses
-        ):
-            return jsonify({
-                "success": False,
-                "error": (
-                    "Simulation or Zep graph ingestion is still active; "
-                    "wait for a terminal run status before generating a report"
-                ),
-                "ingestion_pending": updater is not None,
-            }), 409
-        successful_terminal_statuses = {
-            RunnerStatus.COMPLETED,
-            RunnerStatus.STOPPED,
-        }
-        if (
-            run_state is None
-            or run_state.runner_status not in successful_terminal_statuses
-        ):
-            return jsonify({
-                "success": False,
-                "error": (
-                    "A successfully completed or stopped simulation is required "
-                    "before generating a report"
-                ),
-            }), 409
+
+        barrier = _report_readiness_barrier(run_state, updater)
+        if barrier is not None:
+            return barrier
 
         # 获取项目信息
         project = ProjectManager.get_project(state.project_id)
@@ -183,30 +257,13 @@ def generate_report():
                     "success": False,
                     "error": "The project graph changed while reporting was starting",
                 }), 409
-            if refreshed_updater is not None or (
-                refreshed_run_state is not None
-                and refreshed_run_state.runner_status in active_statuses
-            ):
-                return jsonify({
-                    "success": False,
-                    "error": (
-                        "Simulation or Zep graph ingestion became active; "
-                        "retry after it reaches a terminal state"
-                    ),
-                    "ingestion_pending": refreshed_updater is not None,
-                }), 409
-            if (
-                refreshed_run_state is None
-                or refreshed_run_state.runner_status
-                not in successful_terminal_statuses
-            ):
-                return jsonify({
-                    "success": False,
-                    "error": (
-                        "A successfully completed or stopped simulation is "
-                        "required before generating a report"
-                    ),
-                }), 409
+            # 与入口同一套就绪判定：所有启用平台已完成 + 图谱写入收尾完成，
+            # 或 runner_status 已进入成功终态。
+            barrier = _report_readiness_barrier(
+                refreshed_run_state, refreshed_updater
+            )
+            if barrier is not None:
+                return barrier
 
             # Cached-report reuse is now part of the same atomic barrier, so a
             # concurrent rerun cannot make the returned report stale between

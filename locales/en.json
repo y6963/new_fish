@@ -194,6 +194,7 @@
     "stopException": "Stop error: {error}",
     "allPlatformsCompleted": "All platform simulations have ended",
     "simCompleted": "Simulation completed",
+    "simCompletedViaFallback": "✓ Simulation completed (platform completed detection)",
     "graphRealtimeRefresh": "Graph real-time refresh enabled (30s)",
     "graphRefreshStopped": "Graph real-time refresh stopped",
     "preparingGoBack": "Preparing to return to Step 2, closing simulation...",
@@ -205,7 +206,18 @@
     "forceStopSuccess": "Simulation force stopped",
     "forceStopFailed": "Force stop failed: {error}",
     "startGenerateReportBtn": "Generate Report",
-    "generatingReportBtn": "Starting..."
+    "generatingReportBtn": "Starting...",
+    "graphIngestionLabel": "Graph",
+    "graphIngestionPending": "Pending",
+    "graphIngestionWaiting": "Writing to graph · {count} left",
+    "graphIngestionFinalizing": "Finalizing graph ingestion",
+    "graphIngestionReady": "Graph ready — report can be generated",
+    "graphIngestionFailed": "Graph ingestion failed",
+    "graphIngestionFailedHint": "Graph ingestion did not finish. Retry, then generate the report.",
+    "retryGraphIngestion": "Retry graph ingestion",
+    "retryingGraphIngestion": "Retrying...",
+    "reportWaitingHint": "Simulation finished. Writing the last memories into the graph before the report can start (waited {seconds}s)",
+    "reportReadyHint": "Simulation finished and graph is ready — report can be generated"
   },
   "step4": {
     "generatingSection": "Generating {title}...",
@@ -538,6 +550,8 @@
     "stopException": "Stop error: {error}",
     "allPlatformsCompleted": "✓ All platform simulations have ended",
     "simCompleted": "✓ Simulation completed",
+    "simCompletedViaFallback": "✓ Simulation completed (platform completed detection)",
+    "simStatusUpdated": "Simulation status updated: {status}",
     "simFailed": "✗ Simulation failed",
     "reportRequestSent": "Report generation request sent, please wait...",
     "startingReportGen": "Starting report generation...",
@@ -565,7 +579,13 @@
     "getReportInfoFailed": "Failed to get report info: {error}",
     "enterStep": "Entering Step {step}: {name}",
     "returnToStep": "Returning to Step {step}: {name}",
-    "customSimRounds": "Custom simulation rounds: {rounds} rounds"
+    "customSimRounds": "Custom simulation rounds: {rounds} rounds",
+    "graphProcessingInProgress": "Graph ingestion in progress, waiting for cloud processing...",
+    "graphIngestionProgress": "Graph ingestion progress: {count} pending",
+    "graphIngestionFailedLog": "Graph ingestion incomplete: {error}",
+    "graphIngestionRetryStarted": "Graph ingestion retry started, please wait...",
+    "graphIngestionRetryNoop": "Nothing to retry for graph ingestion",
+    "simReadyForReport": "✓ Graph is ready — report can be generated"
   },
   "report": {
     "taskStarted": "Report generation task started",

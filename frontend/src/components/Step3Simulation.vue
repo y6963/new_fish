@@ -88,18 +88,79 @@
             </div>
           </div>
         </div>
+
+        <!-- 图谱状态 -->
+        <div class="platform-status graph" :class="graphStatusClass">
+          <div class="platform-header">
+            <svg class="platform-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="18" cy="5" r="3"></circle>
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="19" r="3"></circle>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+            </svg>
+            <span class="platform-name">{{ $t('step3.graphIngestionLabel') }}</span>
+            <span v-if="runStatus.graph_status === 'completed'" class="status-badge">
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <span v-else-if="runStatus.graph_status === 'failed'" class="status-badge error">
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </span>
+          </div>
+          <div class="platform-stats">
+            <span class="stat">
+              <span class="stat-label">STATUS</span>
+              <span class="stat-value mono">{{ graphStatusText }}</span>
+            </span>
+            <span class="stat" v-if="runStatus.graph_stats">
+              <span class="stat-label">SENT</span>
+              <span class="stat-value mono">{{ runStatus.graph_stats.items_sent || 0 }}</span>
+            </span>
+            <span class="stat" v-if="graphPendingCount > 0">
+              <span class="stat-label">PENDING</span>
+              <span class="stat-value mono warning">{{ graphPendingCount }}</span>
+            </span>
+            <span class="stat" v-if="runStatus.graph_stats && runStatus.graph_stats.failed_count > 0">
+              <span class="stat-label">FAILED</span>
+              <span class="stat-value mono error">{{ runStatus.graph_stats.failed_count }}</span>
+            </span>
+            <span class="stat" v-if="graphWaiting">
+              <span class="stat-label">WAITED</span>
+              <span class="stat-value mono">{{ graphWaitSeconds }}s</span>
+            </span>
+          </div>
+          <div class="graph-hint" v-if="graphWaiting">
+            {{ $t('step3.reportWaitingHint', { seconds: graphWaitSeconds }) }}
+          </div>
+          <div class="graph-hint error" v-else-if="runStatus.graph_status === 'failed'">
+            {{ $t('step3.graphIngestionFailedHint') }}
+            <button
+              class="retry-ingestion-btn"
+              :disabled="retryingIngestion"
+              @click="handleRetryGraphIngestion"
+            >
+              {{ retryingIngestion ? $t('step3.retryingGraphIngestion') : $t('step3.retryGraphIngestion') }}
+            </button>
+          </div>
+        </div>
       </div>
 
       <div class="action-controls">
         <button 
           class="action-btn primary"
-          :disabled="phase !== 2 || isGeneratingReport"
+          :disabled="!reportReady || isGeneratingReport"
           @click="handleNextStep"
         >
           <span v-if="isGeneratingReport" class="loading-spinner-small"></span>
           {{ isGeneratingReport ? $t('step3.generatingReportBtn') : $t('step3.startGenerateReportBtn') }}
           <span v-if="!isGeneratingReport" class="arrow-icon">→</span>
         </button>
+        <div class="action-hint" v-if="reportReady">{{ $t('step3.reportReadyHint') }}</div>
       </div>
     </div>
 
@@ -293,7 +354,8 @@ import {
   startSimulation,
   stopSimulation,
   getRunStatus,
-  getRunStatusDetail
+  getRunStatusDetail,
+  retryGraphIngestion
 } from '../api/simulation'
 import { generateReport } from '../api/report'
 
@@ -325,6 +387,9 @@ const runStatus = ref({})
 const allActions = ref([]) // 所有动作（增量累积）
 const actionIds = ref(new Set()) // 用于去重的动作ID集合
 const scrollContainer = ref(null)
+const graphProcessingLogged = ref(false) // 防止重复打印图谱处理日志
+const graphFailedLogged = ref(false) // 防止重复打印图谱写入失败日志
+let lastLoggedPending = null // 上次已播报的待处理条数
 
 // Computed
 // 按时间顺序显示动作（最新的在最后面，即底部）
@@ -360,6 +425,93 @@ const redditElapsedTime = computed(() => {
   return formatElapsedTime(runStatus.value.reddit_current_round || 0)
 })
 
+// 图谱状态样式类
+const graphStatusClass = computed(() => {
+  const status = runStatus.value.graph_status
+  return {
+    uploading: status === 'uploading',
+    processing: status === 'processing',
+    completed: status === 'completed',
+    failed: status === 'failed',
+    unknown: status === 'unknown' || !status,
+  }
+})
+
+// 图谱状态文本
+const graphStatusText = computed(() => {
+  const status = runStatus.value.graph_status
+  switch (status) {
+    case 'uploading': return 'Sending'
+    case 'processing': return 'Processing'
+    case 'completed': return 'Ready'
+    case 'failed': return 'Error'
+    case 'unknown': return 'Unknown'
+    default: return 'Idle'
+  }
+})
+
+// 能否进入第四步：唯一依据是后端给出的 report_ready
+// （runner_status 已是成功终态，或"所有启用平台完成 + 图谱写入收尾完成"）
+const reportReady = computed(() => runStatus.value.report_ready === true)
+
+// 图谱写入还剩多少条待处理（队列 + 等待云端处理）
+const graphPendingCount = computed(() => {
+  const stats = runStatus.value.graph_stats
+  if (!stats) return 0
+  return (stats.queue_size || 0) + (stats.pending_episode_count || 0)
+})
+
+// 平台已跑完、但图谱写入还没收尾：这时用户最需要知道"卡在哪、等了多久"
+const graphWaiting = computed(() => (
+  runStatus.value.all_platforms_completed === true &&
+  !reportReady.value &&
+  runStatus.value.graph_status !== 'failed'
+))
+
+const graphWaitSeconds = ref(0)
+let graphWaitStartedAt = null
+let graphWaitTimer = null
+
+watch(graphWaiting, (waiting) => {
+  if (waiting) {
+    if (graphWaitStartedAt === null) graphWaitStartedAt = Date.now()
+    if (!graphWaitTimer) {
+      graphWaitTimer = setInterval(() => {
+        graphWaitSeconds.value = Math.round((Date.now() - graphWaitStartedAt) / 1000)
+      }, 1000)
+    }
+  } else {
+    if (graphWaitTimer) {
+      clearInterval(graphWaitTimer)
+      graphWaitTimer = null
+    }
+    graphWaitStartedAt = null
+    graphWaitSeconds.value = 0
+  }
+}, { immediate: true })
+
+// 重试图谱写入（收尾失败后的恢复入口，不需要重跑模拟）
+const retryingIngestion = ref(false)
+
+const handleRetryGraphIngestion = async () => {
+  if (!props.simulationId || retryingIngestion.value) return
+  retryingIngestion.value = true
+  try {
+    const res = await retryGraphIngestion(props.simulationId)
+    const retrying = res?.data?.retrying === true
+    addLog(retrying ? t('log.graphIngestionRetryStarted') : t('log.graphIngestionRetryNoop'))
+    if (retrying) {
+      stopPolling()
+      startStatusPolling()
+      fetchRunStatus()
+    }
+  } catch (err) {
+    addLog(t('log.graphIngestionFailedLog', { error: err.message }))
+  } finally {
+    retryingIngestion.value = false
+  }
+}
+
 // Methods
 const addLog = (msg) => {
   emit('add-log', msg)
@@ -376,6 +528,9 @@ const resetAllState = () => {
   startError.value = null
   isStarting.value = false
   isStopping.value = false
+  graphProcessingLogged.value = false  // 重置图谱处理日志标志
+  graphFailedLogged.value = false
+  lastLoggedPending = null
   stopPolling()  // 停止之前可能存在的轮询
 }
 
@@ -511,51 +666,53 @@ const fetchRunStatus = async () => {
         prevRedditRound.value = data.reddit_current_round
       }
       
-      // 检测模拟是否已完成（通过 runner_status 或平台完成状态判断）
-      const isCompleted = data.runner_status === 'completed' || data.runner_status === 'stopped'
+      // 就绪与否只由后端判定（report_ready = runner_status 成功终态，
+      // 或"所有启用平台已完成 + 图谱写入收尾完成"）。
+      // 前端不再用"平台完成"冒充"已完成"：那样会在图谱还在写入时就把报告放行。
+      const reportReady = data.report_ready === true
       const isFailed = data.runner_status === 'failed'
+      const graphFailed = data.graph_status === 'failed'
       
-      // runner_status is authoritative because the backend only publishes a
-      // terminal state after the Zep ingestion barrier has completed.
       if (isFailed) {
         addLog(t('log.simFailed') + (data.error ? `: ${data.error}` : ''))
-        phase.value = 2
+        phase.value = 3
         stopPolling()
         emit('update-status', 'error')
-      } else if (isCompleted) {
-        addLog(t('log.simCompleted'))
+      } else if (reportReady) {
+        // 图谱已可查，允许生成报告（此时模拟进程可能仍在等待采访命令）
+        addLog(t('log.simReadyForReport'))
         phase.value = 2
         stopPolling()
         emit('update-status', 'completed')
+      } else {
+        // 仍在模拟，或平台已完成但图谱还在收尾：必须继续轮询，直到真正就绪
+        phase.value = 1
+        emit('update-status', 'processing')
+        
+        if (data.all_platforms_completed) {
+          // 用户最关心的是"卡在哪、还剩多少、等了多久"
+          const pending = (data.graph_stats?.queue_size || 0)
+            + (data.graph_stats?.pending_episode_count || 0)
+          if (graphFailed) {
+            if (!graphFailedLogged.value) {
+              addLog(t('log.graphIngestionFailedLog', {
+                error: data.graph_ingestion_error || t('common.unknownError')
+              }))
+              graphFailedLogged.value = true
+            }
+          } else if (!graphProcessingLogged.value) {
+            addLog(t('log.graphProcessingInProgress'))
+            graphProcessingLogged.value = true
+          } else if (pending > 0 && pending !== lastLoggedPending) {
+            addLog(t('log.graphIngestionProgress', { count: pending }))
+            lastLoggedPending = pending
+          }
+        }
       }
     }
   } catch (err) {
     console.warn('获取运行状态失败:', err)
   }
-}
-
-// 检查所有启用的平台是否已完成
-const checkPlatformsCompleted = (data) => {
-  // 如果没有任何平台数据，返回 false
-  if (!data) return false
-  
-  // 检查各平台的完成状态
-  const twitterCompleted = data.twitter_completed === true
-  const redditCompleted = data.reddit_completed === true
-  
-  // 如果至少有一个平台完成了，检查是否所有启用的平台都完成了
-  // 通过 actions_count 判断平台是否被启用（如果 count > 0 或 running 曾为 true）
-  const twitterEnabled = (data.twitter_actions_count > 0) || data.twitter_running || twitterCompleted
-  const redditEnabled = (data.reddit_actions_count > 0) || data.reddit_running || redditCompleted
-  
-  // 如果没有任何平台被启用，返回 false
-  if (!twitterEnabled && !redditEnabled) return false
-  
-  // 检查所有启用的平台是否都已完成
-  if (twitterEnabled && !twitterCompleted) return false
-  if (redditEnabled && !redditCompleted) return false
-  
-  return true
 }
 
 const fetchRunStatusDetail = async () => {
@@ -648,6 +805,16 @@ const handleNextStep = async () => {
     return
   }
 
+  // 就绪前不发起请求：避免前端放行、后端 409 的"点了没反应"体验
+  if (!reportReady.value) {
+    addLog(runStatus.value.graph_status === 'failed'
+      ? t('log.graphIngestionFailedLog', {
+          error: runStatus.value.graph_ingestion_error || t('common.unknownError')
+        })
+      : t('log.graphProcessingInProgress'))
+    return
+  }
+
   if (isGeneratingReport.value) {
     addLog(t('log.reportRequestSent'))
     return
@@ -675,6 +842,12 @@ const handleNextStep = async () => {
   } catch (err) {
     addLog(t('log.reportGenException', { error: err.message }))
     isGeneratingReport.value = false
+    // 被图谱写入状态挡住时，恢复轮询，让用户看到进度或重试入口
+    if (/graph ingestion|episodes pending|still finalizing/i.test(err.message || '')) {
+      stopPolling()
+      startStatusPolling()
+      fetchRunStatus()
+    }
   }
 }
 
@@ -697,6 +870,10 @@ onMounted(() => {
 
 onUnmounted(() => {
   stopPolling()
+  if (graphWaitTimer) {
+    clearInterval(graphWaitTimer)
+    graphWaitTimer = null
+  }
 })
 </script>
 
@@ -833,6 +1010,47 @@ onUnmounted(() => {
 
 .platform-status.twitter .platform-icon { color: #000; }
 .platform-status.reddit .platform-icon { color: #000; }
+.platform-status.graph .platform-icon { color: #555; }
+
+/* 图谱状态颜色 */
+.platform-status.graph.uploading { background: #fff8e6; border-color: #ffc107; }
+.platform-status.graph.processing { background: #e3f2fd; border-color: #2196f3; }
+.platform-status.graph.completed { background: #e8f5e9; border-color: #4caf50; }
+.platform-status.graph.failed { background: #ffebee; border-color: #f44336; }
+.platform-status.graph.unknown { background: #f5f5f5; border-color: #9e9e9e; }
+
+.stat-value.warning { color: #ff9800; }
+.stat-value.error { color: #f44336; }
+
+/* 图谱写入等待/失败提示 */
+.graph-hint {
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #5f5e5a;
+}
+
+.graph-hint.error { color: #a32d2d; }
+
+.retry-ingestion-btn {
+  margin-left: 8px;
+  padding: 3px 10px;
+  font-size: 12px;
+  border: 1px solid #a32d2d;
+  border-radius: 6px;
+  background: #fff;
+  color: #a32d2d;
+  cursor: pointer;
+}
+
+.retry-ingestion-btn:hover:not(:disabled) { background: #fcebeb; }
+.retry-ingestion-btn:disabled { opacity: 0.6; cursor: default; }
+
+.action-hint {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #3b6d11;
+}
 
 .platform-stats {
   display: flex;

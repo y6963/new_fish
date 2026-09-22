@@ -769,6 +769,17 @@ def setup_signal_handlers():
 
 
 if __name__ == "__main__":
+    # 启动前的兼容性补丁（任一失败都不应阻断模拟）：
+    # 1) messages 规范化：合并重复的 system，避免采访被 chat template 拒绝；
+    # 2) 推荐模型加载：只查本地缓存并记住失败，避免每次刷新白等约 150 秒。
+    try:
+        import oasis_message_patch
+        oasis_message_patch.apply()
+        import oasis_recsys_patch
+        oasis_recsys_patch.apply()
+    except Exception as _patch_error:
+        print(f"[warn] 兼容性补丁未完全启用: {_patch_error}")
+
     setup_signal_handlers()
     try:
         asyncio.run(main())

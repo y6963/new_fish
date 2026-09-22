@@ -10,6 +10,7 @@
 
 import os
 import json
+import sys
 import time
 import uuid
 from typing import Dict, Any, Optional, List
@@ -20,6 +21,35 @@ from enum import Enum
 from ..utils.logger import get_logger
 
 logger = get_logger('mirofish.simulation_ipc')
+
+
+def _process_exists(pid: Any) -> bool:
+    """判断进程号对应的进程是否仍然存在。
+
+    只用于「安全增强」：**无法判定时一律返回 True**，以免误杀正常流程。
+    仅当能明确断定进程已不存在（ProcessLookupError）时才返回 False。
+
+    Windows 上 ``os.kill(pid, 0)`` 语义不同，直接不参与判定。
+    """
+    if sys.platform == "win32":
+        return True
+
+    try:
+        pid = int(pid)
+    except (TypeError, ValueError):
+        return True
+    if pid <= 0:
+        return True
+
+    try:
+        os.kill(pid, 0)
+    except ProcessLookupError:
+        return False          # 确定不存在
+    except PermissionError:
+        return True           # 存在但当前用户无权限
+    except OSError:
+        return True           # 其他情况不下结论
+    return True
 
 
 class CommandType(str, Enum):
@@ -267,11 +297,34 @@ class SimulationIPCClient:
             timeout=timeout
         )
     
+    def _read_recorded_pid(self, status: Dict[str, Any]) -> Optional[int]:
+        """取模拟进程的进程号。
+
+        优先用 env_status.json 里脚本自报的 pid；回落到 run_state.json 里
+        后端记录的 process_pid（旧数据也覆盖得到）。
+        """
+        pid = status.get("pid")
+        if pid:
+            return pid
+
+        run_state_file = os.path.join(self.simulation_dir, "run_state.json")
+        try:
+            with open(run_state_file, 'r', encoding='utf-8') as f:
+                return json.load(f).get("process_pid")
+        except (json.JSONDecodeError, OSError, AttributeError):
+            return None
+
     def check_env_alive(self) -> bool:
         """
         检查模拟环境是否存活
         
-        通过检查 env_status.json 文件来判断
+        通过检查 env_status.json 文件来判断。该文件由模拟脚本在命令循环
+        开始时写 ``alive``、退出时写 ``stopped``，因此**进程被强杀（OOM、
+        kill -9、崩溃）时会永远停留在 ``alive``**。
+
+        为避免这种"假存活"让后续命令白白等到超时（batch_interview 要等
+        180 秒），这里再做一次进程号校验：仅当能明确断定进程已不存在时
+        才判为不存活，其余情况一律沿用文件标记。
         """
         status_file = os.path.join(self.simulation_dir, "env_status.json")
         if not os.path.exists(status_file):
@@ -280,9 +333,22 @@ class SimulationIPCClient:
         try:
             with open(status_file, 'r', encoding='utf-8') as f:
                 status = json.load(f)
-            return status.get("status") == "alive"
         except (json.JSONDecodeError, OSError):
             return False
+
+        if status.get("status") != "alive":
+            return False
+
+        pid = self._read_recorded_pid(status)
+        if pid and not _process_exists(pid):
+            logger.warning(
+                "env_status.json 标记为 alive，但进程已不存在: pid=%s, dir=%s",
+                pid,
+                self.simulation_dir,
+            )
+            return False
+
+        return True
 
 
 class SimulationIPCServer:

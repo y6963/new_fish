@@ -194,6 +194,7 @@
     "stopException": "停止异常: {error}",
     "allPlatformsCompleted": "检测到所有平台模拟已结束",
     "simCompleted": "模拟已完成",
+    "simCompletedViaFallback": "✓ 模拟完成（平台完成检测）",
     "graphRealtimeRefresh": "开启图谱实时刷新 (30s)",
     "graphRefreshStopped": "停止图谱实时刷新",
     "preparingGoBack": "准备返回 Step 2，正在关闭模拟...",
@@ -205,7 +206,18 @@
     "forceStopSuccess": "模拟已强制停止",
     "forceStopFailed": "强制停止失败: {error}",
     "startGenerateReportBtn": "开始生成结果报告",
-    "generatingReportBtn": "启动中..."
+    "generatingReportBtn": "启动中...",
+    "graphIngestionLabel": "图谱写入",
+    "graphIngestionPending": "图谱写入中",
+    "graphIngestionWaiting": "图谱写入中 · 剩余 {count} 条",
+    "graphIngestionFinalizing": "图谱写入收尾中",
+    "graphIngestionReady": "图谱已就绪，可生成报告",
+    "graphIngestionFailed": "图谱写入失败",
+    "graphIngestionFailedHint": "图谱写入未完成，可重试后再生成报告。",
+    "retryGraphIngestion": "重试图谱写入",
+    "retryingGraphIngestion": "重试中...",
+    "reportWaitingHint": "模拟已结束，正在把最后一批记忆写入图谱，完成后即可生成报告（已等待 {seconds}s）",
+    "reportReadyHint": "模拟已完成、图谱已就绪，可以生成报告"
   },
   "step4": {
     "generatingSection": "正在生成{title}...",
@@ -538,6 +550,8 @@
     "stopException": "停止异常: {error}",
     "allPlatformsCompleted": "✓ 检测到所有平台模拟已结束",
     "simCompleted": "✓ 模拟已完成",
+    "simCompletedViaFallback": "✓ 模拟完成（平台完成检测）",
+    "simStatusUpdated": "模拟状态已更新: {status}",
     "simFailed": "✗ 模拟失败",
     "reportRequestSent": "报告生成请求已发送，请稍候...",
     "startingReportGen": "正在启动报告生成...",
@@ -565,7 +579,13 @@
     "getReportInfoFailed": "获取报告信息失败: {error}",
     "enterStep": "进入 Step {step}: {name}",
     "returnToStep": "返回 Step {step}: {name}",
-    "customSimRounds": "自定义模拟轮数: {rounds} 轮"
+    "customSimRounds": "自定义模拟轮数: {rounds} 轮",
+    "graphProcessingInProgress": "图谱写入中，等待云端处理完成...",
+    "graphIngestionProgress": "图谱写入进度: 剩余 {count} 条待处理",
+    "graphIngestionFailedLog": "图谱写入未完成: {error}",
+    "graphIngestionRetryStarted": "已重新触发图谱写入，请稍候...",
+    "graphIngestionRetryNoop": "没有待重试的图谱写入",
+    "simReadyForReport": "✓ 图谱已就绪，可以生成报告"
   },
   "report": {
     "taskStarted": "报告生成任务开始",

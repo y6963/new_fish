@@ -111,6 +111,17 @@ export const getRunStatusDetail = (simulationId) => {
 }
 
 /**
+ * 重试图谱写入收尾
+ *
+ * 模拟已结束但 Zep 写入收尾失败（等待云端处理超时）时调用；
+ * 成功后即可生成报告，无需重跑模拟。
+ * @param {string} simulationId
+ */
+export const retryGraphIngestion = (simulationId) => {
+  return service.post(`/api/simulation/${simulationId}/graph-ingestion/retry`)
+}
+
+/**
  * 获取模拟中的帖子
  * @param {string} simulationId
  * @param {string} [platform] - 'reddit' | 'twitter'（省略时由后端根据模拟配置自动选择）
