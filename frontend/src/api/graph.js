@@ -64,3 +64,75 @@ export function getProject(projectId) {
     method: 'get'
   })
 }
+
+/**
+ * 导出图谱
+ * @param {String} graphId - 图谱ID
+ * @param {String} format - 导出格式: 'json' | 'sqlite' | 'cypher'
+ * @returns {Promise}
+ */
+export function exportGraph(graphId, format = 'json') {
+  return service({
+    url: `/api/graph/export/${graphId}`,
+    method: 'post',
+    data: { format }
+  })
+}
+
+/**
+ * 列出所有导出文件
+ * @returns {Promise}
+ */
+export function listExports() {
+  return service({
+    url: '/api/graph/export/list',
+    method: 'get'
+  })
+}
+
+/**
+ * 获取本地导出的图谱数据
+ * @param {String} filename - 导出文件名
+ * @returns {Promise}
+ */
+export function getLocalGraphData(filename) {
+  return service({
+    url: `/api/graph/local/${filename}`,
+    method: 'get'
+  })
+}
+
+/**
+ * 验证本地图谱文件
+ * @param {String} filename - 导出文件名
+ * @returns {Promise}
+ */
+export function validateLocalGraph(filename) {
+  return service({
+    url: `/api/graph/validate/${filename}`,
+    method: 'get'
+  })
+}
+
+/**
+ * 验证导出文件与原始图谱的一致性
+ * @param {String} graphId - Zep 图谱ID
+ * @param {String} exportFilename - 导出文件名
+ * @returns {Promise}
+ */
+export function verifyGraphExport(graphId, exportFilename) {
+  return service({
+    url: `/api/graph/verify/${graphId}`,
+    method: 'post',
+    data: { export_filename: exportFilename }
+  })
+}
+
+/**
+ * 下载导出的图谱文件
+ * @param {String} filename - 导出文件名
+ * @returns {string} 下载URL
+ */
+export function getExportDownloadUrl(filename) {
+  return `/api/graph/download/${filename}`
+}

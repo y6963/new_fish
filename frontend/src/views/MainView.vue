@@ -59,6 +59,7 @@
           :buildProgress="buildProgress"
           :graphData="graphData"
           :systemLogs="systemLogs"
+          :onGraphDataChange="handleGraphDataChange"
           @next-step="handleNextStep"
         />
         <!-- Step 2: 环境搭建 -->
@@ -149,6 +150,14 @@ const addLog = (msg) => {
   // Keep last 100 logs
   if (systemLogs.value.length > 100) {
     systemLogs.value.shift()
+  }
+}
+
+// --- Graph Data Change Handler ---
+const handleGraphDataChange = (newGraphData) => {
+  if (newGraphData) {
+    graphData.value = newGraphData
+    addLog(`Loaded local graph: ${newGraphData.graph_id} (${newGraphData.node_count} nodes, ${newGraphData.edge_count} edges)`)
   }
 }
 

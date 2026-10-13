@@ -168,6 +168,114 @@
           </button>
         </div>
       </div>
+
+      <!-- Step 04: Export & Restore -->
+      <div class="step-card" :class="{ 'active': showExportPanel }">
+        <div class="card-header">
+          <div class="step-info">
+            <span class="step-num">04</span>
+            <span class="step-title">{{ $t('step1.exportRestore') }}</span>
+          </div>
+          <div class="step-status">
+            <span v-if="exportedFiles.length > 0" class="badge accent">{{ exportedFiles.length }} {{ $t('step1.exported') }}</span>
+            <span v-else class="badge pending">{{ $t('step1.notExported') }}</span>
+          </div>
+        </div>
+        
+        <div class="card-content">
+          <p class="api-note">POST /api/graph/export/:id</p>
+          <p class="description">{{ $t('step1.exportRestoreDesc') }}</p>
+          
+          <!-- Export Options -->
+          <div class="export-section" v-if="projectData?.graph_id">
+            <div class="export-formats">
+              <span class="format-label">{{ $t('step1.selectFormat') }}:</span>
+              <select v-model="selectedFormat" class="format-select">
+                <option value="json">JSON</option>
+                <option value="sqlite">SQLite</option>
+                <option value="cypher">Cypher (Neo4j)</option>
+              </select>
+            </div>
+            
+            <div class="export-actions">
+              <button 
+                class="action-btn primary" 
+                :disabled="exporting || !projectData.graph_id"
+                @click="handleExport"
+              >
+                <span v-if="exporting" class="spinner-sm"></span>
+                {{ exporting ? $t('step1.exporting') : $t('step1.exportGraph') }}
+              </button>
+              
+              <button 
+                class="action-btn secondary"
+                @click="showFileSelector = !showFileSelector"
+              >
+                {{ $t('step1.loadLocal') }}
+              </button>
+            </div>
+            
+            <!-- Export Result -->
+            <div v-if="exportResult" class="export-result">
+              <div class="result-header">
+                <span class="result-title">{{ $t('step1.exportSuccess') }}</span>
+                <a :href="exportResult.download_url" class="download-link" target="_blank">
+                  {{ $t('step1.download') }}
+                </a>
+              </div>
+              <div class="result-info">
+                <span>{{ $t('step1.filename') }}: {{ exportResult.filename }}</span>
+                <span>{{ $t('step1.nodeCount') }}: {{ exportResult.graph_info?.node_count }}</span>
+                <span>{{ $t('step1.edgeCount') }}: {{ exportResult.graph_info?.edge_count }}</span>
+                <span class="checksum">Checksum: {{ exportResult.graph_info?.checksum?.substring(0, 16) }}...</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- File Selector for Loading -->
+          <div v-if="showFileSelector" class="file-selector">
+            <div class="selector-header">
+              <span>{{ $t('step1.localFiles') }}</span>
+              <button class="close-btn" @click="showFileSelector = false">×</button>
+            </div>
+            
+            <div class="file-list" v-if="exportedFiles.length > 0">
+              <div 
+                v-for="file in exportedFiles" 
+                :key="file.filename"
+                class="file-item"
+              >
+                <div class="file-info">
+                  <span class="file-name">{{ file.filename }}</span>
+                  <span class="file-meta">{{ formatFileSize(file.size) }} | {{ file.format }}</span>
+                </div>
+                <div class="file-actions">
+                  <button class="mini-btn" @click="loadLocalGraph(file.filename)">
+                    {{ $t('step1.load') }}
+                  </button>
+                  <a :href="`/api/graph/download/${file.filename}`" class="mini-btn" target="_blank">
+                    {{ $t('step1.download') }}
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div v-else class="no-files">
+              {{ $t('step1.noLocalFiles') }}
+            </div>
+          </div>
+          
+          <!-- Validation Result -->
+          <div v-if="validationResult" class="validation-result" :class="{ valid: validationResult.is_valid, invalid: !validationResult.is_valid }">
+            <div class="validation-header">
+              <span class="validation-icon">{{ validationResult.is_valid ? '✓' : '✗' }}</span>
+              <span class="validation-title">{{ validationResult.is_valid ? $t('step1.validationPass') : $t('step1.validationFail') }}</span>
+            </div>
+            <div v-if="validationResult.checksum" class="validation-details">
+              <span>{{ $t('step1.checksumMatch') }}: {{ validationResult.checksum.match ? $t('step1.yes') : $t('step1.no') }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Bottom Info / Logs -->
@@ -191,6 +299,7 @@ import { computed, ref, watch, nextTick } from 'vue'
 import { useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { createSimulation } from '../api/simulation'
+import { exportGraph, listExports, getLocalGraphData, validateLocalGraph } from '../api/graph'
 
 const router = useRouter()
 const { t } = useI18n()
@@ -201,7 +310,8 @@ const props = defineProps({
   ontologyProgress: Object,
   buildProgress: Object,
   graphData: Object,
-  systemLogs: { type: Array, default: () => [] }
+  systemLogs: { type: Array, default: () => [] },
+  onGraphDataChange: Function  // 用于通知父组件图谱数据变化
 })
 
 defineEmits(['next-step'])
@@ -209,6 +319,112 @@ defineEmits(['next-step'])
 const selectedOntologyItem = ref(null)
 const logContent = ref(null)
 const creatingSimulation = ref(false)
+
+// Export & Restore State
+const selectedFormat = ref('json')
+const exporting = ref(false)
+const exportResult = ref(null)
+const exportedFiles = ref([])
+const showFileSelector = ref(false)
+const validationResult = ref(null)
+
+// Computed: 是否显示导出面板
+const showExportPanel = computed(() => {
+  return props.projectData?.graph_id && props.currentPhase >= 2
+})
+
+// 格式化文件大小
+const formatFileSize = (bytes) => {
+  if (!bytes) return '0 B'
+  const k = 1024
+  const sizes = ['B', 'KB', 'MB', 'GB']
+  const i = Math.floor(Math.log(bytes) / Math.log(k))
+  return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i]
+}
+
+// 导出图谱
+const handleExport = async () => {
+  if (!props.projectData?.graph_id) {
+    alert('No graph to export')
+    return
+  }
+  
+  exporting.value = true
+  exportResult.value = null
+  validationResult.value = null
+  
+  try {
+    const res = await exportGraph(props.projectData.graph_id, selectedFormat.value)
+    
+    if (res.success) {
+      exportResult.value = res.data
+      // 刷新文件列表
+      await loadExportedFiles()
+      // 验证导出
+      await verifyExport(res.data.filename)
+    } else {
+      alert('Export failed: ' + res.error)
+    }
+  } catch (err) {
+    console.error('Export error:', err)
+    alert('Export error: ' + err.message)
+  } finally {
+    exporting.value = false
+  }
+}
+
+// 加载已导出的文件列表
+const loadExportedFiles = async () => {
+  try {
+    const res = await listExports()
+    if (res.success) {
+      exportedFiles.value = res.data || []
+    }
+  } catch (err) {
+    console.error('Load exports error:', err)
+  }
+}
+
+// 加载本地图谱
+const loadLocalGraph = async (filename) => {
+  try {
+    const res = await getLocalGraphData(filename)
+    
+    if (res.success && res.data) {
+      // 将本地图谱数据传递给父组件
+      if (props.onGraphDataChange) {
+        props.onGraphDataChange(res.data)
+      }
+      // 验证图谱
+      await verifyExport(filename)
+      showFileSelector.value = false
+    } else {
+      alert('Failed to load local graph: ' + res.error)
+    }
+  } catch (err) {
+    console.error('Load local graph error:', err)
+    alert('Load error: ' + err.message)
+  }
+}
+
+// 验证导出文件
+const verifyExport = async (filename) => {
+  try {
+    const res = await validateLocalGraph(filename)
+    if (res.success) {
+      validationResult.value = res.data
+    }
+  } catch (err) {
+    console.error('Validation error:', err)
+  }
+}
+
+// 初始化时加载导出文件列表
+watch(showExportPanel, (newVal) => {
+  if (newVal) {
+    loadExportedFiles()
+  }
+}, { immediate: true })
 
 // 进入环境搭建 - 创建 simulation 并跳转
 const handleEnterEnvSetup = async () => {
@@ -696,5 +912,263 @@ watch(() => props.systemLogs.length, () => {
 .log-msg {
   color: #CCC;
   word-break: break-all;
+}
+
+/* Export Section */
+.export-section {
+  margin-top: 16px;
+}
+
+.export-formats {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.format-label {
+  font-size: 12px;
+  color: #666;
+}
+
+.format-select {
+  padding: 6px 12px;
+  border: 1px solid #E0E0E0;
+  border-radius: 4px;
+  background: white;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.export-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.action-btn {
+  padding: 10px 20px;
+  background: #FF5722;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.action-btn:hover:not(:disabled) {
+  background: #E64A19;
+}
+
+.action-btn:disabled {
+  background: #CCC;
+  cursor: not-allowed;
+}
+
+.action-btn.primary {
+  background: #7B2D8E;
+}
+
+.action-btn.primary:hover:not(:disabled) {
+  background: #5A1F6B;
+}
+
+.action-btn.secondary {
+  background: #666;
+}
+
+.action-btn.secondary:hover:not(:disabled) {
+  background: #555;
+}
+
+.export-result {
+  background: #E8F5E9;
+  border: 1px solid #A5D6A7;
+  border-radius: 6px;
+  padding: 12px;
+  margin-top: 12px;
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.result-title {
+  font-weight: 600;
+  color: #2E7D32;
+}
+
+.download-link {
+  color: #1976D2;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.download-link:hover {
+  text-decoration: underline;
+}
+
+.result-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 11px;
+  color: #555;
+}
+
+.result-info .checksum {
+  font-family: 'JetBrains Mono', monospace;
+  color: #888;
+}
+
+/* File Selector */
+.file-selector {
+  background: #F5F5F5;
+  border: 1px solid #E0E0E0;
+  border-radius: 6px;
+  margin-top: 12px;
+  overflow: hidden;
+}
+
+.selector-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  background: #EEE;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.file-list {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.file-item:last-child {
+  border-bottom: none;
+}
+
+.file-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.file-name {
+  font-size: 12px;
+  font-weight: 500;
+  color: #333;
+}
+
+.file-meta {
+  font-size: 10px;
+  color: #888;
+}
+
+.file-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.mini-btn {
+  padding: 4px 10px;
+  background: #FFF;
+  border: 1px solid #DDD;
+  border-radius: 4px;
+  font-size: 11px;
+  cursor: pointer;
+  color: #333;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.mini-btn:hover {
+  background: #F0F0F0;
+}
+
+.no-files {
+  padding: 20px;
+  text-align: center;
+  color: #999;
+  font-size: 12px;
+}
+
+/* Validation Result */
+.validation-result {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.validation-result.valid {
+  background: #E8F5E9;
+  border: 1px solid #A5D6A7;
+}
+
+.validation-result.invalid {
+  background: #FFEBEE;
+  border: 1px solid #EF9A9A;
+}
+
+.validation-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.validation-icon {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.validation-result.valid .validation-icon {
+  color: #2E7D32;
+}
+
+.validation-result.invalid .validation-icon {
+  color: #C62828;
+}
+
+.validation-title {
+  font-weight: 600;
+}
+
+.validation-details {
+  font-size: 11px;
+  color: #555;
+}
+
+/* Close button */
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #999;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.close-btn:hover {
+  color: #333;
 }
 </style>

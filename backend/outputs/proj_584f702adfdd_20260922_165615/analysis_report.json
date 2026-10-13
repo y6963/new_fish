@@ -1,0 +1,110 @@
+{
+  "project_id": "proj_584f702adfdd",
+  "graph_id": "mirofish_30d6bd2f072e4576",
+  "timestamp": "20260922_165615",
+  "statistics": {
+    "text_length": 3060,
+    "chunks_count": 9,
+    "nodes_count": 33,
+    "edges_count": 126
+  },
+  "entity_types": {
+    "ConsumerGroup": 6,
+    "Investor": 2,
+    "RestaurantChain": 9,
+    "Organization": 1,
+    "MiningCompany": 1,
+    "Influencer": 1,
+    "TechCompany": 1,
+    "CorporateExecutive": 1,
+    "Founder": 1
+  },
+  "edge_types": {
+    "CRITICIZES": 1,
+    "ACCUSED_BY": 9,
+    "CONSUMES_FROM": 6,
+    "AFFECTS": 44,
+    "RESPONDS_TO": 18,
+    "HAS_FINANCIAL_DATA": 2,
+    "INVESTED_IN": 5,
+    "BOYCOTTS": 1,
+    "CLOSED_STORES_AND_LAYED_OFF": 1,
+    "HAS_CAPITAL_INCREASE": 1,
+    "WORKS_FOR": 10,
+    "WANTS_SUPPORT_FROM": 1,
+    "AFFILIATED_WITH": 1,
+    "LIKES": 3,
+    "SUPPORTS_REGULATION_OF": 1,
+    "MAKES_FRESH_FOOD": 1,
+    "EXPERIENCES_REVENUE_DECLINE": 1,
+    "OFFERS": 2,
+    "HAS_LAYOFFS": 1,
+    "USES_OPERATING_MODEL": 1,
+    "HAS_MARKET_POSITION": 1,
+    "EXPERIENCED": 1,
+    "CLOSED_STORES_IN": 2,
+    "HAS_LISTING_STATUS": 1,
+    "HAS_VALUATION": 1,
+    "PROMOTES": 2,
+    "HAS_PROFILE": 1,
+    "EXPERIENCES_CRISIS": 1,
+    "HAS_FINANCIAL_DISTRESS": 1,
+    "CLOSES_STORES": 1,
+    "ADVOCATES_REGULATION_OF": 1,
+    "ADVOCATES_FOR": 1,
+    "HAS_STORE_COUNT": 1,
+    "HAS_STORES_IN": 1
+  },
+  "top_entities": [
+    {
+      "name": "消费者群体",
+      "type": "ConsumerGroup",
+      "summary": "消费者群体持续对西贝预制菜的高价产生负面反应，认为其定价持续超出内心价值感知。2021年21元馒头和33元花卷、2023年29元三只蒸饺引发公众吐槽；贾国龙承认西贝销售额平均下滑约10%，客流断崖式下"
+    },
+    {
+      "name": "大中矿业实控人",
+      "type": "Investor",
+      "summary": "大中矿业实控人于2026年3月入股西贝，持股2.16%，西贝当时估值约10亿元。该实控人从长期主义出发，将近期围绕西贝的争议视为因信息不对称引发的信任赤字，主张餐饮供应链透明化、后厨开放化和规范标准化"
+    },
+    {
+      "name": "部分消费者",
+      "type": "ConsumerGroup",
+      "summary": "部分消费者持续抵制西贝，导致价格敏感型群体流失，并严重损害了对西贝的整体信任。部分消费者曾为表达对西贝困境的支持点赞了大中矿业实控人关于西贝营收下滑、门店缩减和估值暴跌的分析，同时也点赞了全聚德关于餐"
+    },
+    {
+      "name": "全聚德",
+      "type": "RestaurantChain",
+      "summary": "全聚德称西贝、太二、海底捞、呷哺呷哺等品牌营收下滑9%-20%，并将这些变化归因于公众对“高价低配”餐饮模式的反感。全聚德认为餐饮行业必须回归“鲜制”和“透明”。西贝因价格与透明度争议遭遇客流和营收断"
+    },
+    {
+      "name": "消费者",
+      "type": "ConsumerGroup",
+      "summary": "消费者对西贝预制菜争议及价格溢价极度反感，因信息不对称和信任崩塌而持续抵制，出现观望、放弃消费及流失情况，近400家门店客流断崖式下跌。全聚德、呷哺呷哺、太二、海底捞等同业品牌营收也下滑9%-20%，"
+    },
+    {
+      "name": "绝味鸭脖",
+      "type": "RestaurantChain",
+      "summary": "绝味鸭脖的营收下滑约9%-20%。"
+    },
+    {
+      "name": "餐饮行业",
+      "type": "Organization",
+      "summary": "餐饮行业面临系统性信任危机，公众对“高价低配”模式的反感加剧。西贝、太二、海底捞、呷哺呷哺、全聚德等品牌的营收下滑9%至20%，反映出行业对预制菜和高溢价模式的信任受损。行业被呼吁回归“鲜制”和透明化"
+    },
+    {
+      "name": "太二酸菜鱼",
+      "type": "RestaurantChain",
+      "summary": "太二酸菜鱼的营收在2026年9月因公众对“高价低配”餐饮模式的反感而下滑9%至20%。该品牌与西贝、海底捞、呷哺呷哺等品牌共同陷入餐饮行业“伪高端”模式的系统性信任危机。消费者认为该行业缺乏透明化并混"
+    },
+    {
+      "name": "大中矿业",
+      "type": "MiningCompany",
+      "summary": "大中矿业实际控制人为林来嵘。2026年3月，林来嵘出资224.76万元获得大中矿业2.16%股权，对应估值约10亿元。大中矿业自2026年3月起入股西贝，持有西贝股权。2026年4月至9月，西贝进入持"
+    },
+    {
+      "name": "西贝员工",
+      "type": "ConsumerGroup",
+      "summary": "西贝员工是西贝全体员工，规模超过17000人，在2025年9月罗永浩引发舆论风波后成为受冲击最大的群体。2026年9月21日，员工代表发帖表示公司关了102家门店、裁了4000多人，员工努力现做但消费"
+    }
+  ]
+}

@@ -839,6 +839,281 @@ def _build_graph_impl():
         }), 500
 
 
+# ============== 图谱导出接口 ==============
+
+@graph_bp.route('/export/<graph_id>', methods=['POST'])
+def export_graph(graph_id: str):
+    """
+    导出图谱数据为独立格式
+    
+    请求参数 (JSON):
+        format: "json" | "sqlite" | "cypher"  (默认 "json")
+        
+    返回:
+        {
+            "success": true,
+            "data": {
+                "file_path": "/path/to/exported/file.json",
+                "filename": "filename.json",
+                "format": "json",
+                "graph_info": {
+                    "name": "图谱名称",
+                    "node_count": 100,
+                    "edge_count": 200,
+                    "checksum": "abc123..."
+                }
+            }
+        }
+    """
+    try:
+        if not Config.ZEP_API_KEY:
+            return jsonify({
+                "success": False,
+                "error": t('api.zepApiKeyMissing')
+            }), 500
+        
+        data = request.get_json(silent=True) or {}
+        format_str = data.get('format', 'json').lower()
+        
+        from ..services.graph_exporter import GraphExporter, ExportFormat
+        
+        try:
+            export_format = ExportFormat(format_str)
+        except ValueError:
+            return jsonify({
+                "success": False,
+                "error": f"不支持的格式: {format_str}。支持的格式: json, sqlite, cypher"
+            }), 400
+        
+        exporter = GraphExporter(api_key=Config.ZEP_API_KEY)
+        
+        # 执行导出
+        file_path = exporter.export_graph(graph_id, export_format)
+        filename = os.path.basename(file_path)
+        
+        # 获取图谱信息
+        graph_data = exporter.fetch_graph_from_zep(graph_id)
+        
+        return jsonify({
+            "success": True,
+            "data": {
+                "file_path": file_path,
+                "filename": filename,
+                "format": format_str,
+                "download_url": f"/api/graph/download/{filename}",
+                "graph_info": {
+                    "name": graph_data.name,
+                    "node_count": graph_data.node_count,
+                    "edge_count": graph_data.edge_count,
+                    "checksum": graph_data.checksum,
+                    "exported_at": graph_data.exported_at
+                }
+            }
+        })
+        
+    except Exception as e:
+        logger.exception(f"导出图谱失败: {graph_id}")
+        return jsonify({
+            "success": False,
+            "error": str(e)
+        }), 500
+
+
+@graph_bp.route('/export/list', methods=['GET'])
+def list_exports():
+    """
+    列出所有导出文件
+    """
+    try:
+        from ..services.graph_exporter import GraphExporter
+        
+        exporter = GraphExporter(api_key=Config.ZEP_API_KEY)
+        exports = exporter.list_exports()
+        
+        return jsonify({
+            "success": True,
+            "data": exports
+        })
+        
+    except Exception as e:
+        return jsonify({
+            "success": False,
+            "error": str(e)
+        }), 500
+
+
+@graph_bp.route('/download/<filename>', methods=['GET'])
+def download_export(filename: str):
+    """
+    下载导出的图谱文件
+    """
+    from werkzeug.utils import secure_filename
+    from flask import send_file
+    
+    safe_filename = secure_filename(filename)
+    file_path = os.path.join(
+        GraphExporter.EXPORTS_DIR,
+        safe_filename
+    )
+    
+    if not os.path.exists(file_path):
+        return jsonify({
+            "success": False,
+            "error": "文件不存在"
+        }), 404
+    
+    # 根据文件扩展名设置 MIME 类型
+    ext = os.path.splitext(safe_filename)[1].lower()
+    mimetypes = {
+        '.json': 'application/json',
+        '.db': 'application/x-sqlite3',
+        '.sqlite': 'application/x-sqlite3',
+        '.cypher': 'text/plain'
+    }
+    mimetype = mimetypes.get(ext, 'application/octet-stream')
+    
+    return send_file(
+        file_path,
+        mimetype=mimetype,
+        as_attachment=True,
+        download_name=safe_filename
+    )
+
+
+# ============== 图谱恢复接口 ==============
+
+@graph_bp.route('/local/<filename>', methods=['GET'])
+def get_local_graph(filename: str):
+    """
+    获取本地导出的图谱数据（用于前端显示）
+    
+    Returns:
+        图谱数据（与 Zep API 返回格式相同）
+    """
+    try:
+        from werkzeug.utils import secure_filename
+        from ..services.graph_exporter import GraphRestore
+        
+        safe_filename = secure_filename(filename)
+        file_path = os.path.join(
+            GraphRestore.EXPORTS_DIR,
+            safe_filename
+        )
+        
+        if not os.path.exists(file_path):
+            return jsonify({
+                "success": False,
+                "error": "文件不存在"
+            }), 404
+        
+        restorer = GraphRestore(api_key=Config.ZEP_API_KEY)
+        graph_data = restorer.get_local_graph_data(file_path)
+        
+        return jsonify({
+            "success": True,
+            "data": graph_data
+        })
+        
+    except Exception as e:
+        logger.exception("获取本地图谱失败")
+        return jsonify({
+            "success": False,
+            "error": str(e)
+        }), 500
+
+
+@graph_bp.route('/validate/<filename>', methods=['GET'])
+def validate_local_graph(filename: str):
+    """
+    验证本地导出的图谱文件
+    
+    Returns:
+        验证报告
+    """
+    try:
+        from werkzeug.utils import secure_filename
+        from ..services.graph_exporter import GraphValidator, GraphRestore
+        
+        safe_filename = secure_filename(filename)
+        file_path = os.path.join(
+            GraphRestore.EXPORTS_DIR,
+            safe_filename
+        )
+        
+        if not os.path.exists(file_path):
+            return jsonify({
+                "success": False,
+                "error": "文件不存在"
+            }), 404
+        
+        validator = GraphValidator(api_key=Config.ZEP_API_KEY)
+        report = validator.verify_local_graph(file_path)
+        
+        return jsonify({
+            "success": True,
+            "data": report
+        })
+        
+    except Exception as e:
+        logger.exception("验证图谱失败")
+        return jsonify({
+            "success": False,
+            "error": str(e)
+        }), 500
+
+
+@graph_bp.route('/verify/<graph_id>', methods=['POST'])
+def verify_graph_export(graph_id: str):
+    """
+    验证导出文件与原始图谱的一致性
+    
+    请求参数 (JSON):
+        export_filename: 导出文件名
+        
+    Returns:
+        验证报告
+    """
+    try:
+        from werkzeug.utils import secure_filename
+        from ..services.graph_exporter import GraphValidator, GraphRestore
+        
+        data = request.get_json(silent=True) or {}
+        export_filename = data.get('export_filename')
+        
+        if not export_filename:
+            return jsonify({
+                "success": False,
+                "error": "缺少 export_filename 参数"
+            }), 400
+        
+        safe_filename = secure_filename(export_filename)
+        file_path = os.path.join(
+            GraphRestore.EXPORTS_DIR,
+            safe_filename
+        )
+        
+        if not os.path.exists(file_path):
+            return jsonify({
+                "success": False,
+                "error": "导出文件不存在"
+            }), 404
+        
+        validator = GraphValidator(api_key=Config.ZEP_API_KEY)
+        report = validator.validate_export(graph_id, file_path)
+        
+        return jsonify({
+            "success": True,
+            "data": report
+        })
+        
+    except Exception as e:
+        logger.exception("验证图谱失败")
+        return jsonify({
+            "success": False,
+            "error": str(e)
+        }), 500
+
+
 # ============== 任务查询接口 ==============
 
 @graph_bp.route('/task/<task_id>', methods=['GET'])

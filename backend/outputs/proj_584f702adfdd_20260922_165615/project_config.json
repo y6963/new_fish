@@ -1,0 +1,355 @@
+{
+  "project_id": "proj_584f702adfdd",
+  "name": "Unnamed Project",
+  "status": "graph_completed",
+  "created_at": "2026-09-21T11:14:10.212849",
+  "updated_at": "2026-09-21T11:15:59.693973",
+  "files": [
+    {
+      "filename": "测试剧本_罗永浩西贝事件.md",
+      "size": 6176
+    }
+  ],
+  "total_text_length": 3060,
+  "ontology": {
+    "entity_types": [
+      {
+        "name": "Influencer",
+        "description": "拥有大量粉丝的公众人物或大V，如罗永浩，能在社交媒体上引发舆论风暴。",
+        "attributes": [
+          {
+            "name": "follower_count",
+            "type": "text",
+            "description": "全网粉丝数量级描述"
+          },
+          {
+            "name": "platform",
+            "type": "text",
+            "description": "主要发声平台"
+          }
+        ],
+        "examples": [
+          "罗永浩"
+        ]
+      },
+      {
+        "name": "Founder",
+        "description": "企业的创始人或核心灵魂人物，如贾国龙，通常代表企业最高意志。",
+        "attributes": [
+          {
+            "name": "company_affiliation",
+            "type": "text",
+            "description": "所属企业或品牌"
+          },
+          {
+            "name": "leadership_role",
+            "type": "text",
+            "description": "在组织中的具体职务"
+          }
+        ],
+        "examples": [
+          "贾国龙"
+        ]
+      },
+      {
+        "name": "CorporateExecutive",
+        "description": "企业高管或董事会成员，如张丽平，参与公司重大决策或危机处理。",
+        "attributes": [
+          {
+            "name": "position",
+            "type": "text",
+            "description": "具体职位"
+          },
+          {
+            "name": "relationship_to_founder",
+            "type": "text",
+            "description": "与创始人的关系（如配偶、亲属）"
+          }
+        ],
+        "examples": [
+          "张丽平"
+        ]
+      },
+      {
+        "name": "Investor",
+        "description": "企业股东、投资人或实控人，如林来嵘，关注企业估值和财务健康。",
+        "attributes": [
+          {
+            "name": "investment_amount",
+            "type": "text",
+            "description": "投资金额或持股比例"
+          },
+          {
+            "name": "background",
+            "type": "text",
+            "description": "投资人背景或原属公司"
+          }
+        ],
+        "examples": [
+          "林来嵘"
+        ]
+      },
+      {
+        "name": "RestaurantChain",
+        "description": "大型连锁餐饮品牌企业，如西贝，是舆论事件的主要当事方。",
+        "attributes": [
+          {
+            "name": "brand_name",
+            "type": "text",
+            "description": "品牌名称"
+          },
+          {
+            "name": "store_count",
+            "type": "text",
+            "description": "门店数量"
+          }
+        ],
+        "examples": [
+          "西贝莜面村"
+        ]
+      },
+      {
+        "name": "TechCompany",
+        "description": "科技公司或互联网企业，如锤子科技，其创始人可能跨界参与舆论。",
+        "attributes": [
+          {
+            "name": "industry_focus",
+            "type": "text",
+            "description": "主要业务领域"
+          },
+          {
+            "name": "status",
+            "type": "text",
+            "description": "企业当前状态（如运营、破产、转型）"
+          }
+        ],
+        "examples": [
+          "锤子科技"
+        ]
+      },
+      {
+        "name": "MiningCompany",
+        "description": "矿业或其他传统行业上市公司，其高管可能作为跨界投资人出现。",
+        "attributes": [
+          {
+            "name": "stock_code",
+            "type": "text",
+            "description": "股票代码（如有）"
+          },
+          {
+            "name": "main_business",
+            "type": "text",
+            "description": "主营业务"
+          }
+        ],
+        "examples": [
+          "大中矿业"
+        ]
+      },
+      {
+        "name": "ConsumerGroup",
+        "description": "消费者群体或特定用户圈层，如亲子家庭、价格敏感型用户，是舆论的受众和参与者。",
+        "attributes": [
+          {
+            "name": "demographic",
+            "type": "text",
+            "description": "人群特征描述"
+          },
+          {
+            "name": "sentiment_trend",
+            "type": "text",
+            "description": "当前情绪趋势（如抵制、观望、支持）"
+          }
+        ],
+        "examples": [
+          "西贝消费者",
+          "亲子家庭用户"
+        ]
+      },
+      {
+        "name": "Person",
+        "description": "任何自然人个体的兜底类型。当人物不属于上述具体角色（如普通员工、路人网友）时归入此类。",
+        "attributes": [
+          {
+            "name": "role_description",
+            "type": "text",
+            "description": "在事件中的简要角色描述"
+          }
+        ],
+        "examples": [
+          "西贝员工",
+          "普通网友"
+        ]
+      },
+      {
+        "name": "Organization",
+        "description": "任何组织机构的兜底类型。当组织不属于上述具体类型（如行业协会、小型供应商）时归入此类。",
+        "attributes": [
+          {
+            "name": "org_type",
+            "type": "text",
+            "description": "组织性质（如协会、NGO、小型企业）"
+          }
+        ],
+        "examples": [
+          "餐饮行业协会",
+          "地方市场监管部门"
+        ]
+      }
+    ],
+    "edge_types": [
+      {
+        "name": "ACCUSED_BY",
+        "description": "指控或批评关系，如罗永浩指控西贝使用预制菜。",
+        "source_targets": [
+          {
+            "source": "Influencer",
+            "target": "RestaurantChain"
+          },
+          {
+            "source": "Influencer",
+            "target": "Founder"
+          }
+        ],
+        "attributes": [
+          {
+            "name": "accusation_content",
+            "type": "text",
+            "description": "指控的具体内容"
+          }
+        ]
+      },
+      {
+        "name": "RESPONDS_TO",
+        "description": "回应关系，如贾国龙回应罗永浩的指控。",
+        "source_targets": [
+          {
+            "source": "Founder",
+            "target": "Influencer"
+          },
+          {
+            "source": "RestaurantChain",
+            "target": "Influencer"
+          }
+        ],
+        "attributes": [
+          {
+            "name": "response_tone",
+            "type": "text",
+            "description": "回应的语气（如强硬、道歉、澄清）"
+          }
+        ]
+      },
+      {
+        "name": "WORKS_FOR",
+        "description": "任职关系，如贾国龙在西贝工作，张丽平是西贝董事。",
+        "source_targets": [
+          {
+            "source": "Founder",
+            "target": "RestaurantChain"
+          },
+          {
+            "source": "CorporateExecutive",
+            "target": "RestaurantChain"
+          },
+          {
+            "source": "Person",
+            "target": "RestaurantChain"
+          }
+        ],
+        "attributes": [
+          {
+            "name": "details",
+            "type": "text",
+            "description": "Additional details about this ontology type."
+          }
+        ]
+      },
+      {
+        "name": "INVESTED_IN",
+        "description": "投资关系，如林来嵘投资西贝。",
+        "source_targets": [
+          {
+            "source": "Investor",
+            "target": "RestaurantChain"
+          }
+        ],
+        "attributes": [
+          {
+            "name": "investment_stage",
+            "type": "text",
+            "description": "投资阶段或轮次"
+          }
+        ]
+      },
+      {
+        "name": "CONSUMES_FROM",
+        "description": "消费关系，如消费者群体在西贝消费。",
+        "source_targets": [
+          {
+            "source": "ConsumerGroup",
+            "target": "RestaurantChain"
+          }
+        ],
+        "attributes": [
+          {
+            "name": "consumption_frequency",
+            "type": "text",
+            "description": "消费频率或忠诚度"
+          }
+        ]
+      },
+      {
+        "name": "AFFILIATED_WITH",
+        "description": "隶属或关联关系，如锤子科技与罗永浩的关联，或员工与公司的关联。",
+        "source_targets": [
+          {
+            "source": "Influencer",
+            "target": "TechCompany"
+          },
+          {
+            "source": "Person",
+            "target": "Organization"
+          }
+        ],
+        "attributes": [
+          {
+            "name": "details",
+            "type": "text",
+            "description": "Additional details about this ontology type."
+          }
+        ]
+      },
+      {
+        "name": "AFFECTS",
+        "description": "影响关系，如舆论事件对营收、估值的影响，或竞争对手间的相互影响。",
+        "source_targets": [
+          {
+            "source": "RestaurantChain",
+            "target": "RestaurantChain"
+          },
+          {
+            "source": "Influencer",
+            "target": "ConsumerGroup"
+          }
+        ],
+        "attributes": [
+          {
+            "name": "impact_type",
+            "type": "text",
+            "description": "影响类型（如负面舆情、流量转移）"
+          }
+        ]
+      }
+    ]
+  },
+  "analysis_summary": "该文本描述了一起由知名大V罗永浩发起、针对餐饮品牌西贝的公关危机事件。核心实体包括发起者（Influencer）、被攻击方核心人物（Founder, CorporateExecutive）、投资方（Investor）、涉事企业（RestaurantChain, TechCompany, MiningCompany）以及受众（ConsumerGroup）。关系设计聚焦于舆论攻击（ACCUSED_BY）、危机回应（RESPONDS_TO）、商业关联（WORKS_FOR, INVESTED_IN）以及市场影响（CONSUMES_FROM, AFFECTS）。兜底类型Person和Organization用于容纳文本中提到的普通员工、其他餐饮同行（如海底捞、太二等未单独列出的品牌）及监管机构等。",
+  "graph_id": "mirofish_30d6bd2f072e4576",
+  "graph_build_task_id": "bf6589db-e1c8-4da3-965e-d2158249fd85",
+  "zep_batch_id": "7c99bd37-054a-4351-b41d-b69acaa05081",
+  "zep_batch_operation_id": "42475de2051d7224636d5f462871040feaac961eb614dd815aafcce4ffbf728c",
+  "simulation_requirement": "预测一下这个事件后双方未来5年的营收状况",
+  "chunk_size": 500,
+  "chunk_overlap": 50,
+  "error": null
+}

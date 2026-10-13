@@ -1,0 +1,3342 @@
+{
+  "graph_id": "mirofish_30d6bd2f072e4576",
+  "nodes": [
+    {
+      "uuid": "f14c7494-97f0-4754-871a-680b6532fb57",
+      "name": "消费者群体",
+      "labels": [
+        "ConsumerGroup"
+      ],
+      "summary": "消费者群体持续对西贝预制菜的高价产生负面反应，认为其定价持续超出内心价值感知。2021年21元馒头和33元花卷、2023年29元三只蒸饺引发公众吐槽；贾国龙承认西贝销售额平均下滑约10%，客流断崖式下滑，单月营收不足往年一半，门店从近400家缩减到200多家。2025年9月10日，罗永浩发帖吐槽西贝预制菜贵且不透明，贾国龙承认第一反应硬刚并反思了该错误；消费者群体表示不是反对预制菜，而是反对将预制菜当现做菜卖高价。消费者群体认为西贝的透明度、定价合理性和信息不对称构成信任危机，要求西贝明确标注现做和预制菜品，价格回归成本而非品牌溢价，并改善质量，否则信任难以恢复。",
+      "attributes": {
+        "demographic": "关注餐饮品牌、预制菜争议及定价问题的消费者",
+        "name": "消费者群体",
+        "sentiment_trend": "质疑、不满"
+      },
+      "created_at": "2026-09-21T03:14:35.923Z"
+    },
+    {
+      "uuid": "f08b62a9-390b-47d5-bcf0-d0718c6687bf",
+      "name": "郑州",
+      "labels": [],
+      "summary": "2026年9月，西贝在郑州仅剩2家门店。",
+      "attributes": {
+        "name": "郑州"
+      },
+      "created_at": "2026-09-21T03:14:36.547Z"
+    },
+    {
+      "uuid": "ec75073e-749b-44fc-8cc2-62b7797fe027",
+      "name": "大中矿业实控人",
+      "labels": [
+        "Investor"
+      ],
+      "summary": "大中矿业实控人于2026年3月入股西贝，持股2.16%，西贝当时估值约10亿元。该实控人从长期主义出发，将近期围绕西贝的争议视为因信息不对称引发的信任赤字，主张餐饮供应链透明化、后厨开放化和规范标准化，并认为重建现做信任需要5年时间。",
+      "attributes": {
+        "background": "关注消费服务领域的战略投资者，自2026年3月入股西贝以来秉持长期主义视角。",
+        "investment_amount": "2026年3月入股西贝",
+        "name": "大中矿业实控人",
+        "role_description": "大中矿业实控人"
+      },
+      "created_at": "2026-09-21T03:14:37.403Z"
+    },
+    {
+      "uuid": "ea6d0f13-b698-4298-b327-064ef8873239",
+      "name": "部分消费者",
+      "labels": [
+        "ConsumerGroup"
+      ],
+      "summary": "部分消费者持续抵制西贝，导致价格敏感型群体流失，并严重损害了对西贝的整体信任。部分消费者曾为表达对西贝困境的支持点赞了大中矿业实控人关于西贝营收下滑、门店缩减和估值暴跌的分析，同时也点赞了全聚德关于餐饮行业应回归鲜制与透明的帖子。",
+      "attributes": {
+        "demographic": "部分消费者",
+        "name": "部分消费者",
+        "role_description": "西贝普通员工",
+        "sentiment_trend": "持续抵制"
+      },
+      "created_at": "2026-09-21T03:14:37.403Z"
+    },
+    {
+      "uuid": "e3701088-9c8c-4882-a2db-f3dea8505b7f",
+      "name": "预制菜行业规范化",
+      "labels": [],
+      "summary": "罗永浩以推动预制菜行业规范化为初衷，通过直播带货和公开表达引发舆论关注。行业变革方向包括透明度提升、鲜制赛道崛起、标准化加速以及危机公关升级。",
+      "attributes": {
+        "name": "预制菜行业规范化"
+      },
+      "created_at": "2026-09-21T03:14:36.226Z"
+    },
+    {
+      "uuid": "df7351fb-f03d-484f-a72b-6b1075f51508",
+      "name": "全聚德",
+      "labels": [
+        "RestaurantChain"
+      ],
+      "summary": "全聚德称西贝、太二、海底捞、呷哺呷哺等品牌营收下滑9%-20%，并将这些变化归因于公众对“高价低配”餐饮模式的反感。全聚德认为餐饮行业必须回归“鲜制”和“透明”。西贝因价格与透明度争议遭遇客流和营收断崖式下滑，单月营收不足往年一半，门店由近400家缩减至200多家，估值从约200亿降至约10亿，并关闭了102家门店、裁减4000多人。贾国龙承认西贝面对质疑时最初强硬应对是错误的，并承诺增加后厨开放和食材来源透明度，贾国龙重新担任CEO。西贝餐饮集团张丽平称西贝坚持现制、拒绝预制菜进校园和企业食堂，并已开放全国主要门店后厨参观通道、升级溯源系统。",
+      "attributes": {
+        "brand_name": "全聚德",
+        "name": "全聚德",
+        "store_count": "102"
+      },
+      "created_at": "2026-09-21T03:14:36.769Z"
+    },
+    {
+      "uuid": "d8dbb582-004e-4aff-b441-d1b47359554a",
+      "name": "预制菜",
+      "labels": [],
+      "summary": "预制菜因罗永浩对西贝餐饮的质疑引发整个行业的信任危机。2025年9月10日，罗永浩发帖指出西贝几乎全是预制菜且价格高昂；罗永浩随后呼吁国家强制标注预制菜，认为这有助于行业规范。西贝创始人贾国龙承认第一反应是强硬回应，并认为西贝的定价超出了消费者的价值感知；贾国龙重新担任CEO后，表示将推进透明化，并承诺反思和改变。\n\n西贝在风波中关闭了102家门店，裁减4000多人，门店从近400家缩减到200多家，西贝的单月营收不足往年一半。西贝的估值从200亿元跌至10亿元，退出通道堵塞；部分消费者持续抵制，价格敏感型群体已经流失，但亲子家庭仍在一定程度上认可西贝的服务。餐饮行业受影响显著：太二酸菜鱼、怂火锅、海底捞、呷哺呷哺、全聚德、绿茶、绝味鸭脖的营收分别下滑约9%至20%。\n\n投资者短期内不期望高回报，更关注能否止血并维持生存，新投资人趁低入场。餐饮同行中，强调现做的品牌和更具性价比的替代选择被视为受益者，其他品牌则反思危机公关并重视预制菜标注问题。",
+      "attributes": {
+        "name": "预制菜"
+      },
+      "created_at": "2026-09-21T03:14:36.769Z"
+    },
+    {
+      "uuid": "d4e703c4-c75a-491e-ad1f-f9b81a729fd1",
+      "name": "西贝儿童餐",
+      "labels": [],
+      "summary": "2026年6月，西贝发布儿童餐“5大安心承诺”，强调当天现做。",
+      "attributes": {
+        "name": "西贝儿童餐"
+      },
+      "created_at": "2026-09-21T03:14:36.547Z"
+    },
+    {
+      "uuid": "cf43eb6b-b91a-4084-bcfa-132558443301",
+      "name": "消费者",
+      "labels": [
+        "ConsumerGroup"
+      ],
+      "summary": "消费者对西贝预制菜争议及价格溢价极度反感，因信息不对称和信任崩塌而持续抵制，出现观望、放弃消费及流失情况，近400家门店客流断崖式下跌。全聚德、呷哺呷哺、太二、海底捞等同业品牌营收也下滑9%-20%，西贝从近400家门店缩减到200多家，估值从200亿降至10亿，贾国龙重新担任CEO并承诺后厨和食材来源透明化；张丽平宣布西贝坚持现炒、开放全国门店后厨参观、建立溯源公开平台并开展透明厨房直播；新荣记于2026年3月入股西贝，西贝推出儿童餐安心承诺并试图重塑形象；消费者群体要求明确标注现做与预制菜品、实施价格透明并改善菜品质量。",
+      "attributes": {
+        "demographic": "消费者群体或特定用户圈层，如亲子家庭、价格敏感型用户，是舆论的受众和参与者。",
+        "name": "消费者",
+        "role_description": "消费者",
+        "sentiment_trend": "抵制"
+      },
+      "created_at": "2026-09-21T03:14:37.058Z"
+    },
+    {
+      "uuid": "c2d7cc5f-636c-4739-af20-c1fd74c5cbcc",
+      "name": "员工自营模式",
+      "labels": [],
+      "summary": "",
+      "attributes": {
+        "name": "员工自营模式"
+      },
+      "created_at": "2026-09-21T03:14:37.403Z"
+    },
+    {
+      "uuid": "be6c3c03-1bf2-4ca9-b329-038c45f95a58",
+      "name": "绝味鸭脖",
+      "labels": [
+        "RestaurantChain"
+      ],
+      "summary": "绝味鸭脖的营收下滑约9%-20%。",
+      "attributes": {
+        "brand_name": "绝味鸭脖",
+        "name": "绝味鸭脖",
+        "store_count": "约9%-20%"
+      },
+      "created_at": "2026-09-21T03:14:36.769Z"
+    },
+    {
+      "uuid": "aa0f1500-8be4-4a9f-89a7-aca121cb5dad",
+      "name": "餐饮行业",
+      "labels": [
+        "Organization"
+      ],
+      "summary": "餐饮行业面临系统性信任危机，公众对“高价低配”模式的反感加剧。西贝、太二、海底捞、呷哺呷哺、全聚德等品牌的营收下滑9%至20%，反映出行业对预制菜和高溢价模式的信任受损。行业被呼吁回归“鲜制”和透明化，明确标识产品是否使用预制菜，以重建消费者信任并保障知情权。",
+      "attributes": {
+        "name": "餐饮行业",
+        "org_type": "行业"
+      },
+      "created_at": "2026-09-21T03:26:12.387Z"
+    },
+    {
+      "uuid": "a173f1e1-dd31-47b4-b00a-ca5e99704474",
+      "name": "太二酸菜鱼",
+      "labels": [
+        "RestaurantChain"
+      ],
+      "summary": "太二酸菜鱼的营收在2026年9月因公众对“高价低配”餐饮模式的反感而下滑9%至20%。该品牌与西贝、海底捞、呷哺呷哺等品牌共同陷入餐饮行业“伪高端”模式的系统性信任危机。消费者认为该行业缺乏透明化并混淆了鲜制与预制概念，导致整体品牌价值大幅下跌。",
+      "attributes": {
+        "brand_name": "太二",
+        "name": "太二酸菜鱼",
+        "store_count": "102"
+      },
+      "created_at": "2026-09-21T03:14:36.769Z"
+    },
+    {
+      "uuid": "a0399182-6759-4040-9103-8c2ae89aa6f4",
+      "name": "重庆",
+      "labels": [],
+      "summary": "2026年8月，西贝关闭重庆最后一家门店并退出重庆。",
+      "attributes": {
+        "name": "重庆"
+      },
+      "created_at": "2026-09-21T03:14:36.547Z"
+    },
+    {
+      "uuid": "9fdc34e4-facc-4668-9442-7c6efb604b0f",
+      "name": "大中矿业",
+      "labels": [
+        "MiningCompany"
+      ],
+      "summary": "大中矿业实际控制人为林来嵘。2026年3月，林来嵘出资224.76万元获得大中矿业2.16%股权，对应估值约10亿元。大中矿业自2026年3月起入股西贝，持有西贝股权。2026年4月至9月，西贝进入持续低迷期。西贝随后发布儿童餐“5大安心承诺”。西贝关闭了合肥、重庆的最后门店，并于2026年9月在郑州仅保留2家门店，全国在营门店约203至226家。2026年9月19日，“西贝将彻底倒闭”冲上热搜，西贝对此予以辟谣。围绕西贝的争议聚焦于西贝是否大量使用预制菜、中央厨房预处理与预制菜的区别、冷冻食材保存期及添加剂、价格虚高和缺乏预制菜定义标准等问题；西贝以每道菜有明确制作标准回应，而公众认知与2024年3月国家六部门联合发布的预制菜定义之间仍存在差距。",
+      "attributes": {
+        "main_business": "矿业",
+        "name": "大中矿业",
+        "stock_code": "000933"
+      },
+      "created_at": "2026-09-21T03:14:36.547Z"
+    },
+    {
+      "uuid": "9b78552d-af70-4f4a-b62d-8b16ecd3598e",
+      "name": "西贝员工",
+      "labels": [
+        "ConsumerGroup"
+      ],
+      "summary": "西贝员工是西贝全体员工，规模超过17000人，在2025年9月罗永浩引发舆论风波后成为受冲击最大的群体。2026年9月21日，员工代表发帖表示公司关了102家门店、裁了4000多人，员工努力现做但消费者不信任，贾国龙重新担任CEO并推动透明化，员工对未来表示不确定并呼吁理解与停止一味指责。",
+      "attributes": {
+        "demographic": "西贝全体员工",
+        "name": "西贝员工",
+        "role_description": "西贝普通员工",
+        "sentiment_trend": "受冲击最大"
+      },
+      "created_at": "2026-09-21T03:14:36.739Z"
+    },
+    {
+      "uuid": "9a7dbb80-ecf9-42af-8fbd-cd2dd4d24ef4",
+      "name": "罗永浩",
+      "labels": [
+        "Influencer"
+      ],
+      "summary": "罗永浩在2025年9月10日发布微博，称与同事在西贝用餐时发现几乎全是预制菜且价格昂贵，并呼吁国家尽早推动立法强制饭馆注明是否使用预制菜。该微博引发舆论风暴，将西贝推向风口浪尖；西贝创始人贾国龙称之为西贝成立以来最大的一次外部危机。罗永浩随后连发30余条微博反驳贾国龙的回应，并开启直播，直播在线人数达10万人。\n\n贾国龙先是否认西贝使用预制菜，宣布开放后厨参观；2025年11月单月营收仅2.65亿元，不到往年同期一半。2026年1月，西贝确认关闭102家门店，约占30%，涉及约4000名员工。2026年3月，大中矿业实控人林来嵘出资224.76万元获得2.16%股权，西贝估值约10亿元，门店从近400家缩减至200多家。\n\n西贝创始人贾国龙自2025年事件后反思应对方式，重新出任CEO，并推动公开核心食材来源及加工流程、标注“现做”与“中央厨房配送”菜品、重新审视价格体系。张丽平作为西贝董事参与了西贝的应对。罗永浩持续强调消费者反对的是不透明和虚假宣传，主张强制标注以保障知情权和选择权；消费者普遍要求透明承诺、明码实价和真实品质。",
+      "attributes": {
+        "follower_count": "大量粉丝",
+        "name": "罗永浩",
+        "platform": "社交媒体"
+      },
+      "created_at": "2026-09-21T03:14:35.826Z"
+    },
+    {
+      "uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "name": "西贝",
+      "labels": [
+        "RestaurantChain"
+      ],
+      "summary": "西贝曾连续十一年位居中式正餐营收第一，巅峰时期拥有近400家门店，2023年营收62亿元，估值预期200亿元，员工1.7万多人。2025年9月10日，罗永浩在微博发布吐槽引发舆论风暴，西贝创始人贾国龙将之称为公司成立以来最大的外部危机。贾国龙随后承认公司应对方式不当，承诺开放后厨、建立食材溯源平台并重新审视定价；西贝董事张丽平参与股权质押。2025年11月，西贝单月营收降至2.65亿元；截至2026年3月，西贝已关闭102家门店，涉及约4000名员工，2026年1月确认一季度关闭102家门店。2026年3月，大中矿业实控人林来嵘出资224.76万元获得西贝2.16%股权，西贝估值降至约10亿元；新荣记等也进入股东结构。截至2026年9月，西贝在全国仅剩约203至226家门店，郑州仅剩2家，合肥和重庆最后门店关闭，半年累计亏损超过6亿元，估值从200亿元跌至约10亿元。贾国龙重新担任CEO，西贝推出鲜制承诺并强调当天现做，关闭低效门店、收缩战线并推动后厨和运营透明化。",
+      "attributes": {
+        "brand_name": "西贝",
+        "name": "西贝",
+        "store_count": "全国门店"
+      },
+      "created_at": "2026-09-21T03:14:35.826Z"
+    },
+    {
+      "uuid": "70ec8e2f-b6e4-460d-969b-c9c4f4740e7e",
+      "name": "其他品牌",
+      "labels": [],
+      "summary": "",
+      "attributes": {
+        "name": "其他品牌"
+      },
+      "created_at": "2026-09-21T03:14:37.403Z"
+    },
+    {
+      "uuid": "6e7aa2c4-ef9a-4c7f-9b08-08a064887de6",
+      "name": "锤子科技",
+      "labels": [
+        "TechCompany"
+      ],
+      "summary": "",
+      "attributes": {
+        "industry_focus": "科技行业",
+        "name": "锤子科技",
+        "status": "运营"
+      },
+      "created_at": "2026-09-21T03:14:36.739Z"
+    },
+    {
+      "uuid": "61528428-8a36-478d-bc4c-7c96f5ff8662",
+      "name": "怂火锅",
+      "labels": [
+        "RestaurantChain"
+      ],
+      "summary": "怂火锅的营收下滑约9%-20%。",
+      "attributes": {
+        "brand_name": "怂火锅",
+        "name": "怂火锅",
+        "store_count": "约9%-20%"
+      },
+      "created_at": "2026-09-21T03:14:36.769Z"
+    },
+    {
+      "uuid": "5f05e200-8474-41fb-a2d1-6c2c3582f27c",
+      "name": "合肥",
+      "labels": [],
+      "summary": "2026年8月，西贝关闭合肥最后一家门店并退出合肥。",
+      "attributes": {
+        "name": "合肥"
+      },
+      "created_at": "2026-09-21T03:14:36.547Z"
+    },
+    {
+      "uuid": "59756c2d-7e58-48d6-9887-049174d93903",
+      "name": "呷哺呷哺",
+      "labels": [
+        "RestaurantChain"
+      ],
+      "summary": "呷哺呷哺的营收下滑9%-20%。该品牌与西贝、太二、海底捞等品牌的营收同样下滑9%-20%。这一营收下降被视为“高价低配”餐饮模式引发的系统性信任危机的一部分，消费者对预制菜信息透明度、现做与高溢价之间的信息不对称感到极度反感。",
+      "attributes": {
+        "brand_name": "呷哺呷哺",
+        "name": "呷哺呷哺",
+        "store_count": "全聚德、呷哺呷哺等同业的营收下滑（9%-20%）"
+      },
+      "created_at": "2026-09-21T03:14:36.769Z"
+    },
+    {
+      "uuid": "54f2b445-76ec-44a9-98b9-923078dcdcb7",
+      "name": "林来嵘",
+      "labels": [
+        "Investor"
+      ],
+      "summary": "林来嵘是大中矿业实控人。2026年3月，林来嵘出资224.76万元获得2.16%股权，对应估值约10亿元。",
+      "attributes": {
+        "background": "大中矿业实控人",
+        "investment_amount": "null",
+        "name": "林来嵘"
+      },
+      "created_at": "2026-09-21T03:14:36.547Z"
+    },
+    {
+      "uuid": "4c53150f-1dc2-41d9-954e-4e3624fd5083",
+      "name": "新荣记",
+      "labels": [
+        "RestaurantChain"
+      ],
+      "summary": "新荣记作为新股东入股西贝餐饮集团。大中矿业实控人于2026年3月以约10亿元估值入股西贝，持股比例为2.16%；西贝注册资本于2026年9月增至1.02亿元。西贝推出“鲜制”承诺，贾国龙重新担任CEO并推进一线变革，同时关闭低效门店、收缩战线，已关闭约102家门店并裁员约4000人，部分门店转为员工自营模式；西贝上市计划搁浅，创始人贾国龙妻子发生股权质押。消费者因“预制菜”与“高价低配”问题出现持续抵制和信任危机，全聚德、呷哺呷哺、太二等品牌同期营收也出现9%至20%的下滑。",
+      "attributes": {
+        "brand_name": "新荣记",
+        "name": "新荣记",
+        "org_type": "企业",
+        "store_count": "近400家"
+      },
+      "created_at": "2026-09-21T03:14:37.403Z"
+    },
+    {
+      "uuid": "374bd60b-5a28-4387-916c-f30d236c916a",
+      "name": "荠菜春笋炒年糕",
+      "labels": [],
+      "summary": "荠菜春笋炒年糕是绿茶餐厅于2026年春分推出的时令菜品，由荠菜、春笋和手工捣制的年糕制成，主打自然、健康与匠心烹饪。",
+      "attributes": {
+        "name": "荠菜春笋炒年糕"
+      },
+      "created_at": "2026-09-21T03:29:47.816Z"
+    },
+    {
+      "uuid": "3442fda6-7c1d-49bf-98e0-ee01944b733e",
+      "name": "张丽平",
+      "labels": [
+        "CorporateExecutive"
+      ],
+      "summary": "张丽平是西贝创始人兼CEO贾国龙的妻子，担任西贝董事。2025年9月西贝遭遇贾国龙称为成立以来最大外部危机的期间，张丽平通过股权质押进行自救。在2026年9月的后续危机回应中，张丽平发布西贝官方声明，回应关于预制菜的争议，明确表示西贝坚持现炒、拒绝使用预制菜，并承诺全面开放全国主要门店后厨参观，启动透明厨房直播计划，以及建立西贝食材溯源公开平台以实现关键食材来源全程可查。",
+      "attributes": {
+        "name": "张丽平",
+        "position": "张丽平",
+        "relationship_to_founder": "张丽平",
+        "role_description": "西贝餐饮集团相关人士，发布关于西贝坚持现炒、透明运营及开放后厨参观的声明"
+      },
+      "created_at": "2026-09-21T03:14:36.739Z"
+    },
+    {
+      "uuid": "3294f77c-1f6e-4748-a1b6-abbc732d17d5",
+      "name": "海底捞",
+      "labels": [
+        "RestaurantChain"
+      ],
+      "summary": "海底捞的营收下滑约9%至20%。海底捞与西贝、太二、呷哺呷哺等同业的营收下滑被归因于公众对“高价低配”餐饮模式和预制菜信息不对称的极度反感。",
+      "attributes": {
+        "brand_name": "海底捞",
+        "name": "海底捞",
+        "store_count": "null"
+      },
+      "created_at": "2026-09-21T03:14:36.769Z"
+    },
+    {
+      "uuid": "197e7134-d873-4813-9b1b-6add66388ff3",
+      "name": "价格敏感型消费者",
+      "labels": [
+        "ConsumerGroup"
+      ],
+      "summary": "价格敏感型消费者转向其他品牌。",
+      "attributes": {
+        "demographic": "价格敏感型消费者",
+        "name": "价格敏感型消费者",
+        "sentiment_trend": "转向其他品牌"
+      },
+      "created_at": "2026-09-21T03:14:37.403Z"
+    },
+    {
+      "uuid": "0bc42e09-5ecc-4dbb-92ac-489eaa2a1fdd",
+      "name": "亲子家庭",
+      "labels": [
+        "ConsumerGroup"
+      ],
+      "summary": "亲子家庭仍认可西贝的服务和场景。",
+      "attributes": {
+        "demographic": "亲子家庭",
+        "name": "亲子家庭",
+        "sentiment_trend": "认可服务"
+      },
+      "created_at": "2026-09-21T03:14:37.403Z"
+    },
+    {
+      "uuid": "0aaa7fc7-77bd-4dd1-b53e-7bd5ac015a40",
+      "name": "绿茶",
+      "labels": [
+        "RestaurantChain"
+      ],
+      "summary": "绿茶的营收下滑约9%-20%。绿茶于2026年9月21日发布推文，推广荠菜春笋炒年糕，并强调时令食材与匠心烹饪。",
+      "attributes": {
+        "brand_name": "绿茶餐厅",
+        "name": "绿茶",
+        "store_count": "null"
+      },
+      "created_at": "2026-09-21T03:14:36.769Z"
+    },
+    {
+      "uuid": "087f1334-1861-48d0-be51-cc1992dada0c",
+      "name": "鲜制承诺",
+      "labels": [],
+      "summary": "",
+      "attributes": {
+        "name": "鲜制承诺"
+      },
+      "created_at": "2026-09-21T03:14:37.403Z"
+    },
+    {
+      "uuid": "07383432-1c88-4b02-b192-6201fbc8de76",
+      "name": "贾国龙",
+      "labels": [
+        "Founder"
+      ],
+      "summary": "贾国龙是西贝创始人，重新担任西贝CEO并主导西贝的危机应对与业务调整。2025年9月10日，罗永浩发布微博质疑西贝使用预制菜且价格过高；贾国龙随后回应并公开承认西贝第一反应是硬刚，这是错误的，同时承认西贝定价超出消费者的价值感知，单月营收已不足往年一半，并宣布开放后厨参观及建立食材溯源计划。贾国龙还发布了关于17000多名员工的公开内容，但西贝在2026年1月至3月确认关闭102家门店并裁员约4000人。大中矿业实控人林来嵘于2026年3月出资入股西贝，获得2.16%股权，交易金额约为224.76万元，对应估值约10亿元；西贝此前曾预期IPO估值为200亿元，张丽平（贾国龙妻子、西贝董事）的股权质押与现金流紧张也被提及。贾国龙表示西贝将重新审视部分菜品定价体系，明确区分现做菜品与中央厨房配送菜品，并通过开放后厨、透明厨房直播和食材溯源来重建消费者信任。",
+      "attributes": {
+        "company_affiliation": "西贝",
+        "leadership_role": "创始人",
+        "name": "贾国龙",
+        "role_description": "西贝餐饮集团CEO"
+      },
+      "created_at": "2026-09-21T03:14:35.827Z"
+    }
+  ],
+  "edges": [
+    {
+      "uuid": "fba083f3-6f84-42e2-b6ba-fc02b030606e",
+      "name": "CRITICIZES",
+      "fact": "大中矿业实控人认为西贝从近400家门店缩减到200多家，估值从200亿跌到10亿，属于战略失误。",
+      "fact_type": "CRITICIZES",
+      "source_node_uuid": "ec75073e-749b-44fc-8cc2-62b7797fe027",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "大中矿业实控人",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "CRITICIZES",
+        "fact": "大中矿业实控人认为西贝从近400家门店缩减到200多家，估值从200亿跌到10亿，属于战略失误。",
+        "reference_time": "2026-09-21 03:23:27.211000+00:00"
+      },
+      "created_at": "2026-09-21T03:25:58.191Z",
+      "valid_at": "2026-09-21T03:23:27.211Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "ab3df595-3d96-4c5a-845e-16e5c535b569",
+        "d0fd21fb-1fbe-4d2f-9a5e-5351dfba78d3"
+      ]
+    },
+    {
+      "uuid": "f659a669-5eef-4895-b763-81a50e6de04e",
+      "name": "ACCUSED_BY",
+      "fact": "2021年，西贝因21元馒头和33元花卷引发消费者吐槽。",
+      "fact_type": "ACCUSED_BY",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "f14c7494-97f0-4754-871a-680b6532fb57",
+      "source_node_name": "西贝",
+      "target_node_name": "消费者群体",
+      "attributes": {
+        "edge_type": "ACCUSED_BY",
+        "fact": "2021年，西贝因21元馒头和33元花卷引发消费者吐槽。",
+        "reference_time": "2026-09-21 03:14:34.365000+00:00"
+      },
+      "created_at": "2026-09-21T03:14:35.923Z",
+      "valid_at": "2021-01-01T00:00:00Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "add65fc9-742c-47e8-82c2-3dac80ae2619",
+        "781fa4c3-4ba2-480b-a54c-674da5fdfc0f"
+      ]
+    },
+    {
+      "uuid": "f43faa62-410e-4f9b-8f04-2d2cdc3bdaf7",
+      "name": "CONSUMES_FROM",
+      "fact": "价格敏感型消费者转向其他品牌。",
+      "fact_type": "CONSUMES_FROM",
+      "source_node_uuid": "197e7134-d873-4813-9b1b-6add66388ff3",
+      "target_node_uuid": "70ec8e2f-b6e4-460d-969b-c9c4f4740e7e",
+      "source_node_name": "价格敏感型消费者",
+      "target_node_name": "其他品牌",
+      "attributes": {
+        "edge_type": "CONSUMES_FROM",
+        "fact": "价格敏感型消费者转向其他品牌。",
+        "reference_time": "2026-09-21 03:14:34.371000+00:00"
+      },
+      "created_at": "2026-09-21T03:14:37.403Z",
+      "valid_at": "2026-09-21T03:14:34.371Z",
+      "invalid_at": "2026-09-21T03:25:54.712Z",
+      "expired_at": "2026-09-21T03:26:16.305Z",
+      "episodes": [
+        "566e3829-c335-44bb-ba78-c0f3f5fb57d8",
+        "fbafbaaf-c346-4929-b903-0281c0f57fc6"
+      ]
+    },
+    {
+      "uuid": "f1b638eb-2893-4371-8983-bab684f09471",
+      "name": "AFFECTS",
+      "fact": "全聚德认为西贝的危机反映了公众对高价低配餐饮模式的反感，并认为西贝的衰退是餐饮行业必须回归鲜制和透明的信号。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "df7351fb-f03d-484f-a72b-6b1075f51508",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "全聚德",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "全聚德认为西贝的危机反映了公众对高价低配餐饮模式的反感，并认为西贝的衰退是餐饮行业必须回归鲜制和透明的信号。",
+        "impact_type": "负面舆情",
+        "reference_time": "2026-09-21 03:20:59.617000+00:00"
+      },
+      "created_at": "2026-09-21T03:21:05.626Z",
+      "valid_at": "2026-09-21T03:20:59.617Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "781fa4c3-4ba2-480b-a54c-674da5fdfc0f",
+        "32ecdf49-55c3-41f1-91b6-c5ae9bcf78f8",
+        "162c1798-7d5d-4884-8b35-74f45b0c7125"
+      ]
+    },
+    {
+      "uuid": "eb109d0d-dd89-4c53-9a16-4f838c2b4540",
+      "name": "RESPONDS_TO",
+      "fact": "2026年9月19日，\"西贝将彻底倒闭\"冲上热搜，西贝对此辟谣。",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "西贝",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "RESPONDS_TO",
+        "fact": "2026年9月19日，\"西贝将彻底倒闭\"冲上热搜，西贝对此辟谣。",
+        "reference_time": "2026-09-21 03:14:34.361851+00:00"
+      },
+      "created_at": "2026-09-21T03:14:36.547Z",
+      "valid_at": "2026-09-19T00:00:00Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "54a90497-c331-4c7b-bf2a-9a6e1bb98c36"
+      ]
+    },
+    {
+      "uuid": "e9d7278a-281f-4682-82bb-742cc8ca08f0",
+      "name": "AFFECTS",
+      "fact": "消费者认为，西贝长期自证不清，导致品牌价值断崖式下跌。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "cf43eb6b-b91a-4084-bcfa-132558443301",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "消费者",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "消费者认为，西贝长期自证不清，导致品牌价值断崖式下跌。",
+        "reference_time": "2026-09-21 11:25:54.712984+08:00"
+      },
+      "created_at": "2026-09-21T03:26:12.387Z",
+      "valid_at": "2026-09-21T03:25:54.712Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "fbafbaaf-c346-4929-b903-0281c0f57fc6"
+      ]
+    },
+    {
+      "uuid": "e3cb2d10-d994-44f4-b6f8-c1f857e64eee",
+      "name": "ACCUSED_BY",
+      "fact": "罗永浩批评西贝在菜单上标注“现炒”“大厨手工艺”，却销售成本很低、定价很高的预制料理包，认为这是欺诈。",
+      "fact_type": "ACCUSED_BY",
+      "source_node_uuid": "9a7dbb80-ecf9-42af-8fbd-cd2dd4d24ef4",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "罗永浩",
+      "target_node_name": "西贝",
+      "attributes": {
+        "accusation_content": "西贝在菜单上标注“现炒”“大厨手工艺”，却销售成本很低、定价很高的预制料理包，属于欺诈。",
+        "edge_type": "ACCUSED_BY",
+        "fact": "罗永浩批评西贝在菜单上标注“现炒”“大厨手工艺”，却销售成本很低、定价很高的预制料理包，认为这是欺诈。",
+        "reference_time": "2026-09-21 03:28:23.602000+00:00"
+      },
+      "created_at": "2026-09-21T03:29:47.816Z",
+      "valid_at": "2026-09-21T03:28:23.602Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "9c19cd21-adf6-4021-90e8-83e4a0e1747d",
+        "bfcceded-271d-42c0-8383-d400978e5272"
+      ]
+    },
+    {
+      "uuid": "dfeb3c7f-b6eb-4c17-b674-37a7d7cfc476",
+      "name": "AFFECTS",
+      "fact": "西贝的客流在2025年9月中旬出现断崖式下滑。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "cf43eb6b-b91a-4084-bcfa-132558443301",
+      "source_node_name": "西贝",
+      "target_node_name": "消费者",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "西贝的客流在2025年9月中旬出现断崖式下滑。",
+        "reference_time": "2026-09-21 03:14:34.358000+00:00"
+      },
+      "created_at": "2026-09-21T03:14:37.058Z",
+      "valid_at": "2025-09-15T00:00:00Z",
+      "invalid_at": "2026-09-21T03:21:00.945Z",
+      "expired_at": "2026-09-21T03:23:34.063Z",
+      "episodes": [
+        "efaf421c-0421-4af2-ac50-0acd1e8b4543",
+        "32ecdf49-55c3-41f1-91b6-c5ae9bcf78f8",
+        "9c19cd21-adf6-4021-90e8-83e4a0e1747d"
+      ]
+    },
+    {
+      "uuid": "df2c3ade-8fc8-455c-a9fe-91233d385cf4",
+      "name": "AFFECTS",
+      "fact": "西贝因预制菜争议关闭了102家门店，并裁减了4000多名员工。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "f14c7494-97f0-4754-871a-680b6532fb57",
+      "source_node_name": "西贝",
+      "target_node_name": "消费者群体",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "西贝因预制菜争议关闭了102家门店，并裁减了4000多名员工。",
+        "reference_time": "2026-09-21 11:28:18.156739+08:00"
+      },
+      "created_at": "2026-09-21T03:28:30.301Z",
+      "valid_at": "2026-09-21T03:28:18.156Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "b6b1428e-11b4-4c49-bf87-90daf20a58b3"
+      ]
+    },
+    {
+      "uuid": "dbff8fb5-410b-4db5-8ce4-f4a75242fd1c",
+      "name": "HAS_FINANCIAL_DATA",
+      "fact": "西贝2025年11月单月营收约为2.65亿元，较2023年巅峰时期约5亿元下降47%。",
+      "fact_type": "HAS_FINANCIAL_DATA",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "西贝",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "HAS_FINANCIAL_DATA",
+        "fact": "西贝2025年11月单月营收约为2.65亿元，较2023年巅峰时期约5亿元下降47%。",
+        "reference_time": "2026-09-21 03:14:34.368000+00:00"
+      },
+      "created_at": "2026-09-21T03:14:36.293Z",
+      "valid_at": "2025-11-01T00:00:00Z",
+      "invalid_at": "2026-09-21T03:21:00.945Z",
+      "expired_at": "2026-09-21T03:23:34.063Z",
+      "episodes": [
+        "ceb867dd-05e4-440b-85b5-08d66621a346",
+        "32ecdf49-55c3-41f1-91b6-c5ae9bcf78f8"
+      ]
+    },
+    {
+      "uuid": "d7663409-f70f-450c-a954-ec3f74a8c813",
+      "name": "AFFECTS",
+      "fact": "西贝预制菜风波损害了消费者的信任，使消费者处于观望或放弃消费的状态。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "cf43eb6b-b91a-4084-bcfa-132558443301",
+      "source_node_name": "西贝",
+      "target_node_name": "消费者",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "西贝预制菜风波损害了消费者的信任，使消费者处于观望或放弃消费的状态。",
+        "reference_time": "2026-09-21 03:14:34.355000+00:00"
+      },
+      "created_at": "2026-09-21T03:14:36.739Z",
+      "valid_at": "2026-09-21T03:14:34.355Z",
+      "invalid_at": "2026-09-21T03:14:34.371Z",
+      "expired_at": "2026-09-21T03:26:01.361Z",
+      "episodes": [
+        "f6cfa6ed-e42c-475f-822b-b32d05aadc5d",
+        "ab3df595-3d96-4c5a-845e-16e5c535b569",
+        "fbafbaaf-c346-4929-b903-0281c0f57fc6",
+        "162c1798-7d5d-4884-8b35-74f45b0c7125"
+      ]
+    },
+    {
+      "uuid": "d6501ae1-0412-4b74-a0a6-5a43f4065d30",
+      "name": "INVESTED_IN",
+      "fact": "大中矿业自2026年3月起入股西贝。",
+      "fact_type": "INVESTED_IN",
+      "source_node_uuid": "9fdc34e4-facc-4668-9442-7c6efb604b0f",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "大中矿业",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "INVESTED_IN",
+        "fact": "大中矿业自2026年3月起入股西贝。",
+        "reference_time": "2026-09-21 11:28:23.602287+08:00"
+      },
+      "created_at": "2026-09-21T03:29:47.816Z",
+      "valid_at": "2026-03-01T00:00:00Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "9c19cd21-adf6-4021-90e8-83e4a0e1747d"
+      ]
+    },
+    {
+      "uuid": "d532fc8e-e7ae-4ab0-ba43-1adea26e25bf",
+      "name": "BOYCOTTS",
+      "fact": "部分消费者持续抵制西贝。",
+      "fact_type": "BOYCOTTS",
+      "source_node_uuid": "ea6d0f13-b698-4298-b327-064ef8873239",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "部分消费者",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "BOYCOTTS",
+        "fact": "部分消费者持续抵制西贝。",
+        "reference_time": "2026-09-21 03:14:34.371000+00:00"
+      },
+      "created_at": "2026-09-21T03:14:37.403Z",
+      "valid_at": "2026-09-21T03:14:34.371Z",
+      "invalid_at": "2026-09-21T03:21:00.945Z",
+      "expired_at": "2026-09-21T03:23:34.063Z",
+      "episodes": [
+        "566e3829-c335-44bb-ba78-c0f3f5fb57d8",
+        "32ecdf49-55c3-41f1-91b6-c5ae9bcf78f8"
+      ]
+    },
+    {
+      "uuid": "d41c84df-6840-47e3-9075-0905a54311b9",
+      "name": "CLOSED_STORES_AND_LAYED_OFF",
+      "fact": "西贝关闭了102家门店，并裁减了4000多名员工。",
+      "fact_type": "CLOSED_STORES_AND_LAYED_OFF",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "西贝",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "CLOSED_STORES_AND_LAYED_OFF",
+        "fact": "西贝关闭了102家门店，并裁减了4000多名员工。",
+        "reference_time": "2026-09-21 03:23:27.211000+00:00"
+      },
+      "created_at": "2026-09-21T03:25:58.191Z",
+      "valid_at": "2026-09-21T03:23:27.211Z",
+      "invalid_at": "2026-09-21T03:26:00.564Z",
+      "expired_at": "2026-09-21T03:28:26.763Z",
+      "episodes": [
+        "ab3df595-3d96-4c5a-845e-16e5c535b569",
+        "162c1798-7d5d-4884-8b35-74f45b0c7125"
+      ]
+    },
+    {
+      "uuid": "d3d57e9b-ff73-4517-9981-a59328b40ed3",
+      "name": "AFFECTS",
+      "fact": "西贝在2025年11月的单月营收仅为2.65亿元，不到往年同期的一半。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "cf43eb6b-b91a-4084-bcfa-132558443301",
+      "source_node_name": "西贝",
+      "target_node_name": "消费者",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "西贝在2025年11月的单月营收仅为2.65亿元，不到往年同期的一半。",
+        "reference_time": "2026-09-21 03:14:34.358000+00:00"
+      },
+      "created_at": "2026-09-21T03:14:37.058Z",
+      "valid_at": "2025-11-01T00:00:00Z",
+      "invalid_at": "2026-09-21T03:21:00.945Z",
+      "expired_at": "2026-09-21T03:23:34.063Z",
+      "episodes": [
+        "efaf421c-0421-4af2-ac50-0acd1e8b4543",
+        "32ecdf49-55c3-41f1-91b6-c5ae9bcf78f8"
+      ]
+    },
+    {
+      "uuid": "d33dc8b3-5dc2-4a1b-8c34-de4567719f4d",
+      "name": "RESPONDS_TO",
+      "fact": "贾国龙表示西贝员工尽力，但消费者认为这无法掩盖西贝价值观错位的问题。",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "07383432-1c88-4b02-b192-6201fbc8de76",
+      "target_node_uuid": "cf43eb6b-b91a-4084-bcfa-132558443301",
+      "source_node_name": "贾国龙",
+      "target_node_name": "消费者",
+      "attributes": {
+        "edge_type": "RESPONDS_TO",
+        "fact": "贾国龙表示西贝员工尽力，但消费者认为这无法掩盖西贝价值观错位的问题。",
+        "reference_time": "2026-09-21 11:28:23.602287+08:00"
+      },
+      "created_at": "2026-09-21T03:29:47.816Z",
+      "valid_at": "2026-09-21T03:28:23.602Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "9c19cd21-adf6-4021-90e8-83e4a0e1747d"
+      ]
+    },
+    {
+      "uuid": "d0d8d795-6a29-453c-9b8d-09bd16c52887",
+      "name": "HAS_CAPITAL_INCREASE",
+      "fact": "西贝于2026年9月将注册资本增至1.02亿元。",
+      "fact_type": "HAS_CAPITAL_INCREASE",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "西贝",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "HAS_CAPITAL_INCREASE",
+        "fact": "西贝于2026年9月将注册资本增至1.02亿元。",
+        "reference_time": "2026-09-21 03:14:34.371358+00:00"
+      },
+      "created_at": "2026-09-21T03:14:37.403Z",
+      "valid_at": "2026-09-01T00:00:00Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "566e3829-c335-44bb-ba78-c0f3f5fb57d8"
+      ]
+    },
+    {
+      "uuid": "d0394cde-572a-496c-960f-f48c5a24bbe2",
+      "name": "WORKS_FOR",
+      "fact": "贾国龙于2026年1月15日在朋友圈发文，称西贝17000多名员工已经尽力。",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "07383432-1c88-4b02-b192-6201fbc8de76",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "贾国龙",
+      "target_node_name": "西贝",
+      "attributes": {
+        "details": "贾国龙于2026年1月15日在朋友圈发文，称西贝17000多名员工已经尽力。",
+        "edge_type": "WORKS_FOR",
+        "fact": "贾国龙于2026年1月15日在朋友圈发文，称西贝17000多名员工已经尽力。",
+        "reference_time": "2026-09-21 03:14:34.358562+00:00"
+      },
+      "created_at": "2026-09-21T03:14:37.058Z",
+      "valid_at": "2026-01-15T00:00:00Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "efaf421c-0421-4af2-ac50-0acd1e8b4543"
+      ]
+    },
+    {
+      "uuid": "ceac16a6-aad4-4045-8573-b870efd78a1d",
+      "name": "RESPONDS_TO",
+      "fact": "西贝于2025年9月12日发布《致顾客的一封信》，公开13道菜的制作流程。",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "9a7dbb80-ecf9-42af-8fbd-cd2dd4d24ef4",
+      "source_node_name": "西贝",
+      "target_node_name": "罗永浩",
+      "attributes": {
+        "edge_type": "RESPONDS_TO",
+        "fact": "西贝于2025年9月12日发布《致顾客的一封信》，公开13道菜的制作流程。",
+        "reference_time": "2026-09-21 03:14:34.358562+00:00",
+        "response_tone": "公开回应"
+      },
+      "created_at": "2026-09-21T03:14:37.058Z",
+      "valid_at": "2025-09-12T00:00:00Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "efaf421c-0421-4af2-ac50-0acd1e8b4543"
+      ]
+    },
+    {
+      "uuid": "ce8dbdef-1b98-4c8e-9774-dbdeab105ac0",
+      "name": "WANTS_SUPPORT_FROM",
+      "fact": "西贝员工希望公司能够挺过去，并希望消费者理解他们的难处。",
+      "fact_type": "WANTS_SUPPORT_FROM",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "f14c7494-97f0-4754-871a-680b6532fb57",
+      "source_node_name": "西贝",
+      "target_node_name": "消费者群体",
+      "attributes": {
+        "edge_type": "WANTS_SUPPORT_FROM",
+        "fact": "西贝员工希望公司能够挺过去，并希望消费者理解他们的难处。",
+        "reference_time": "2026-09-21 11:23:27.211500+08:00"
+      },
+      "created_at": "2026-09-21T03:25:58.191Z",
+      "valid_at": "2026-09-21T03:23:27.211Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "ab3df595-3d96-4c5a-845e-16e5c535b569"
+      ]
+    },
+    {
+      "uuid": "cae936f2-d279-4b9b-9107-ab69b4c496fb",
+      "name": "AFFILIATED_WITH",
+      "fact": "林来嵘是大中矿业实控人。",
+      "fact_type": "AFFILIATED_WITH",
+      "source_node_uuid": "54f2b445-76ec-44a9-98b9-923078dcdcb7",
+      "target_node_uuid": "9fdc34e4-facc-4668-9442-7c6efb604b0f",
+      "source_node_name": "林来嵘",
+      "target_node_name": "大中矿业",
+      "attributes": {
+        "edge_type": "AFFILIATED_WITH",
+        "fact": "林来嵘是大中矿业实控人。",
+        "reference_time": "2026-09-21 03:14:34.361851+00:00"
+      },
+      "created_at": "2026-09-21T03:14:36.547Z",
+      "valid_at": "2026-09-21T03:14:34.361Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "54a90497-c331-4c7b-bf2a-9a6e1bb98c36"
+      ]
+    },
+    {
+      "uuid": "c981d5d0-4990-4a95-8087-66f4e7390774",
+      "name": "LIKES",
+      "fact": "消费者点赞了罗永浩关于西贝使用预制菜且价格过高的帖子。",
+      "fact_type": "LIKES",
+      "source_node_uuid": "cf43eb6b-b91a-4084-bcfa-132558443301",
+      "target_node_uuid": "9a7dbb80-ecf9-42af-8fbd-cd2dd4d24ef4",
+      "source_node_name": "消费者",
+      "target_node_name": "罗永浩",
+      "attributes": {
+        "edge_type": "LIKES",
+        "fact": "消费者点赞了罗永浩关于西贝使用预制菜且价格过高的帖子。",
+        "reference_time": "2026-09-21 11:28:18.156739+08:00"
+      },
+      "created_at": "2026-09-21T03:28:30.301Z",
+      "valid_at": "2026-09-21T03:28:18.156Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "b6b1428e-11b4-4c49-bf87-90daf20a58b3"
+      ]
+    },
+    {
+      "uuid": "c78cf86c-fe30-4984-99b8-5471de4330c0",
+      "name": "AFFECTS",
+      "fact": "西贝的客流出现断崖式下滑，单月营收不足往年的一半。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "f14c7494-97f0-4754-871a-680b6532fb57",
+      "source_node_name": "西贝",
+      "target_node_name": "消费者群体",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "西贝的客流出现断崖式下滑，单月营收不足往年的一半。",
+        "reference_time": "2026-09-21 03:21:00.945000+00:00"
+      },
+      "created_at": "2026-09-21T03:23:31.208Z",
+      "valid_at": "2026-09-21T03:21:00.945Z",
+      "invalid_at": "2026-09-21T03:23:27.211Z",
+      "expired_at": "2026-09-21T03:26:01.361Z",
+      "episodes": [
+        "32ecdf49-55c3-41f1-91b6-c5ae9bcf78f8",
+        "ab3df595-3d96-4c5a-845e-16e5c535b569"
+      ]
+    },
+    {
+      "uuid": "c4102014-2da5-462d-9818-458103503e36",
+      "name": "SUPPORTS_REGULATION_OF",
+      "fact": "罗永浩认为西贝的预制菜应该被强制标注，并认为这对行业规范是好事。",
+      "fact_type": "SUPPORTS_REGULATION_OF",
+      "source_node_uuid": "9a7dbb80-ecf9-42af-8fbd-cd2dd4d24ef4",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "罗永浩",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "SUPPORTS_REGULATION_OF",
+        "fact": "罗永浩认为西贝的预制菜应该被强制标注，并认为这对行业规范是好事。",
+        "reference_time": "2026-09-21 11:25:54.706307+08:00"
+      },
+      "created_at": "2026-09-21T03:26:06.085Z",
+      "valid_at": "2026-09-21T03:25:54.706Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "d0fd21fb-1fbe-4d2f-9a5e-5351dfba78d3"
+      ]
+    },
+    {
+      "uuid": "c26b9836-b643-489f-bbaa-90e9963ca7b3",
+      "name": "MAKES_FRESH_FOOD",
+      "fact": "西贝员工表示公司正在努力现做，但消费者不相信。",
+      "fact_type": "MAKES_FRESH_FOOD",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "西贝",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "MAKES_FRESH_FOOD",
+        "fact": "西贝员工表示公司正在努力现做，但消费者不相信。",
+        "reference_time": "2026-09-21 03:23:27.211000+00:00"
+      },
+      "created_at": "2026-09-21T03:25:58.191Z",
+      "valid_at": "2026-09-21T03:23:27.211Z",
+      "invalid_at": "2026-09-21T03:26:00.564Z",
+      "expired_at": "2026-09-21T03:28:26.763Z",
+      "episodes": [
+        "ab3df595-3d96-4c5a-845e-16e5c535b569",
+        "162c1798-7d5d-4884-8b35-74f45b0c7125"
+      ]
+    },
+    {
+      "uuid": "bcd15321-e25a-401d-8963-194487c7e103",
+      "name": "WORKS_FOR",
+      "fact": "贾国龙是西贝的创始人。",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "07383432-1c88-4b02-b192-6201fbc8de76",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "贾国龙",
+      "target_node_name": "西贝",
+      "attributes": {
+        "details": "贾国龙是西贝的创始人。",
+        "edge_type": "WORKS_FOR",
+        "fact": "贾国龙是西贝的创始人。",
+        "reference_time": "2026-09-21 03:14:34.350000+00:00"
+      },
+      "created_at": "2026-09-21T03:14:35.827Z",
+      "valid_at": "2026-09-21T03:14:34.35Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "20724941-9f10-4cde-ad85-0c8695a71e5c",
+        "ff9d2914-ce00-4f6e-965f-7c5e0fa263ad",
+        "781fa4c3-4ba2-480b-a54c-674da5fdfc0f",
+        "32ecdf49-55c3-41f1-91b6-c5ae9bcf78f8",
+        "b6b1428e-11b4-4c49-bf87-90daf20a58b3",
+        "bfcceded-271d-42c0-8383-d400978e5272"
+      ]
+    },
+    {
+      "uuid": "bc7bd76a-e25c-498f-92c4-10f990556094",
+      "name": "AFFECTS",
+      "fact": "绝味鸭脖的营收因预制菜信任危机下滑约9%至20%。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "d8dbb582-004e-4aff-b441-d1b47359554a",
+      "target_node_uuid": "be6c3c03-1bf2-4ca9-b329-038c45f95a58",
+      "source_node_name": "预制菜",
+      "target_node_name": "绝味鸭脖",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "绝味鸭脖的营收因预制菜信任危机下滑约9%至20%。",
+        "reference_time": "2026-09-21 03:14:34.374000+00:00"
+      },
+      "created_at": "2026-09-21T03:14:36.769Z",
+      "valid_at": "2026-09-21T03:14:34.374Z",
+      "invalid_at": "2026-09-21T03:26:00.564Z",
+      "expired_at": "2026-09-21T03:29:44.491Z",
+      "episodes": [
+        "c8846d93-dc9b-4a4d-8885-c72dfe05384e",
+        "b6b1428e-11b4-4c49-bf87-90daf20a58b3"
+      ]
+    },
+    {
+      "uuid": "bbfd7e2c-233b-46d1-9266-b57a14ecfc2c",
+      "name": "AFFECTS",
+      "fact": "海底捞的营收因预制菜信任危机下滑约9%至20%。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "d8dbb582-004e-4aff-b441-d1b47359554a",
+      "target_node_uuid": "3294f77c-1f6e-4748-a1b6-abbc732d17d5",
+      "source_node_name": "预制菜",
+      "target_node_name": "海底捞",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "海底捞的营收因预制菜信任危机下滑约9%至20%。",
+        "reference_time": "2026-09-21 03:14:34.374000+00:00"
+      },
+      "created_at": "2026-09-21T03:14:36.769Z",
+      "valid_at": "2026-09-21T03:14:34.374Z",
+      "invalid_at": "2026-09-21T03:20:59.617Z",
+      "expired_at": "2026-09-21T03:21:08.658Z",
+      "episodes": [
+        "c8846d93-dc9b-4a4d-8885-c72dfe05384e",
+        "781fa4c3-4ba2-480b-a54c-674da5fdfc0f"
+      ]
+    },
+    {
+      "uuid": "b918ea6d-3b55-4a8a-8861-f0bcfd39e552",
+      "name": "EXPERIENCES_REVENUE_DECLINE",
+      "fact": "西贝的客流出现断崖式下滑，单月营收不足往年的一半。",
+      "fact_type": "EXPERIENCES_REVENUE_DECLINE",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "西贝",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "EXPERIENCES_REVENUE_DECLINE",
+        "fact": "西贝的客流出现断崖式下滑，单月营收不足往年的一半。",
+        "reference_time": "2026-09-21 03:23:27.211000+00:00"
+      },
+      "created_at": "2026-09-21T03:25:58.191Z",
+      "valid_at": "2026-09-21T03:23:27.211Z",
+      "invalid_at": "2026-09-21T03:25:54.706Z",
+      "expired_at": "2026-09-21T03:26:08.725Z",
+      "episodes": [
+        "ab3df595-3d96-4c5a-845e-16e5c535b569",
+        "d0fd21fb-1fbe-4d2f-9a5e-5351dfba78d3"
+      ]
+    },
+    {
+      "uuid": "afd84886-f6db-4cab-be22-0c4ab8ebaaf4",
+      "name": "INVESTED_IN",
+      "fact": "消费者认为，新股东新荣记的介入可能帮助重建信心，但答案取决于后厨真相与菜品本质。",
+      "fact_type": "INVESTED_IN",
+      "source_node_uuid": "4c53150f-1dc2-41d9-954e-4e3624fd5083",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "新荣记",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "INVESTED_IN",
+        "fact": "消费者认为，新股东新荣记的介入可能帮助重建信心，但答案取决于后厨真相与菜品本质。",
+        "reference_time": "2026-09-21 11:26:00.564648+08:00"
+      },
+      "created_at": "2026-09-21T03:28:22.961Z",
+      "valid_at": "2026-09-21T03:26:00.564Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "162c1798-7d5d-4884-8b35-74f45b0c7125"
+      ]
+    },
+    {
+      "uuid": "af2fedfd-cd72-47e2-a5a7-82e38fbe269a",
+      "name": "RESPONDS_TO",
+      "fact": "西贝餐饮集团已全面开放全国主要门店后厨参观通道，并计划升级溯源系统，使关键食材来源全程可查。",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "cf43eb6b-b91a-4084-bcfa-132558443301",
+      "source_node_name": "西贝",
+      "target_node_name": "消费者",
+      "attributes": {
+        "edge_type": "RESPONDS_TO",
+        "fact": "西贝餐饮集团已全面开放全国主要门店后厨参观通道，并计划升级溯源系统，使关键食材来源全程可查。",
+        "reference_time": "2026-09-21 11:26:00.564648+08:00"
+      },
+      "created_at": "2026-09-21T03:28:22.961Z",
+      "valid_at": "2026-09-21T03:26:00.564Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "162c1798-7d5d-4884-8b35-74f45b0c7125"
+      ]
+    },
+    {
+      "uuid": "ac72c792-3274-47cf-ae64-ddf11ed5cc8b",
+      "name": "OFFERS",
+      "fact": "西贝推出“鲜制”承诺，强调当天现做。",
+      "fact_type": "OFFERS",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "087f1334-1861-48d0-be51-cc1992dada0c",
+      "source_node_name": "西贝",
+      "target_node_name": "鲜制承诺",
+      "attributes": {
+        "edge_type": "OFFERS",
+        "fact": "西贝推出“鲜制”承诺，强调当天现做。",
+        "reference_time": "2026-09-21 03:14:34.371000+00:00"
+      },
+      "created_at": "2026-09-21T03:14:37.403Z",
+      "valid_at": "2026-09-21T03:14:34.371Z",
+      "invalid_at": "2026-09-21T03:28:23.602Z",
+      "expired_at": "2026-09-21T03:29:50.696Z",
+      "episodes": [
+        "566e3829-c335-44bb-ba78-c0f3f5fb57d8",
+        "9c19cd21-adf6-4021-90e8-83e4a0e1747d"
+      ]
+    },
+    {
+      "uuid": "a882b943-b48e-4974-b4b7-ae5ba75b3a10",
+      "name": "AFFECTS",
+      "fact": "消费者呼吁餐饮行业建立明确的标识体系，保障消费者的知情权，让鲜制回归本质。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "cf43eb6b-b91a-4084-bcfa-132558443301",
+      "target_node_uuid": "aa0f1500-8be4-4a9f-89a7-aca121cb5dad",
+      "source_node_name": "消费者",
+      "target_node_name": "餐饮行业",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "消费者呼吁餐饮行业建立明确的标识体系，保障消费者的知情权，让鲜制回归本质。",
+        "reference_time": "2026-09-21 03:25:54.712000+00:00"
+      },
+      "created_at": "2026-09-21T03:26:12.387Z",
+      "valid_at": "2026-09-21T03:25:54.712Z",
+      "invalid_at": "2026-09-21T03:28:18.156Z",
+      "expired_at": "2026-09-21T03:29:44.491Z",
+      "episodes": [
+        "fbafbaaf-c346-4929-b903-0281c0f57fc6",
+        "b6b1428e-11b4-4c49-bf87-90daf20a58b3"
+      ]
+    },
+    {
+      "uuid": "a5bc5718-a7c5-483f-b76a-2c0857e00e36",
+      "name": "AFFECTS",
+      "fact": "绿茶的营收下滑幅度约为9%至20%。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "0aaa7fc7-77bd-4dd1-b53e-7bd5ac015a40",
+      "target_node_uuid": "0aaa7fc7-77bd-4dd1-b53e-7bd5ac015a40",
+      "source_node_name": "绿茶",
+      "target_node_name": "绿茶",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "绿茶的营收下滑幅度约为9%至20%。",
+        "impact_type": "营收下滑",
+        "reference_time": "2026-09-21 03:14:34.377703+00:00"
+      },
+      "created_at": "2026-09-21T03:14:36.226Z",
+      "valid_at": "2026-09-21T03:14:34.377Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "ff9d2914-ce00-4f6e-965f-7c5e0fa263ad"
+      ]
+    },
+    {
+      "uuid": "a56c4668-27ff-48cf-b395-2be4e5e335f3",
+      "name": "RESPONDS_TO",
+      "fact": "西贝的一名普通员工表示，西贝员工一直在努力现做菜品，但消费者不信任他们。",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "cf43eb6b-b91a-4084-bcfa-132558443301",
+      "source_node_name": "西贝",
+      "target_node_name": "消费者",
+      "attributes": {
+        "edge_type": "RESPONDS_TO",
+        "fact": "西贝的一名普通员工表示，西贝员工一直在努力现做菜品，但消费者不信任他们。",
+        "reference_time": "2026-09-21 03:26:00.564000+00:00"
+      },
+      "created_at": "2026-09-21T03:28:22.961Z",
+      "valid_at": "2026-09-21T03:26:00.564Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "162c1798-7d5d-4884-8b35-74f45b0c7125",
+        "9c19cd21-adf6-4021-90e8-83e4a0e1747d"
+      ]
+    },
+    {
+      "uuid": "a1f40dea-9107-47ac-b8da-cb8982c55dc4",
+      "name": "AFFECTS",
+      "fact": "西贝计划全面开放全国门店后厨，邀请消费者、媒体及行业伙伴实地参观。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "f14c7494-97f0-4754-871a-680b6532fb57",
+      "source_node_name": "西贝",
+      "target_node_name": "消费者群体",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "西贝计划全面开放全国门店后厨，邀请消费者、媒体及行业伙伴实地参观。",
+        "reference_time": "2026-09-21 11:28:24.645868+08:00"
+      },
+      "created_at": "2026-09-21T03:34:03.409Z",
+      "valid_at": "2026-09-21T03:28:24.645Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "bfcceded-271d-42c0-8383-d400978e5272"
+      ]
+    },
+    {
+      "uuid": "a1925547-b32c-4789-b527-39d7eb3e8c2d",
+      "name": "RESPONDS_TO",
+      "fact": "贾国龙表示西贝从2021年的馒头到现在的蒸饺一直存在价格争议，客流已经断崖式下滑，单月营收不足往年一半。",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "07383432-1c88-4b02-b192-6201fbc8de76",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "贾国龙",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "RESPONDS_TO",
+        "fact": "贾国龙表示西贝从2021年的馒头到现在的蒸饺一直存在价格争议，客流已经断崖式下滑，单月营收不足往年一半。",
+        "reference_time": "2026-09-21 03:25:54.706000+00:00"
+      },
+      "created_at": "2026-09-21T03:26:06.085Z",
+      "valid_at": "2026-09-21T03:25:54.706Z",
+      "invalid_at": "2026-09-21T03:28:24.645Z",
+      "expired_at": "2026-09-21T03:34:05.815Z",
+      "episodes": [
+        "d0fd21fb-1fbe-4d2f-9a5e-5351dfba78d3",
+        "bfcceded-271d-42c0-8383-d400978e5272"
+      ]
+    },
+    {
+      "uuid": "a0d87721-0b4d-40fe-b009-879760c1eeff",
+      "name": "HAS_LAYOFFS",
+      "fact": "西贝已裁员约4000人，并可能继续裁员。",
+      "fact_type": "HAS_LAYOFFS",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "西贝",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "HAS_LAYOFFS",
+        "fact": "西贝已裁员约4000人，并可能继续裁员。",
+        "reference_time": "2026-09-21 03:14:34.371000+00:00"
+      },
+      "created_at": "2026-09-21T03:14:37.403Z",
+      "valid_at": "2026-09-21T03:14:34.371Z",
+      "invalid_at": "2026-09-21T03:26:00.564Z",
+      "expired_at": "2026-09-21T03:28:26.763Z",
+      "episodes": [
+        "566e3829-c335-44bb-ba78-c0f3f5fb57d8",
+        "162c1798-7d5d-4884-8b35-74f45b0c7125"
+      ]
+    },
+    {
+      "uuid": "9b57bae2-382a-4759-978a-03ad7b9361d9",
+      "name": "AFFECTS",
+      "fact": "全聚德认为，公众对高价低配的餐饮模式已经极度反感，餐饮行业需要回归鲜制和透明。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "df7351fb-f03d-484f-a72b-6b1075f51508",
+      "target_node_uuid": "3294f77c-1f6e-4748-a1b6-abbc732d17d5",
+      "source_node_name": "全聚德",
+      "target_node_name": "海底捞",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "全聚德认为，公众对高价低配的餐饮模式已经极度反感，餐饮行业需要回归鲜制和透明。",
+        "impact_type": "负面舆情",
+        "reference_time": "2026-09-21 11:25:54.712984+08:00"
+      },
+      "created_at": "2026-09-21T03:26:12.387Z",
+      "valid_at": "2026-09-21T03:25:54.712Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "fbafbaaf-c346-4929-b903-0281c0f57fc6"
+      ]
+    },
+    {
+      "uuid": "9a3969ad-715f-49e1-92fe-5ced62dd8f99",
+      "name": "AFFECTS",
+      "fact": "怂火锅的营收因预制菜信任危机下滑约9%至20%。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "d8dbb582-004e-4aff-b441-d1b47359554a",
+      "target_node_uuid": "61528428-8a36-478d-bc4c-7c96f5ff8662",
+      "source_node_name": "预制菜",
+      "target_node_name": "怂火锅",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "怂火锅的营收因预制菜信任危机下滑约9%至20%。",
+        "reference_time": "2026-09-21 03:14:34.374000+00:00"
+      },
+      "created_at": "2026-09-21T03:14:36.769Z",
+      "valid_at": "2026-09-21T03:14:34.374Z",
+      "invalid_at": "2026-09-21T03:20:59.617Z",
+      "expired_at": "2026-09-21T03:21:08.658Z",
+      "episodes": [
+        "c8846d93-dc9b-4a4d-8885-c72dfe05384e",
+        "781fa4c3-4ba2-480b-a54c-674da5fdfc0f"
+      ]
+    },
+    {
+      "uuid": "95e03368-337c-4c32-a192-d7e0999f7b53",
+      "name": "LIKES",
+      "fact": "消费者点赞了大中矿业实控人关于西贝的帖子。",
+      "fact_type": "LIKES",
+      "source_node_uuid": "cf43eb6b-b91a-4084-bcfa-132558443301",
+      "target_node_uuid": "9fdc34e4-facc-4668-9442-7c6efb604b0f",
+      "source_node_name": "消费者",
+      "target_node_name": "大中矿业",
+      "attributes": {
+        "edge_type": "LIKES",
+        "fact": "消费者点赞了大中矿业实控人关于西贝的帖子。",
+        "reference_time": "2026-09-21 03:25:54.712000+00:00"
+      },
+      "created_at": "2026-09-21T03:26:12.387Z",
+      "valid_at": "2026-09-21T03:25:54.712Z",
+      "invalid_at": "2026-09-21T03:28:18.156Z",
+      "expired_at": "2026-09-21T03:29:44.491Z",
+      "episodes": [
+        "fbafbaaf-c346-4929-b903-0281c0f57fc6",
+        "b6b1428e-11b4-4c49-bf87-90daf20a58b3"
+      ]
+    },
+    {
+      "uuid": "91adff3f-d9ec-4758-96c5-e9e144f7b2eb",
+      "name": "USES_OPERATING_MODEL",
+      "fact": "部分西贝门店转为员工自营模式。",
+      "fact_type": "USES_OPERATING_MODEL",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "c2d7cc5f-636c-4739-af20-c1fd74c5cbcc",
+      "source_node_name": "西贝",
+      "target_node_name": "员工自营模式",
+      "attributes": {
+        "edge_type": "USES_OPERATING_MODEL",
+        "fact": "部分西贝门店转为员工自营模式。",
+        "reference_time": "2026-09-21 03:14:34.371358+00:00"
+      },
+      "created_at": "2026-09-21T03:14:37.403Z",
+      "valid_at": "2026-09-21T03:14:34.371Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "566e3829-c335-44bb-ba78-c0f3f5fb57d8"
+      ]
+    },
+    {
+      "uuid": "90f03b80-dff6-41f7-af47-9413a2d32c7a",
+      "name": "CONSUMES_FROM",
+      "fact": "消费者群体认为西贝的馒头、花卷和预制菜性价比太低，并因价格敏感而持续抵制西贝。",
+      "fact_type": "CONSUMES_FROM",
+      "source_node_uuid": "f14c7494-97f0-4754-871a-680b6532fb57",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "消费者群体",
+      "target_node_name": "西贝",
+      "attributes": {
+        "consumption_frequency": "持续抵制",
+        "edge_type": "CONSUMES_FROM",
+        "fact": "消费者群体认为西贝的馒头、花卷和预制菜性价比太低，并因价格敏感而持续抵制西贝。",
+        "reference_time": "2026-09-21 03:21:00.945000+00:00"
+      },
+      "created_at": "2026-09-21T03:23:31.208Z",
+      "valid_at": "2026-09-21T03:21:00.945Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "32ecdf49-55c3-41f1-91b6-c5ae9bcf78f8",
+        "ab3df595-3d96-4c5a-845e-16e5c535b569",
+        "d0fd21fb-1fbe-4d2f-9a5e-5351dfba78d3",
+        "b6b1428e-11b4-4c49-bf87-90daf20a58b3"
+      ]
+    },
+    {
+      "uuid": "87e8d76c-64c5-41b5-82ba-1bbb45d38855",
+      "name": "HAS_MARKET_POSITION",
+      "fact": "西贝连续十一年位居中式正餐营收第一。",
+      "fact_type": "HAS_MARKET_POSITION",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "西贝",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "HAS_MARKET_POSITION",
+        "fact": "西贝连续十一年位居中式正餐营收第一。",
+        "reference_time": "2026-09-21 03:14:34.355291+00:00"
+      },
+      "created_at": "2026-09-21T03:14:36.739Z",
+      "valid_at": "2026-09-21T03:14:34.355Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "f6cfa6ed-e42c-475f-822b-b32d05aadc5d"
+      ]
+    },
+    {
+      "uuid": "879f9170-c063-42d6-a07e-5fb5f729e27a",
+      "name": "AFFECTS",
+      "fact": "大中矿业实控人认为西贝的公关危机和战略失误导致整体信任严重受损，未来5年若无法重建现做信任，营收很难恢复。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "ec75073e-749b-44fc-8cc2-62b7797fe027",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "大中矿业实控人",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "大中矿业实控人认为西贝的公关危机和战略失误导致整体信任严重受损，未来5年若无法重建现做信任，营收很难恢复。",
+        "reference_time": "2026-09-21 11:25:54.706307+08:00"
+      },
+      "created_at": "2026-09-21T03:26:06.085Z",
+      "valid_at": "2026-09-21T03:25:54.706Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "d0fd21fb-1fbe-4d2f-9a5e-5351dfba78d3"
+      ]
+    },
+    {
+      "uuid": "86ede873-03e8-4458-b82b-047888e6bbd2",
+      "name": "HAS_FINANCIAL_DATA",
+      "fact": "西贝在2026年半年累计亏损超过6亿元。",
+      "fact_type": "HAS_FINANCIAL_DATA",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "西贝",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "HAS_FINANCIAL_DATA",
+        "fact": "西贝在2026年半年累计亏损超过6亿元。",
+        "reference_time": "2026-09-21 03:14:34.368442+00:00"
+      },
+      "created_at": "2026-09-21T03:14:36.293Z",
+      "valid_at": "2026-01-01T00:00:00Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "ceb867dd-05e4-440b-85b5-08d66621a346"
+      ]
+    },
+    {
+      "uuid": "84ae7187-c414-476c-b486-b30ae9a7c17a",
+      "name": "EXPERIENCED",
+      "fact": "西贝陷入自证清白循环，并因此浪费了最佳公关窗口期。",
+      "fact_type": "EXPERIENCED",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "西贝",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "EXPERIENCED",
+        "fact": "西贝陷入自证清白循环，并因此浪费了最佳公关窗口期。",
+        "reference_time": "2026-09-21 03:14:34.368442+00:00"
+      },
+      "created_at": "2026-09-21T03:14:36.293Z",
+      "valid_at": "2026-09-21T03:14:34.368Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "ceb867dd-05e4-440b-85b5-08d66621a346"
+      ]
+    },
+    {
+      "uuid": "7e409750-72fd-441c-8a73-17bc9a2a2e0a",
+      "name": "RESPONDS_TO",
+      "fact": "贾国龙将罗永浩引发的舆论事件称为西贝成立以来最大的一次外部危机。",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "07383432-1c88-4b02-b192-6201fbc8de76",
+      "target_node_uuid": "9a7dbb80-ecf9-42af-8fbd-cd2dd4d24ef4",
+      "source_node_name": "贾国龙",
+      "target_node_name": "罗永浩",
+      "attributes": {
+        "edge_type": "RESPONDS_TO",
+        "fact": "贾国龙将罗永浩引发的舆论事件称为西贝成立以来最大的一次外部危机。",
+        "reference_time": "2026-09-21 03:14:34.350000+00:00",
+        "response_tone": "强硬"
+      },
+      "created_at": "2026-09-21T03:14:35.827Z",
+      "valid_at": "2026-09-21T03:14:34.35Z",
+      "invalid_at": "2026-09-21T03:14:34.355Z",
+      "expired_at": "2026-09-21T03:21:08.658Z",
+      "episodes": [
+        "20724941-9f10-4cde-ad85-0c8695a71e5c",
+        "781fa4c3-4ba2-480b-a54c-674da5fdfc0f",
+        "b6b1428e-11b4-4c49-bf87-90daf20a58b3"
+      ]
+    },
+    {
+      "uuid": "7d082089-6a4a-4c6a-9868-a74911ad20e0",
+      "name": "AFFECTS",
+      "fact": "西贝在2026年1月确认关闭102家门店，约占门店总数的30%，涉及4000余名员工。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "cf43eb6b-b91a-4084-bcfa-132558443301",
+      "source_node_name": "西贝",
+      "target_node_name": "消费者",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "西贝在2026年1月确认关闭102家门店，约占门店总数的30%，涉及4000余名员工。",
+        "reference_time": "2026-09-21 03:14:34.358000+00:00"
+      },
+      "created_at": "2026-09-21T03:14:37.058Z",
+      "valid_at": "2026-01-01T00:00:00Z",
+      "invalid_at": "2026-09-21T03:23:27.211Z",
+      "expired_at": "2026-09-21T03:26:01.361Z",
+      "episodes": [
+        "efaf421c-0421-4af2-ac50-0acd1e8b4543",
+        "ab3df595-3d96-4c5a-845e-16e5c535b569"
+      ]
+    },
+    {
+      "uuid": "7b4a5469-1163-4fcd-9429-da3cb3773a95",
+      "name": "AFFECTS",
+      "fact": "消费者群体认为西贝员工因西贝的争议而受到影响。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "f14c7494-97f0-4754-871a-680b6532fb57",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "消费者群体",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "消费者群体认为西贝员工因西贝的争议而受到影响。",
+        "reference_time": "2026-09-21 11:20:59.617796+08:00"
+      },
+      "created_at": "2026-09-21T03:21:05.626Z",
+      "valid_at": "2026-09-21T03:20:59.617Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "781fa4c3-4ba2-480b-a54c-674da5fdfc0f"
+      ]
+    },
+    {
+      "uuid": "79f4abf7-910e-4492-9d58-d1c671dfb40d",
+      "name": "CONSUMES_FROM",
+      "fact": "消费者持续抵制西贝，价格敏感型群体已经流失。",
+      "fact_type": "CONSUMES_FROM",
+      "source_node_uuid": "cf43eb6b-b91a-4084-bcfa-132558443301",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "消费者",
+      "target_node_name": "西贝",
+      "attributes": {
+        "consumption_frequency": "持续抵制",
+        "edge_type": "CONSUMES_FROM",
+        "fact": "消费者持续抵制西贝，价格敏感型群体已经流失。",
+        "reference_time": "2026-09-21 03:25:54.712000+00:00"
+      },
+      "created_at": "2026-09-21T03:26:12.387Z",
+      "valid_at": "2026-09-21T03:25:54.712Z",
+      "invalid_at": "2026-09-21T03:28:18.156Z",
+      "expired_at": "2026-09-21T03:29:44.491Z",
+      "episodes": [
+        "fbafbaaf-c346-4929-b903-0281c0f57fc6",
+        "b6b1428e-11b4-4c49-bf87-90daf20a58b3"
+      ]
+    },
+    {
+      "uuid": "790d8284-7e0f-4e17-a3e6-13da0f0845d9",
+      "name": "AFFECTS",
+      "fact": "消费者发布帖子称，西贝的衰退反映了餐饮行业伪高端模式的系统性崩盘。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "cf43eb6b-b91a-4084-bcfa-132558443301",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "消费者",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "消费者发布帖子称，西贝的衰退反映了餐饮行业伪高端模式的系统性崩盘。",
+        "reference_time": "2026-09-21 03:25:54.712000+00:00"
+      },
+      "created_at": "2026-09-21T03:26:12.387Z",
+      "valid_at": "2026-09-21T03:25:54.712Z",
+      "invalid_at": "2026-09-21T03:28:18.156Z",
+      "expired_at": "2026-09-21T03:29:44.491Z",
+      "episodes": [
+        "fbafbaaf-c346-4929-b903-0281c0f57fc6",
+        "b6b1428e-11b4-4c49-bf87-90daf20a58b3"
+      ]
+    },
+    {
+      "uuid": "7690bba2-ddef-4fb6-9925-8c56349f9d4d",
+      "name": "CLOSED_STORES_IN",
+      "fact": "西贝于2026年8月关闭合肥和重庆的最后门店，退出这两座城市。",
+      "fact_type": "CLOSED_STORES_IN",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "a0399182-6759-4040-9103-8c2ae89aa6f4",
+      "source_node_name": "西贝",
+      "target_node_name": "重庆",
+      "attributes": {
+        "edge_type": "CLOSED_STORES_IN",
+        "fact": "西贝于2026年8月关闭合肥和重庆的最后门店，退出这两座城市。",
+        "reference_time": "2026-09-21 03:14:34.361851+00:00"
+      },
+      "created_at": "2026-09-21T03:14:36.547Z",
+      "valid_at": "2026-08-01T00:00:00Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "54a90497-c331-4c7b-bf2a-9a6e1bb98c36"
+      ]
+    },
+    {
+      "uuid": "71822ff0-40ed-48ed-904a-a6f251947510",
+      "name": "RESPONDS_TO",
+      "fact": "罗永浩于2025年9月12日连发30多条微博反驳，并开启直播回应，直播中1分钟在线人数达到10万人。",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "9a7dbb80-ecf9-42af-8fbd-cd2dd4d24ef4",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "罗永浩",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "RESPONDS_TO",
+        "fact": "罗永浩于2025年9月12日连发30多条微博反驳，并开启直播回应，直播中1分钟在线人数达到10万人。",
+        "reference_time": "2026-09-21 03:14:34.358562+00:00"
+      },
+      "created_at": "2026-09-21T03:14:37.058Z",
+      "valid_at": "2025-09-12T00:00:00Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "efaf421c-0421-4af2-ac50-0acd1e8b4543"
+      ]
+    },
+    {
+      "uuid": "71128417-ca49-45ff-a4c6-0074cd13e443",
+      "name": "AFFECTS",
+      "fact": "西贝建立“西贝食材溯源”公开平台，公开核心食材来源及加工流程，以重建消费者信任。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "f14c7494-97f0-4754-871a-680b6532fb57",
+      "source_node_name": "西贝",
+      "target_node_name": "消费者群体",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "西贝建立“西贝食材溯源”公开平台，公开核心食材来源及加工流程，以重建消费者信任。",
+        "reference_time": "2026-09-21 11:28:24.645868+08:00"
+      },
+      "created_at": "2026-09-21T03:34:03.41Z",
+      "valid_at": "2026-09-21T03:28:24.645Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "bfcceded-271d-42c0-8383-d400978e5272"
+      ]
+    },
+    {
+      "uuid": "702e5832-4e19-404d-9448-90953ed282c5",
+      "name": "AFFECTS",
+      "fact": "罗永浩与西贝的争议引发了整个餐饮行业对预制菜的信任危机。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "9a7dbb80-ecf9-42af-8fbd-cd2dd4d24ef4",
+      "target_node_uuid": "d8dbb582-004e-4aff-b441-d1b47359554a",
+      "source_node_name": "罗永浩",
+      "target_node_name": "预制菜",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "罗永浩与西贝的争议引发了整个餐饮行业对预制菜的信任危机。",
+        "reference_time": "2026-09-21 03:14:34.374532+00:00"
+      },
+      "created_at": "2026-09-21T03:14:36.769Z",
+      "valid_at": "2026-09-21T03:14:34.374Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "c8846d93-dc9b-4a4d-8885-c72dfe05384e"
+      ]
+    },
+    {
+      "uuid": "6d8541d5-dec6-474d-b773-2d94cf31459e",
+      "name": "AFFECTS",
+      "fact": "西贝的衰退被描述为餐饮行业伪高端模式的系统性崩盘，核心问题是信息不对称下的高溢价和信任成本失衡。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "f14c7494-97f0-4754-871a-680b6532fb57",
+      "source_node_name": "西贝",
+      "target_node_name": "消费者群体",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "西贝的衰退被描述为餐饮行业伪高端模式的系统性崩盘，核心问题是信息不对称下的高溢价和信任成本失衡。",
+        "reference_time": "2026-09-21 11:28:18.156739+08:00"
+      },
+      "created_at": "2026-09-21T03:28:30.301Z",
+      "valid_at": "2026-09-21T03:28:18.156Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "b6b1428e-11b4-4c49-bf87-90daf20a58b3"
+      ]
+    },
+    {
+      "uuid": "6b39ea99-d9a4-4657-b8e8-6fab1514d3dd",
+      "name": "INVESTED_IN",
+      "fact": "大中矿业实控人于2026年3月入股西贝2.16%，当时西贝估值约10亿元。",
+      "fact_type": "INVESTED_IN",
+      "source_node_uuid": "ec75073e-749b-44fc-8cc2-62b7797fe027",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "大中矿业实控人",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "INVESTED_IN",
+        "fact": "大中矿业实控人于2026年3月入股西贝2.16%，当时西贝估值约10亿元。",
+        "investment_stage": "入股",
+        "reference_time": "2026-09-21 03:14:34.371358+00:00"
+      },
+      "created_at": "2026-09-21T03:14:37.403Z",
+      "valid_at": "2026-03-01T00:00:00Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "566e3829-c335-44bb-ba78-c0f3f5fb57d8"
+      ]
+    },
+    {
+      "uuid": "69424180-29ab-429d-b6af-0fd4a455d907",
+      "name": "AFFECTS",
+      "fact": "西贝普通员工表示，西贝正在经历门店关闭和裁员带来的困难，希望公司能够挺过去。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "9b78552d-af70-4f4a-b62d-8b16ecd3598e",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "西贝员工",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "西贝普通员工表示，西贝正在经历门店关闭和裁员带来的困难，希望公司能够挺过去。",
+        "reference_time": "2026-09-21 11:25:54.706307+08:00"
+      },
+      "created_at": "2026-09-21T03:26:06.085Z",
+      "valid_at": "2026-09-21T03:25:54.706Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "d0fd21fb-1fbe-4d2f-9a5e-5351dfba78d3"
+      ]
+    },
+    {
+      "uuid": "68ad0855-2872-4a6b-aabb-b1146f183085",
+      "name": "HAS_LISTING_STATUS",
+      "fact": "西贝的上市计划已经搁浅。",
+      "fact_type": "HAS_LISTING_STATUS",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "西贝",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "HAS_LISTING_STATUS",
+        "fact": "西贝的上市计划已经搁浅。",
+        "reference_time": "2026-09-21 03:14:34.371358+00:00"
+      },
+      "created_at": "2026-09-21T03:14:37.403Z",
+      "valid_at": "2026-09-21T03:14:34.371Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "566e3829-c335-44bb-ba78-c0f3f5fb57d8"
+      ]
+    },
+    {
+      "uuid": "66e45b5c-fa96-46b8-8dec-59084a052ecd",
+      "name": "AFFECTS",
+      "fact": "消费者认为，全聚德、呷哺呷哺等同业营收下滑9%-20%，印证了西贝事件引发的系统性信任危机。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "df7351fb-f03d-484f-a72b-6b1075f51508",
+      "source_node_name": "西贝",
+      "target_node_name": "全聚德",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "消费者认为，全聚德、呷哺呷哺等同业营收下滑9%-20%，印证了西贝事件引发的系统性信任危机。",
+        "impact_type": "负面舆情",
+        "reference_time": "2026-09-21 03:26:00.564000+00:00"
+      },
+      "created_at": "2026-09-21T03:28:22.961Z",
+      "valid_at": "2026-09-21T03:26:00.564Z",
+      "invalid_at": "2026-09-21T03:28:18.156Z",
+      "expired_at": "2026-09-21T03:29:44.491Z",
+      "episodes": [
+        "162c1798-7d5d-4884-8b35-74f45b0c7125",
+        "b6b1428e-11b4-4c49-bf87-90daf20a58b3"
+      ]
+    },
+    {
+      "uuid": "66bdf051-770b-4b1a-b863-ffb033f02d5c",
+      "name": "ACCUSED_BY",
+      "fact": "消费者批评西贝的“29元蒸饺”事件，认为西贝用预制菜冒充现做、用高价收割消费者信任。",
+      "fact_type": "ACCUSED_BY",
+      "source_node_uuid": "cf43eb6b-b91a-4084-bcfa-132558443301",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "消费者",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "ACCUSED_BY",
+        "fact": "消费者批评西贝的“29元蒸饺”事件，认为西贝用预制菜冒充现做、用高价收割消费者信任。",
+        "reference_time": "2026-09-21 11:28:23.602287+08:00"
+      },
+      "created_at": "2026-09-21T03:29:47.816Z",
+      "valid_at": "2026-09-21T03:28:23.602Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "9c19cd21-adf6-4021-90e8-83e4a0e1747d"
+      ]
+    },
+    {
+      "uuid": "643ea0b9-c02f-4f94-b393-716fb1520f7c",
+      "name": "AFFECTS",
+      "fact": "全聚德发布帖子称，西贝的危机并非孤立事件，太二、海底捞和呷哺呷哺等品牌的营收也下滑了9%-20%。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "df7351fb-f03d-484f-a72b-6b1075f51508",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "全聚德",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "全聚德发布帖子称，西贝的危机并非孤立事件，太二、海底捞和呷哺呷哺等品牌的营收也下滑了9%-20%。",
+        "impact_type": "负面舆情",
+        "reference_time": "2026-09-21 11:25:54.712984+08:00"
+      },
+      "created_at": "2026-09-21T03:26:12.387Z",
+      "valid_at": "2026-09-21T03:25:54.712Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "fbafbaaf-c346-4929-b903-0281c0f57fc6"
+      ]
+    },
+    {
+      "uuid": "6304ae22-256b-466e-a6bb-193ebfec82f6",
+      "name": "HAS_VALUATION",
+      "fact": "西贝在2026年的企业估值约为10亿元，较2023年期望的200亿元下降约95%。",
+      "fact_type": "HAS_VALUATION",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "西贝",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "HAS_VALUATION",
+        "fact": "西贝在2026年的企业估值约为10亿元，较2023年期望的200亿元下降约95%。",
+        "reference_time": "2026-09-21 03:14:34.368442+00:00"
+      },
+      "created_at": "2026-09-21T03:14:36.293Z",
+      "valid_at": "2026-01-01T00:00:00Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "ceb867dd-05e4-440b-85b5-08d66621a346"
+      ]
+    },
+    {
+      "uuid": "62342a6b-c0fb-4a76-8955-ea39eef98307",
+      "name": "AFFECTS",
+      "fact": "太二、海底捞和呷哺呷哺等餐饮品牌的营收都因西贝危机而下滑了9%至20%。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "59756c2d-7e58-48d6-9887-049174d93903",
+      "source_node_name": "西贝",
+      "target_node_name": "呷哺呷哺",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "太二、海底捞和呷哺呷哺等餐饮品牌的营收都因西贝危机而下滑了9%至20%。",
+        "impact_type": "负面舆情",
+        "reference_time": "2026-09-21 03:20:59.617000+00:00"
+      },
+      "created_at": "2026-09-21T03:21:05.626Z",
+      "valid_at": "2026-09-21T03:20:59.617Z",
+      "invalid_at": "2026-09-21T03:25:54.712Z",
+      "expired_at": "2026-09-21T03:26:16.305Z",
+      "episodes": [
+        "781fa4c3-4ba2-480b-a54c-674da5fdfc0f",
+        "32ecdf49-55c3-41f1-91b6-c5ae9bcf78f8",
+        "fbafbaaf-c346-4929-b903-0281c0f57fc6",
+        "162c1798-7d5d-4884-8b35-74f45b0c7125"
+      ]
+    },
+    {
+      "uuid": "5e106f00-8afe-4177-9ffe-d978a0aff641",
+      "name": "OFFERS",
+      "fact": "西贝发布儿童餐，并作出5大安心承诺，强调儿童餐当天现做。",
+      "fact_type": "OFFERS",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "d4e703c4-c75a-491e-ad1f-f9b81a729fd1",
+      "source_node_name": "西贝",
+      "target_node_name": "西贝儿童餐",
+      "attributes": {
+        "edge_type": "OFFERS",
+        "fact": "西贝发布儿童餐，并作出5大安心承诺，强调儿童餐当天现做。",
+        "reference_time": "2026-09-21 03:14:34.361000+00:00"
+      },
+      "created_at": "2026-09-21T03:14:36.547Z",
+      "valid_at": "2026-09-21T03:14:34.361Z",
+      "invalid_at": "2026-09-21T03:28:23.602Z",
+      "expired_at": "2026-09-21T03:29:50.696Z",
+      "episodes": [
+        "54a90497-c331-4c7b-bf2a-9a6e1bb98c36",
+        "9c19cd21-adf6-4021-90e8-83e4a0e1747d"
+      ]
+    },
+    {
+      "uuid": "5da117c4-bcc3-4a9f-9a41-3e73f86cfc50",
+      "name": "AFFECTS",
+      "fact": "太二酸菜鱼的营收因预制菜信任危机下滑约9%。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "d8dbb582-004e-4aff-b441-d1b47359554a",
+      "target_node_uuid": "a173f1e1-dd31-47b4-b00a-ca5e99704474",
+      "source_node_name": "预制菜",
+      "target_node_name": "太二酸菜鱼",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "太二酸菜鱼的营收因预制菜信任危机下滑约9%。",
+        "reference_time": "2026-09-21 03:14:34.374000+00:00"
+      },
+      "created_at": "2026-09-21T03:14:36.769Z",
+      "valid_at": "2026-09-21T03:14:34.374Z",
+      "invalid_at": "2026-09-21T03:20:59.617Z",
+      "expired_at": "2026-09-21T03:21:08.658Z",
+      "episodes": [
+        "c8846d93-dc9b-4a4d-8885-c72dfe05384e",
+        "781fa4c3-4ba2-480b-a54c-674da5fdfc0f"
+      ]
+    },
+    {
+      "uuid": "5cc74f37-c9ba-446c-9844-23fba6b67bd5",
+      "name": "CLOSED_STORES_IN",
+      "fact": "西贝于2026年8月关闭合肥和重庆的最后门店，退出这两座城市。",
+      "fact_type": "CLOSED_STORES_IN",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "5f05e200-8474-41fb-a2d1-6c2c3582f27c",
+      "source_node_name": "西贝",
+      "target_node_name": "合肥",
+      "attributes": {
+        "edge_type": "CLOSED_STORES_IN",
+        "fact": "西贝于2026年8月关闭合肥和重庆的最后门店，退出这两座城市。",
+        "reference_time": "2026-09-21 03:14:34.361851+00:00"
+      },
+      "created_at": "2026-09-21T03:14:36.547Z",
+      "valid_at": "2026-08-01T00:00:00Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "54a90497-c331-4c7b-bf2a-9a6e1bb98c36"
+      ]
+    },
+    {
+      "uuid": "5c741139-ed44-4b71-9278-2d9525216cf9",
+      "name": "AFFECTS",
+      "fact": "大中矿业实控人认为西贝的门店从近400家缩减到200多家，估值从200亿跌到10亿，这是战略失误。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "9fdc34e4-facc-4668-9442-7c6efb604b0f",
+      "source_node_name": "西贝",
+      "target_node_name": "大中矿业",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "大中矿业实控人认为西贝的门店从近400家缩减到200多家，估值从200亿跌到10亿，这是战略失误。",
+        "reference_time": "2026-09-21 03:21:00.945000+00:00"
+      },
+      "created_at": "2026-09-21T03:23:31.208Z",
+      "valid_at": "2026-09-21T03:21:00.945Z",
+      "invalid_at": "2026-09-21T03:23:27.211Z",
+      "expired_at": "2026-09-21T03:26:01.361Z",
+      "episodes": [
+        "32ecdf49-55c3-41f1-91b6-c5ae9bcf78f8",
+        "ab3df595-3d96-4c5a-845e-16e5c535b569",
+        "fbafbaaf-c346-4929-b903-0281c0f57fc6"
+      ]
+    },
+    {
+      "uuid": "5bebc638-61f4-4105-8c48-d702fbf6f2cf",
+      "name": "WORKS_FOR",
+      "fact": "贾国龙作为西贝CEO，承认西贝过去在沟通上存在不足，并承诺公开食材来源、开放更多后厨，以重建消费者信任。",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "07383432-1c88-4b02-b192-6201fbc8de76",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "贾国龙",
+      "target_node_name": "西贝",
+      "attributes": {
+        "details": "贾国龙是西贝的CEO。",
+        "edge_type": "WORKS_FOR",
+        "fact": "贾国龙作为西贝CEO，承认西贝过去在沟通上存在不足，并承诺公开食材来源、开放更多后厨，以重建消费者信任。",
+        "reference_time": "2026-09-21 03:26:00.564000+00:00"
+      },
+      "created_at": "2026-09-21T03:28:22.961Z",
+      "valid_at": "2026-09-21T03:26:00.564Z",
+      "invalid_at": "2026-09-21T03:28:24.645Z",
+      "expired_at": "2026-09-21T03:34:05.815Z",
+      "episodes": [
+        "162c1798-7d5d-4884-8b35-74f45b0c7125",
+        "bfcceded-271d-42c0-8383-d400978e5272"
+      ]
+    },
+    {
+      "uuid": "5a001d34-159a-49d4-bfd8-b97c037361d9",
+      "name": "CONSUMES_FROM",
+      "fact": "消费者群体认为西贝应明确标注现做和预制菜品，让消费者知情权落地。",
+      "fact_type": "CONSUMES_FROM",
+      "source_node_uuid": "f14c7494-97f0-4754-871a-680b6532fb57",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "消费者群体",
+      "target_node_name": "西贝",
+      "attributes": {
+        "consumption_frequency": "消费者群体认为西贝应明确标注现做和预制菜品，让消费者知情权落地。",
+        "edge_type": "CONSUMES_FROM",
+        "fact": "消费者群体认为西贝应明确标注现做和预制菜品，让消费者知情权落地。",
+        "reference_time": "2026-09-21 11:28:18.156739+08:00"
+      },
+      "created_at": "2026-09-21T03:28:30.301Z",
+      "valid_at": "2026-09-21T03:28:18.156Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "b6b1428e-11b4-4c49-bf87-90daf20a58b3"
+      ]
+    },
+    {
+      "uuid": "58f95cf6-2b96-415d-b42c-95dfda9e6fd0",
+      "name": "ACCUSED_BY",
+      "fact": "罗永浩是西贝预制菜风波的攻击方。",
+      "fact_type": "ACCUSED_BY",
+      "source_node_uuid": "9a7dbb80-ecf9-42af-8fbd-cd2dd4d24ef4",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "罗永浩",
+      "target_node_name": "西贝",
+      "attributes": {
+        "accusation_content": "罗永浩是西贝预制菜风波的攻击方。",
+        "edge_type": "ACCUSED_BY",
+        "fact": "罗永浩是西贝预制菜风波的攻击方。",
+        "reference_time": "2026-09-21 03:14:34.355000+00:00"
+      },
+      "created_at": "2026-09-21T03:14:36.739Z",
+      "valid_at": "2026-09-21T03:14:34.355Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "f6cfa6ed-e42c-475f-822b-b32d05aadc5d",
+        "20724941-9f10-4cde-ad85-0c8695a71e5c",
+        "efaf421c-0421-4af2-ac50-0acd1e8b4543",
+        "d0fd21fb-1fbe-4d2f-9a5e-5351dfba78d3"
+      ]
+    },
+    {
+      "uuid": "58b9f449-b899-4011-bd6c-81f77b1d74a2",
+      "name": "RESPONDS_TO",
+      "fact": "贾国龙回应罗永浩关于西贝预制菜、定价和透明度的批评，表示西贝将建立食材溯源平台，公开核心食材来源及加工流程，并邀请媒体、消费者代表和行业专家监督。",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "07383432-1c88-4b02-b192-6201fbc8de76",
+      "target_node_uuid": "9a7dbb80-ecf9-42af-8fbd-cd2dd4d24ef4",
+      "source_node_name": "贾国龙",
+      "target_node_name": "罗永浩",
+      "attributes": {
+        "edge_type": "RESPONDS_TO",
+        "fact": "贾国龙回应罗永浩关于西贝预制菜、定价和透明度的批评，表示西贝将建立食材溯源平台，公开核心食材来源及加工流程，并邀请媒体、消费者代表和行业专家监督。",
+        "reference_time": "2026-09-21 11:28:24.645868+08:00",
+        "response_tone": "澄清"
+      },
+      "created_at": "2026-09-21T03:34:03.409Z",
+      "valid_at": "2026-09-21T03:28:24.645Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "bfcceded-271d-42c0-8383-d400978e5272"
+      ]
+    },
+    {
+      "uuid": "549dde9c-6e0c-4c4c-964f-d4fcde5854e6",
+      "name": "AFFECTS",
+      "fact": "西贝的17000多名员工是受西贝预制菜风波冲击最大的群体。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "9b78552d-af70-4f4a-b62d-8b16ecd3598e",
+      "source_node_name": "西贝",
+      "target_node_name": "西贝员工",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "西贝的17000多名员工是受西贝预制菜风波冲击最大的群体。",
+        "reference_time": "2026-09-21 03:14:34.355291+00:00"
+      },
+      "created_at": "2026-09-21T03:14:36.739Z",
+      "valid_at": "2026-09-21T03:14:34.355Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "f6cfa6ed-e42c-475f-822b-b32d05aadc5d"
+      ]
+    },
+    {
+      "uuid": "54401805-2a04-4944-9cce-721cfe746c93",
+      "name": "AFFECTS",
+      "fact": "全聚德认为，公众对高价低配的餐饮模式已经极度反感，餐饮行业需要回归鲜制和透明。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "df7351fb-f03d-484f-a72b-6b1075f51508",
+      "target_node_uuid": "a173f1e1-dd31-47b4-b00a-ca5e99704474",
+      "source_node_name": "全聚德",
+      "target_node_name": "太二酸菜鱼",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "全聚德认为，公众对高价低配的餐饮模式已经极度反感，餐饮行业需要回归鲜制和透明。",
+        "impact_type": "负面舆情",
+        "reference_time": "2026-09-21 11:25:54.712984+08:00"
+      },
+      "created_at": "2026-09-21T03:26:12.387Z",
+      "valid_at": "2026-09-21T03:25:54.712Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "fbafbaaf-c346-4929-b903-0281c0f57fc6"
+      ]
+    },
+    {
+      "uuid": "51ce20f3-6819-4908-bc46-4659b709655d",
+      "name": "RESPONDS_TO",
+      "fact": "贾国龙回应罗永浩关于西贝预制菜、定价和透明度的批评，表示西贝将区分现做菜品与中央厨房配送菜品，并重新审视部分菜品定价。",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "07383432-1c88-4b02-b192-6201fbc8de76",
+      "target_node_uuid": "9a7dbb80-ecf9-42af-8fbd-cd2dd4d24ef4",
+      "source_node_name": "贾国龙",
+      "target_node_name": "罗永浩",
+      "attributes": {
+        "edge_type": "RESPONDS_TO",
+        "fact": "贾国龙回应罗永浩关于西贝预制菜、定价和透明度的批评，表示西贝将区分现做菜品与中央厨房配送菜品，并重新审视部分菜品定价。",
+        "reference_time": "2026-09-21 11:28:24.645868+08:00",
+        "response_tone": "澄清"
+      },
+      "created_at": "2026-09-21T03:34:03.409Z",
+      "valid_at": "2026-09-21T03:28:24.645Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "bfcceded-271d-42c0-8383-d400978e5272"
+      ]
+    },
+    {
+      "uuid": "5157ad5c-ae83-4960-afc5-3076b4f85551",
+      "name": "AFFECTS",
+      "fact": "绿茶的营收因预制菜信任危机下滑约9%至20%。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "d8dbb582-004e-4aff-b441-d1b47359554a",
+      "target_node_uuid": "0aaa7fc7-77bd-4dd1-b53e-7bd5ac015a40",
+      "source_node_name": "预制菜",
+      "target_node_name": "绿茶",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "绿茶的营收因预制菜信任危机下滑约9%至20%。",
+        "reference_time": "2026-09-21 03:14:34.374532+00:00"
+      },
+      "created_at": "2026-09-21T03:14:36.769Z",
+      "valid_at": "2026-09-21T03:14:34.374Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "c8846d93-dc9b-4a4d-8885-c72dfe05384e"
+      ]
+    },
+    {
+      "uuid": "50f27c8c-ee54-46f0-b762-3307a7ea3d5d",
+      "name": "AFFECTS",
+      "fact": "大中矿业实控人认为西贝的门店关闭、估值下跌和客流下滑是战略失误，并指出消费者持续抵制西贝。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "ec75073e-749b-44fc-8cc2-62b7797fe027",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "大中矿业实控人",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "大中矿业实控人认为西贝的门店关闭、估值下跌和客流下滑是战略失误，并指出消费者持续抵制西贝。",
+        "reference_time": "2026-09-21 03:20:59.617000+00:00"
+      },
+      "created_at": "2026-09-21T03:21:05.626Z",
+      "valid_at": "2026-09-21T03:20:59.617Z",
+      "invalid_at": "2026-09-21T03:21:00.945Z",
+      "expired_at": "2026-09-21T03:26:16.305Z",
+      "episodes": [
+        "781fa4c3-4ba2-480b-a54c-674da5fdfc0f",
+        "fbafbaaf-c346-4929-b903-0281c0f57fc6"
+      ]
+    },
+    {
+      "uuid": "508952b2-26ed-4772-a469-5010069df6fe",
+      "name": "LIKES",
+      "fact": "消费者点赞了全聚德关于西贝危机的帖子。",
+      "fact_type": "LIKES",
+      "source_node_uuid": "cf43eb6b-b91a-4084-bcfa-132558443301",
+      "target_node_uuid": "df7351fb-f03d-484f-a72b-6b1075f51508",
+      "source_node_name": "消费者",
+      "target_node_name": "全聚德",
+      "attributes": {
+        "edge_type": "LIKES",
+        "fact": "消费者点赞了全聚德关于西贝危机的帖子。",
+        "reference_time": "2026-09-21 03:25:54.712000+00:00"
+      },
+      "created_at": "2026-09-21T03:26:12.387Z",
+      "valid_at": "2026-09-21T03:25:54.712Z",
+      "invalid_at": "2026-09-21T03:28:18.156Z",
+      "expired_at": "2026-09-21T03:29:44.491Z",
+      "episodes": [
+        "fbafbaaf-c346-4929-b903-0281c0f57fc6",
+        "b6b1428e-11b4-4c49-bf87-90daf20a58b3"
+      ]
+    },
+    {
+      "uuid": "4f8938f5-7462-41fe-af71-c02f89c63407",
+      "name": "ACCUSED_BY",
+      "fact": "消费者认为西贝大规模关店和裁员4000人，既是企业战略收缩，也是市场对西贝长期高估低配模式的清算。",
+      "fact_type": "ACCUSED_BY",
+      "source_node_uuid": "cf43eb6b-b91a-4084-bcfa-132558443301",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "消费者",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "ACCUSED_BY",
+        "fact": "消费者认为西贝大规模关店和裁员4000人，既是企业战略收缩，也是市场对西贝长期高估低配模式的清算。",
+        "reference_time": "2026-09-21 03:26:00.564000+00:00"
+      },
+      "created_at": "2026-09-21T03:28:22.961Z",
+      "valid_at": "2026-09-21T03:26:00.564Z",
+      "invalid_at": "2026-09-21T03:28:18.156Z",
+      "expired_at": "2026-09-21T03:29:44.491Z",
+      "episodes": [
+        "162c1798-7d5d-4884-8b35-74f45b0c7125",
+        "b6b1428e-11b4-4c49-bf87-90daf20a58b3"
+      ]
+    },
+    {
+      "uuid": "4ed0dd39-8ee8-4427-808f-882bfcf89cdb",
+      "name": "AFFECTS",
+      "fact": "罗永浩与西贝的争议引发了整个餐饮行业对预制菜的信任危机。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "9a7dbb80-ecf9-42af-8fbd-cd2dd4d24ef4",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "罗永浩",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "罗永浩与西贝的争议引发了整个餐饮行业对预制菜的信任危机。",
+        "reference_time": "2026-09-21 03:14:34.374000+00:00"
+      },
+      "created_at": "2026-09-21T03:14:36.769Z",
+      "valid_at": "2026-09-21T03:14:34.374Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "c8846d93-dc9b-4a4d-8885-c72dfe05384e",
+        "781fa4c3-4ba2-480b-a54c-674da5fdfc0f",
+        "32ecdf49-55c3-41f1-91b6-c5ae9bcf78f8",
+        "ab3df595-3d96-4c5a-845e-16e5c535b569"
+      ]
+    },
+    {
+      "uuid": "4dfd1ae5-c8af-48b0-9bf9-cca2344f1833",
+      "name": "PROMOTES",
+      "fact": "罗永浩的初衷是推动预制菜行业规范化。",
+      "fact_type": "PROMOTES",
+      "source_node_uuid": "9a7dbb80-ecf9-42af-8fbd-cd2dd4d24ef4",
+      "target_node_uuid": "e3701088-9c8c-4882-a2db-f3dea8505b7f",
+      "source_node_name": "罗永浩",
+      "target_node_name": "预制菜行业规范化",
+      "attributes": {
+        "edge_type": "PROMOTES",
+        "fact": "罗永浩的初衷是推动预制菜行业规范化。",
+        "reference_time": "2026-09-21 03:14:34.377703+00:00"
+      },
+      "created_at": "2026-09-21T03:14:36.226Z",
+      "valid_at": "2026-09-21T03:14:34.377Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "ff9d2914-ce00-4f6e-965f-7c5e0fa263ad"
+      ]
+    },
+    {
+      "uuid": "4db7bf13-f8d2-47f0-9712-ee2a26a85c96",
+      "name": "RESPONDS_TO",
+      "fact": "贾国龙承认西贝的定价超出了消费者对预制菜的价值感知，并认为这是信任危机。",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "07383432-1c88-4b02-b192-6201fbc8de76",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "贾国龙",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "RESPONDS_TO",
+        "fact": "贾国龙承认西贝的定价超出了消费者对预制菜的价值感知，并认为这是信任危机。",
+        "reference_time": "2026-09-21 03:23:27.211000+00:00"
+      },
+      "created_at": "2026-09-21T03:25:58.191Z",
+      "valid_at": "2026-09-21T03:23:27.211Z",
+      "invalid_at": "2026-09-21T03:28:24.645Z",
+      "expired_at": "2026-09-21T03:34:05.815Z",
+      "episodes": [
+        "ab3df595-3d96-4c5a-845e-16e5c535b569",
+        "d0fd21fb-1fbe-4d2f-9a5e-5351dfba78d3",
+        "bfcceded-271d-42c0-8383-d400978e5272"
+      ]
+    },
+    {
+      "uuid": "4c8e5063-94d6-4013-8baa-e698cd69fcad",
+      "name": "RESPONDS_TO",
+      "fact": "西贝试图通过“儿童餐安心承诺”重塑形象。",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "cf43eb6b-b91a-4084-bcfa-132558443301",
+      "source_node_name": "西贝",
+      "target_node_name": "消费者",
+      "attributes": {
+        "edge_type": "RESPONDS_TO",
+        "fact": "西贝试图通过“儿童餐安心承诺”重塑形象。",
+        "reference_time": "2026-09-21 11:28:23.602287+08:00"
+      },
+      "created_at": "2026-09-21T03:29:47.816Z",
+      "valid_at": "2026-09-21T03:28:23.602Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "9c19cd21-adf6-4021-90e8-83e4a0e1747d"
+      ]
+    },
+    {
+      "uuid": "4bfd8d27-34ab-472c-b472-d2544d10834b",
+      "name": "AFFECTS",
+      "fact": "消费者群体认为西贝面临的不仅是营收下滑，而是整个品牌的消亡风险。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "f14c7494-97f0-4754-871a-680b6532fb57",
+      "source_node_name": "西贝",
+      "target_node_name": "消费者群体",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "消费者群体认为西贝面临的不仅是营收下滑，而是整个品牌的消亡风险。",
+        "reference_time": "2026-09-21 11:28:18.156739+08:00"
+      },
+      "created_at": "2026-09-21T03:28:30.301Z",
+      "valid_at": "2026-09-21T03:28:18.156Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "b6b1428e-11b4-4c49-bf87-90daf20a58b3"
+      ]
+    },
+    {
+      "uuid": "4ba5f342-b99f-4eaa-a492-3fcadb3db963",
+      "name": "AFFECTS",
+      "fact": "太二、海底捞和呷哺呷哺等餐饮品牌的营收都因西贝危机而下滑了9%至20%。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "a173f1e1-dd31-47b4-b00a-ca5e99704474",
+      "source_node_name": "西贝",
+      "target_node_name": "太二酸菜鱼",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "太二、海底捞和呷哺呷哺等餐饮品牌的营收都因西贝危机而下滑了9%至20%。",
+        "impact_type": "负面舆情",
+        "reference_time": "2026-09-21 03:20:59.617000+00:00"
+      },
+      "created_at": "2026-09-21T03:21:05.626Z",
+      "valid_at": "2026-09-21T03:20:59.617Z",
+      "invalid_at": "2026-09-21T03:25:54.712Z",
+      "expired_at": "2026-09-21T03:26:16.305Z",
+      "episodes": [
+        "781fa4c3-4ba2-480b-a54c-674da5fdfc0f",
+        "32ecdf49-55c3-41f1-91b6-c5ae9bcf78f8",
+        "fbafbaaf-c346-4929-b903-0281c0f57fc6",
+        "162c1798-7d5d-4884-8b35-74f45b0c7125"
+      ]
+    },
+    {
+      "uuid": "4a8ee152-0db1-4f42-ac6c-b633a79fd54e",
+      "name": "AFFECTS",
+      "fact": "消费者认为，全聚德、呷哺呷哺等同业营收下滑9%-20%，表明依赖预制和高估模式的餐饮行业面临信任危机。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "cf43eb6b-b91a-4084-bcfa-132558443301",
+      "target_node_uuid": "59756c2d-7e58-48d6-9887-049174d93903",
+      "source_node_name": "消费者",
+      "target_node_name": "呷哺呷哺",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "消费者认为，全聚德、呷哺呷哺等同业营收下滑9%-20%，表明依赖预制和高估模式的餐饮行业面临信任危机。",
+        "reference_time": "2026-09-21 03:25:54.712000+00:00"
+      },
+      "created_at": "2026-09-21T03:26:12.387Z",
+      "valid_at": "2026-09-21T03:25:54.712Z",
+      "invalid_at": "2026-09-21T03:26:00.564Z",
+      "expired_at": "2026-09-21T03:28:26.763Z",
+      "episodes": [
+        "fbafbaaf-c346-4929-b903-0281c0f57fc6",
+        "162c1798-7d5d-4884-8b35-74f45b0c7125"
+      ]
+    },
+    {
+      "uuid": "45fd7ded-0325-4ecc-95d9-7226b0e1581d",
+      "name": "WORKS_FOR",
+      "fact": "张丽平是贾国龙的妻子，并担任西贝董事。",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "3442fda6-7c1d-49bf-98e0-ee01944b733e",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "张丽平",
+      "target_node_name": "西贝",
+      "attributes": {
+        "details": "张丽平担任西贝董事",
+        "edge_type": "WORKS_FOR",
+        "fact": "张丽平是贾国龙的妻子，并担任西贝董事。",
+        "reference_time": "2026-09-21 03:14:34.355000+00:00"
+      },
+      "created_at": "2026-09-21T03:14:36.739Z",
+      "valid_at": "2026-09-21T03:14:34.355Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "f6cfa6ed-e42c-475f-822b-b32d05aadc5d",
+        "b6b1428e-11b4-4c49-bf87-90daf20a58b3"
+      ]
+    },
+    {
+      "uuid": "43e70563-e616-40a5-8940-4cf7a25c7c30",
+      "name": "CONSUMES_FROM",
+      "fact": "消费者群体反对把预制菜当现做菜卖高价，并因此对西贝持观望态度。",
+      "fact_type": "CONSUMES_FROM",
+      "source_node_uuid": "f14c7494-97f0-4754-871a-680b6532fb57",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "消费者群体",
+      "target_node_name": "西贝",
+      "attributes": {
+        "consumption_frequency": "观望",
+        "edge_type": "CONSUMES_FROM",
+        "fact": "消费者群体反对把预制菜当现做菜卖高价，并因此对西贝持观望态度。",
+        "reference_time": "2026-09-21 03:23:27.211000+00:00"
+      },
+      "created_at": "2026-09-21T03:25:58.191Z",
+      "valid_at": "2026-09-21T03:23:27.211Z",
+      "invalid_at": "2026-09-21T03:26:00.564Z",
+      "expired_at": "2026-09-21T03:29:44.491Z",
+      "episodes": [
+        "ab3df595-3d96-4c5a-845e-16e5c535b569",
+        "d0fd21fb-1fbe-4d2f-9a5e-5351dfba78d3",
+        "b6b1428e-11b4-4c49-bf87-90daf20a58b3"
+      ]
+    },
+    {
+      "uuid": "43d71c1f-c7fc-46a5-a6b7-ddd867701cd4",
+      "name": "HAS_PROFILE",
+      "fact": "罗永浩以直播带货和敢说真话著称，拥有全网数千万粉丝。",
+      "fact_type": "HAS_PROFILE",
+      "source_node_uuid": "9a7dbb80-ecf9-42af-8fbd-cd2dd4d24ef4",
+      "target_node_uuid": "9a7dbb80-ecf9-42af-8fbd-cd2dd4d24ef4",
+      "source_node_name": "罗永浩",
+      "target_node_name": "罗永浩",
+      "attributes": {
+        "edge_type": "HAS_PROFILE",
+        "fact": "罗永浩以直播带货和敢说真话著称，拥有全网数千万粉丝。",
+        "reference_time": "2026-09-21 03:14:34.377703+00:00"
+      },
+      "created_at": "2026-09-21T03:14:36.226Z",
+      "valid_at": "2026-09-21T03:14:34.377Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "ff9d2914-ce00-4f6e-965f-7c5e0fa263ad"
+      ]
+    },
+    {
+      "uuid": "430d7bf9-25d1-4bfd-8d84-91d3f2b942d5",
+      "name": "WORKS_FOR",
+      "fact": "2024年，贾国龙承认西贝销售额平均下滑约10%。",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "07383432-1c88-4b02-b192-6201fbc8de76",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "贾国龙",
+      "target_node_name": "西贝",
+      "attributes": {
+        "details": "贾国龙承认西贝销售额平均下滑约10%。",
+        "edge_type": "WORKS_FOR",
+        "fact": "2024年，贾国龙承认西贝销售额平均下滑约10%。",
+        "reference_time": "2026-09-21 03:14:34.365103+00:00"
+      },
+      "created_at": "2026-09-21T03:14:35.923Z",
+      "valid_at": "2024-01-01T00:00:00Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "add65fc9-742c-47e8-82c2-3dac80ae2619"
+      ]
+    },
+    {
+      "uuid": "40556f27-b081-4dac-962a-483309f3ff12",
+      "name": "WORKS_FOR",
+      "fact": "罗永浩是锤子科技的创始人。",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "9a7dbb80-ecf9-42af-8fbd-cd2dd4d24ef4",
+      "target_node_uuid": "6e7aa2c4-ef9a-4c7f-9b08-08a064887de6",
+      "source_node_name": "罗永浩",
+      "target_node_name": "锤子科技",
+      "attributes": {
+        "edge_type": "WORKS_FOR",
+        "fact": "罗永浩是锤子科技的创始人。",
+        "reference_time": "2026-09-21 03:14:34.377703+00:00"
+      },
+      "created_at": "2026-09-21T03:14:36.226Z",
+      "valid_at": "2026-09-21T03:14:34.377Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "ff9d2914-ce00-4f6e-965f-7c5e0fa263ad",
+        "f6cfa6ed-e42c-475f-822b-b32d05aadc5d"
+      ]
+    },
+    {
+      "uuid": "3e2bdcfe-342c-4f39-afa9-ef08090ef1fb",
+      "name": "WORKS_FOR",
+      "fact": "贾国龙重新担任西贝CEO，并启动一线变革。",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "07383432-1c88-4b02-b192-6201fbc8de76",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "贾国龙",
+      "target_node_name": "西贝",
+      "attributes": {
+        "details": "贾国龙重新担任西贝CEO，并启动一线变革。",
+        "edge_type": "WORKS_FOR",
+        "fact": "贾国龙重新担任西贝CEO，并启动一线变革。",
+        "reference_time": "2026-09-21 03:14:34.371000+00:00"
+      },
+      "created_at": "2026-09-21T03:14:37.403Z",
+      "valid_at": "2026-09-21T03:14:34.371Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "566e3829-c335-44bb-ba78-c0f3f5fb57d8",
+        "f6cfa6ed-e42c-475f-822b-b32d05aadc5d",
+        "ab3df595-3d96-4c5a-845e-16e5c535b569",
+        "fbafbaaf-c346-4929-b903-0281c0f57fc6",
+        "162c1798-7d5d-4884-8b35-74f45b0c7125"
+      ]
+    },
+    {
+      "uuid": "3d717e8f-d025-45c8-905a-0fb6b0206357",
+      "name": "AFFECTS",
+      "fact": "全聚德的营收因预制菜信任危机下滑约9%至20%。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "d8dbb582-004e-4aff-b441-d1b47359554a",
+      "target_node_uuid": "df7351fb-f03d-484f-a72b-6b1075f51508",
+      "source_node_name": "预制菜",
+      "target_node_name": "全聚德",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "全聚德的营收因预制菜信任危机下滑约9%至20%。",
+        "reference_time": "2026-09-21 03:14:34.374000+00:00"
+      },
+      "created_at": "2026-09-21T03:14:36.769Z",
+      "valid_at": "2026-09-21T03:14:34.374Z",
+      "invalid_at": "2026-09-21T03:25:54.712Z",
+      "expired_at": "2026-09-21T03:26:16.305Z",
+      "episodes": [
+        "c8846d93-dc9b-4a4d-8885-c72dfe05384e",
+        "fbafbaaf-c346-4929-b903-0281c0f57fc6"
+      ]
+    },
+    {
+      "uuid": "3b7e73c3-aa0f-408d-99d4-f47980340312",
+      "name": "WORKS_FOR",
+      "fact": "部分消费者是西贝的普通员工，经历了西贝关闭102家门店和裁减4000多人的风波。",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "ea6d0f13-b698-4298-b327-064ef8873239",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "部分消费者",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "WORKS_FOR",
+        "fact": "部分消费者是西贝的普通员工，经历了西贝关闭102家门店和裁减4000多人的风波。",
+        "reference_time": "2026-09-21 11:25:54.712984+08:00"
+      },
+      "created_at": "2026-09-21T03:26:12.387Z",
+      "valid_at": "2026-09-21T03:25:54.712Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "fbafbaaf-c346-4929-b903-0281c0f57fc6"
+      ]
+    },
+    {
+      "uuid": "3884fb48-7599-4267-be0a-516e1cce8fc3",
+      "name": "AFFECTS",
+      "fact": "全聚德认为，公众对高价低配的餐饮模式已经极度反感，餐饮行业需要回归鲜制和透明。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "df7351fb-f03d-484f-a72b-6b1075f51508",
+      "target_node_uuid": "59756c2d-7e58-48d6-9887-049174d93903",
+      "source_node_name": "全聚德",
+      "target_node_name": "呷哺呷哺",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "全聚德认为，公众对高价低配的餐饮模式已经极度反感，餐饮行业需要回归鲜制和透明。",
+        "impact_type": "负面舆情",
+        "reference_time": "2026-09-21 11:25:54.712984+08:00"
+      },
+      "created_at": "2026-09-21T03:26:12.387Z",
+      "valid_at": "2026-09-21T03:25:54.712Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "fbafbaaf-c346-4929-b903-0281c0f57fc6"
+      ]
+    },
+    {
+      "uuid": "374d5925-4668-4f99-8efc-d0e2748e83b8",
+      "name": "EXPERIENCES_CRISIS",
+      "fact": "西贝预制菜风波是西贝成立以来最大的一次外部危机。",
+      "fact_type": "EXPERIENCES_CRISIS",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "西贝",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "EXPERIENCES_CRISIS",
+        "fact": "西贝预制菜风波是西贝成立以来最大的一次外部危机。",
+        "reference_time": "2026-09-21 03:14:34.355291+00:00"
+      },
+      "created_at": "2026-09-21T03:14:36.739Z",
+      "valid_at": "2026-09-21T03:14:34.355Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "f6cfa6ed-e42c-475f-822b-b32d05aadc5d"
+      ]
+    },
+    {
+      "uuid": "36effa5d-9a75-4f1a-9f9a-90eb8df52690",
+      "name": "AFFECTS",
+      "fact": "消费者认为，全聚德、呷哺呷哺等同业营收下滑9%-20%，印证了西贝事件引发的系统性信任危机。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "59756c2d-7e58-48d6-9887-049174d93903",
+      "source_node_name": "西贝",
+      "target_node_name": "呷哺呷哺",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "消费者认为，全聚德、呷哺呷哺等同业营收下滑9%-20%，印证了西贝事件引发的系统性信任危机。",
+        "impact_type": "负面舆情",
+        "reference_time": "2026-09-21 03:26:00.564000+00:00"
+      },
+      "created_at": "2026-09-21T03:28:22.961Z",
+      "valid_at": "2026-09-21T03:26:00.564Z",
+      "invalid_at": "2026-09-21T03:28:18.156Z",
+      "expired_at": "2026-09-21T03:29:44.491Z",
+      "episodes": [
+        "162c1798-7d5d-4884-8b35-74f45b0c7125",
+        "b6b1428e-11b4-4c49-bf87-90daf20a58b3"
+      ]
+    },
+    {
+      "uuid": "34505dff-7669-4d72-8ce0-32dcc4778379",
+      "name": "ACCUSED_BY",
+      "fact": "罗永浩在2025年9月10日发布微博，批评西贝使用预制菜且价格过高，该帖子引发了舆论。",
+      "fact_type": "ACCUSED_BY",
+      "source_node_uuid": "9a7dbb80-ecf9-42af-8fbd-cd2dd4d24ef4",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "罗永浩",
+      "target_node_name": "西贝",
+      "attributes": {
+        "accusation_content": "西贝使用预制菜且价格过高",
+        "edge_type": "ACCUSED_BY",
+        "fact": "罗永浩在2025年9月10日发布微博，批评西贝使用预制菜且价格过高，该帖子引发了舆论。",
+        "reference_time": "2026-09-21 11:28:18.156739+08:00"
+      },
+      "created_at": "2026-09-21T03:28:30.301Z",
+      "valid_at": "2025-09-10T00:00:00Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "b6b1428e-11b4-4c49-bf87-90daf20a58b3"
+      ]
+    },
+    {
+      "uuid": "32ca701e-8445-4c06-b57b-6a6f6ae45479",
+      "name": "AFFECTS",
+      "fact": "绝味鸭脖的营收下滑幅度约为9%至20%。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "be6c3c03-1bf2-4ca9-b329-038c45f95a58",
+      "target_node_uuid": "be6c3c03-1bf2-4ca9-b329-038c45f95a58",
+      "source_node_name": "绝味鸭脖",
+      "target_node_name": "绝味鸭脖",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "绝味鸭脖的营收下滑幅度约为9%至20%。",
+        "impact_type": "营收下滑",
+        "reference_time": "2026-09-21 03:14:34.377703+00:00"
+      },
+      "created_at": "2026-09-21T03:14:36.226Z",
+      "valid_at": "2026-09-21T03:14:34.377Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "ff9d2914-ce00-4f6e-965f-7c5e0fa263ad"
+      ]
+    },
+    {
+      "uuid": "2d98c368-dcad-4bb0-b0b0-f31eee865b9a",
+      "name": "RESPONDS_TO",
+      "fact": "贾国龙回应罗永浩关于西贝预制菜的指控，称西贝没有一道预制菜，并宣布开放后厨参观。",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "07383432-1c88-4b02-b192-6201fbc8de76",
+      "target_node_uuid": "9a7dbb80-ecf9-42af-8fbd-cd2dd4d24ef4",
+      "source_node_name": "贾国龙",
+      "target_node_name": "罗永浩",
+      "attributes": {
+        "edge_type": "RESPONDS_TO",
+        "fact": "贾国龙回应罗永浩关于西贝预制菜的指控，称西贝没有一道预制菜，并宣布开放后厨参观。",
+        "reference_time": "2026-09-21 03:14:34.358000+00:00",
+        "response_tone": "澄清"
+      },
+      "created_at": "2026-09-21T03:14:37.058Z",
+      "valid_at": "2025-09-10T00:00:00Z",
+      "invalid_at": "2026-09-21T03:26:00.564Z",
+      "expired_at": "2026-09-21T03:28:26.763Z",
+      "episodes": [
+        "efaf421c-0421-4af2-ac50-0acd1e8b4543",
+        "162c1798-7d5d-4884-8b35-74f45b0c7125"
+      ]
+    },
+    {
+      "uuid": "2c8266f6-b91f-45d1-885b-cec6383d9393",
+      "name": "AFFECTS",
+      "fact": "西贝启动“透明厨房”直播计划，每日定时展示核心菜品的制作过程。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "f14c7494-97f0-4754-871a-680b6532fb57",
+      "source_node_name": "西贝",
+      "target_node_name": "消费者群体",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "西贝启动“透明厨房”直播计划，每日定时展示核心菜品的制作过程。",
+        "reference_time": "2026-09-21 11:28:24.645868+08:00"
+      },
+      "created_at": "2026-09-21T03:34:03.41Z",
+      "valid_at": "2026-09-21T03:28:24.645Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "bfcceded-271d-42c0-8383-d400978e5272"
+      ]
+    },
+    {
+      "uuid": "2ae0b54b-574b-49d8-b3c1-a180c1281636",
+      "name": "RESPONDS_TO",
+      "fact": "大中矿业实控人认为西贝的预制菜争议本质是信息不对称导致的信任赤字，并支持西贝推进供应链透明化和后厨开放化。",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "ec75073e-749b-44fc-8cc2-62b7797fe027",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "大中矿业实控人",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "RESPONDS_TO",
+        "fact": "大中矿业实控人认为西贝的预制菜争议本质是信息不对称导致的信任赤字，并支持西贝推进供应链透明化和后厨开放化。",
+        "reference_time": "2026-09-21 11:28:23.602287+08:00"
+      },
+      "created_at": "2026-09-21T03:29:47.816Z",
+      "valid_at": "2026-09-21T03:28:23.602Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "9c19cd21-adf6-4021-90e8-83e4a0e1747d"
+      ]
+    },
+    {
+      "uuid": "2aa524c8-c4aa-4403-b330-9cbcc09e4de4",
+      "name": "ACCUSED_BY",
+      "fact": "罗永浩要求西贝在菜单上标注所有菜品100%现做、非预制菜半成品，并悬挂食品安全责任险保单。",
+      "fact_type": "ACCUSED_BY",
+      "source_node_uuid": "9a7dbb80-ecf9-42af-8fbd-cd2dd4d24ef4",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "罗永浩",
+      "target_node_name": "西贝",
+      "attributes": {
+        "accusation_content": "西贝使用预制菜半成品，且未在菜单上标注菜品为100%现做、非预制菜半成品。",
+        "edge_type": "ACCUSED_BY",
+        "fact": "罗永浩要求西贝在菜单上标注所有菜品100%现做、非预制菜半成品，并悬挂食品安全责任险保单。",
+        "reference_time": "2026-09-21 11:28:24.645868+08:00"
+      },
+      "created_at": "2026-09-21T03:34:03.409Z",
+      "valid_at": "2026-09-21T03:28:24.645Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "bfcceded-271d-42c0-8383-d400978e5272"
+      ]
+    },
+    {
+      "uuid": "2a5198e7-a6ed-4863-ac4a-b8d50fd829db",
+      "name": "HAS_FINANCIAL_DISTRESS",
+      "fact": "西贝面临现金流紧张，贾国龙妻子进行了股权质押。",
+      "fact_type": "HAS_FINANCIAL_DISTRESS",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "西贝",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "HAS_FINANCIAL_DISTRESS",
+        "fact": "西贝面临现金流紧张，贾国龙妻子进行了股权质押。",
+        "reference_time": "2026-09-21 03:14:34.371358+00:00"
+      },
+      "created_at": "2026-09-21T03:14:37.403Z",
+      "valid_at": "2026-09-21T03:14:34.371Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "566e3829-c335-44bb-ba78-c0f3f5fb57d8"
+      ]
+    },
+    {
+      "uuid": "2a0b7ca9-5ec4-44d0-949e-d3f1dfcd31c6",
+      "name": "CLOSES_STORES",
+      "fact": "西贝关闭低效门店并收缩战线。",
+      "fact_type": "CLOSES_STORES",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "西贝",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "CLOSES_STORES",
+        "fact": "西贝关闭低效门店并收缩战线。",
+        "reference_time": "2026-09-21 03:14:34.371000+00:00"
+      },
+      "created_at": "2026-09-21T03:14:37.403Z",
+      "valid_at": "2026-09-21T03:14:34.371Z",
+      "invalid_at": "2026-09-21T03:20:59.617Z",
+      "expired_at": "2026-09-21T03:21:08.658Z",
+      "episodes": [
+        "566e3829-c335-44bb-ba78-c0f3f5fb57d8",
+        "781fa4c3-4ba2-480b-a54c-674da5fdfc0f"
+      ]
+    },
+    {
+      "uuid": "29753f69-10ca-4f7b-b2f8-9ccafe90a3f2",
+      "name": "RESPONDS_TO",
+      "fact": "张丽平代表西贝餐饮集团表示，西贝拒绝预制菜进校园、进企业食堂及社会餐厅。",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "cf43eb6b-b91a-4084-bcfa-132558443301",
+      "source_node_name": "西贝",
+      "target_node_name": "消费者",
+      "attributes": {
+        "edge_type": "RESPONDS_TO",
+        "fact": "张丽平代表西贝餐饮集团表示，西贝拒绝预制菜进校园、进企业食堂及社会餐厅。",
+        "reference_time": "2026-09-21 11:26:00.564648+08:00"
+      },
+      "created_at": "2026-09-21T03:28:22.961Z",
+      "valid_at": "2026-09-21T03:26:00.564Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "162c1798-7d5d-4884-8b35-74f45b0c7125"
+      ]
+    },
+    {
+      "uuid": "289fd3d7-51c8-4837-95fe-ed7563485c54",
+      "name": "PROMOTES",
+      "fact": "绿茶餐厅推荐荠菜春笋炒年糕，强调使用春日鲜嫩食材和手工捣制年糕。",
+      "fact_type": "PROMOTES",
+      "source_node_uuid": "0aaa7fc7-77bd-4dd1-b53e-7bd5ac015a40",
+      "target_node_uuid": "374bd60b-5a28-4387-916c-f30d236c916a",
+      "source_node_name": "绿茶",
+      "target_node_name": "荠菜春笋炒年糕",
+      "attributes": {
+        "edge_type": "PROMOTES",
+        "fact": "绿茶餐厅推荐荠菜春笋炒年糕，强调使用春日鲜嫩食材和手工捣制年糕。",
+        "reference_time": "2026-09-21 11:28:23.602287+08:00"
+      },
+      "created_at": "2026-09-21T03:29:47.816Z",
+      "valid_at": "2026-09-21T03:28:23.602Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "9c19cd21-adf6-4021-90e8-83e4a0e1747d"
+      ]
+    },
+    {
+      "uuid": "254b45a7-98be-4ea5-9694-d3ef097cbf43",
+      "name": "ADVOCATES_REGULATION_OF",
+      "fact": "罗永浩希望国家立法强制标注预制菜，以规范行业。",
+      "fact_type": "ADVOCATES_REGULATION_OF",
+      "source_node_uuid": "9a7dbb80-ecf9-42af-8fbd-cd2dd4d24ef4",
+      "target_node_uuid": "d8dbb582-004e-4aff-b441-d1b47359554a",
+      "source_node_name": "罗永浩",
+      "target_node_name": "预制菜",
+      "attributes": {
+        "edge_type": "ADVOCATES_REGULATION_OF",
+        "fact": "罗永浩希望国家立法强制标注预制菜，以规范行业。",
+        "reference_time": "2026-09-21 11:23:27.211500+08:00"
+      },
+      "created_at": "2026-09-21T03:25:58.191Z",
+      "valid_at": "2026-09-21T03:23:27.211Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "ab3df595-3d96-4c5a-845e-16e5c535b569"
+      ]
+    },
+    {
+      "uuid": "2403d9c8-ebf3-468b-ac84-a4d597ac28ff",
+      "name": "ACCUSED_BY",
+      "fact": "罗永浩批评西贝的“透明厨房”直播、后厨开放和食材溯源公开平台是公关作秀，认为这些措施无法建立消费者信任。",
+      "fact_type": "ACCUSED_BY",
+      "source_node_uuid": "9a7dbb80-ecf9-42af-8fbd-cd2dd4d24ef4",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "罗永浩",
+      "target_node_name": "西贝",
+      "attributes": {
+        "accusation_content": "罗永浩批评西贝的“透明厨房”直播、后厨开放和食材溯源公开平台是公关作秀，认为这些措施无法建立消费者信任。",
+        "edge_type": "ACCUSED_BY",
+        "fact": "罗永浩批评西贝的“透明厨房”直播、后厨开放和食材溯源公开平台是公关作秀，认为这些措施无法建立消费者信任。",
+        "reference_time": "2026-09-21 11:28:24.645868+08:00"
+      },
+      "created_at": "2026-09-21T03:34:03.409Z",
+      "valid_at": "2026-09-21T03:28:24.645Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "bfcceded-271d-42c0-8383-d400978e5272"
+      ]
+    },
+    {
+      "uuid": "218b975d-aeaf-4940-be5f-e910985c7b3b",
+      "name": "WORKS_FOR",
+      "fact": "西贝的一名普通员工表示，西贝关闭了102家门店并裁减了4000多人，员工因努力现做却不被消费者信任而感到委屈。",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "9b78552d-af70-4f4a-b62d-8b16ecd3598e",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "西贝员工",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "WORKS_FOR",
+        "fact": "西贝的一名普通员工表示，西贝关闭了102家门店并裁减了4000多人，员工因努力现做却不被消费者信任而感到委屈。",
+        "reference_time": "2026-09-21 03:25:54.706000+00:00"
+      },
+      "created_at": "2026-09-21T03:26:06.085Z",
+      "valid_at": "2026-09-21T03:25:54.706Z",
+      "invalid_at": "2026-09-21T03:26:00.564Z",
+      "expired_at": "2026-09-21T03:28:26.763Z",
+      "episodes": [
+        "d0fd21fb-1fbe-4d2f-9a5e-5351dfba78d3",
+        "162c1798-7d5d-4884-8b35-74f45b0c7125"
+      ]
+    },
+    {
+      "uuid": "205304a7-a337-4735-be91-fdc0423b9156",
+      "name": "CONSUMES_FROM",
+      "fact": "亲子家庭仍认可西贝的服务和场景。",
+      "fact_type": "CONSUMES_FROM",
+      "source_node_uuid": "0bc42e09-5ecc-4dbb-92ac-489eaa2a1fdd",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "亲子家庭",
+      "target_node_name": "西贝",
+      "attributes": {
+        "consumption_frequency": "认可",
+        "edge_type": "CONSUMES_FROM",
+        "fact": "亲子家庭仍认可西贝的服务和场景。",
+        "reference_time": "2026-09-21 03:14:34.371000+00:00"
+      },
+      "created_at": "2026-09-21T03:14:37.403Z",
+      "valid_at": "2026-09-21T03:14:34.371Z",
+      "invalid_at": "2026-09-21T03:21:00.945Z",
+      "expired_at": "2026-09-21T03:26:01.361Z",
+      "episodes": [
+        "566e3829-c335-44bb-ba78-c0f3f5fb57d8",
+        "ab3df595-3d96-4c5a-845e-16e5c535b569",
+        "fbafbaaf-c346-4929-b903-0281c0f57fc6"
+      ]
+    },
+    {
+      "uuid": "1e6d66d9-7fd7-40b4-bced-f003ef6f713e",
+      "name": "ADVOCATES_FOR",
+      "fact": "罗永浩主张立法强制标注预制菜，以保障消费者的知情权和选择权。",
+      "fact_type": "ADVOCATES_FOR",
+      "source_node_uuid": "9a7dbb80-ecf9-42af-8fbd-cd2dd4d24ef4",
+      "target_node_uuid": "cf43eb6b-b91a-4084-bcfa-132558443301",
+      "source_node_name": "罗永浩",
+      "target_node_name": "消费者",
+      "attributes": {
+        "edge_type": "ADVOCATES_FOR",
+        "fact": "罗永浩主张立法强制标注预制菜，以保障消费者的知情权和选择权。",
+        "reference_time": "2026-09-21 11:28:23.602287+08:00"
+      },
+      "created_at": "2026-09-21T03:29:47.816Z",
+      "valid_at": "2026-09-21T03:28:23.602Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "9c19cd21-adf6-4021-90e8-83e4a0e1747d"
+      ]
+    },
+    {
+      "uuid": "1bc23689-42dd-4b96-8c1a-c91d93572f23",
+      "name": "HAS_STORE_COUNT",
+      "fact": "截至2026年9月，西贝全国在营门店约203至226家。",
+      "fact_type": "HAS_STORE_COUNT",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "西贝",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "HAS_STORE_COUNT",
+        "fact": "截至2026年9月，西贝全国在营门店约203至226家。",
+        "reference_time": "2026-09-21 03:14:34.361851+00:00"
+      },
+      "created_at": "2026-09-21T03:14:36.547Z",
+      "valid_at": "2026-09-01T00:00:00Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "54a90497-c331-4c7b-bf2a-9a6e1bb98c36",
+        "ceb867dd-05e4-440b-85b5-08d66621a346"
+      ]
+    },
+    {
+      "uuid": "19047fcd-7f8b-47a5-9b06-d55faa781a3a",
+      "name": "RESPONDS_TO",
+      "fact": "贾国龙反思西贝危机公关时，第一反应是硬刚而非倾听，陷入自证清白循环，并浪费了最佳公关窗口期。",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "07383432-1c88-4b02-b192-6201fbc8de76",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "贾国龙",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "RESPONDS_TO",
+        "fact": "贾国龙反思西贝危机公关时，第一反应是硬刚而非倾听，陷入自证清白循环，并浪费了最佳公关窗口期。",
+        "reference_time": "2026-09-21 03:14:34.365000+00:00"
+      },
+      "created_at": "2026-09-21T03:14:35.923Z",
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "add65fc9-742c-47e8-82c2-3dac80ae2619",
+        "9c19cd21-adf6-4021-90e8-83e4a0e1747d"
+      ]
+    },
+    {
+      "uuid": "12a52062-5912-4c33-b0ab-337d48bbcff1",
+      "name": "AFFECTS",
+      "fact": "呷哺呷哺的营收因预制菜信任危机下滑约9%至20%。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "d8dbb582-004e-4aff-b441-d1b47359554a",
+      "target_node_uuid": "59756c2d-7e58-48d6-9887-049174d93903",
+      "source_node_name": "预制菜",
+      "target_node_name": "呷哺呷哺",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "呷哺呷哺的营收因预制菜信任危机下滑约9%至20%。",
+        "reference_time": "2026-09-21 03:14:34.374000+00:00"
+      },
+      "created_at": "2026-09-21T03:14:36.769Z",
+      "valid_at": "2026-09-21T03:14:34.374Z",
+      "invalid_at": "2026-09-21T03:20:59.617Z",
+      "expired_at": "2026-09-21T03:21:08.658Z",
+      "episodes": [
+        "c8846d93-dc9b-4a4d-8885-c72dfe05384e",
+        "781fa4c3-4ba2-480b-a54c-674da5fdfc0f"
+      ]
+    },
+    {
+      "uuid": "11577da2-1051-4637-b63f-78b226801d90",
+      "name": "AFFECTS",
+      "fact": "西贝在贾国龙公开回应后，仍面临大规模关店和裁员。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "cf43eb6b-b91a-4084-bcfa-132558443301",
+      "source_node_name": "西贝",
+      "target_node_name": "消费者",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "西贝在贾国龙公开回应后，仍面临大规模关店和裁员。",
+        "reference_time": "2026-09-21 11:28:23.602287+08:00"
+      },
+      "created_at": "2026-09-21T03:29:47.816Z",
+      "valid_at": "2026-09-21T03:28:23.602Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "9c19cd21-adf6-4021-90e8-83e4a0e1747d"
+      ]
+    },
+    {
+      "uuid": "10aba888-1239-436c-b64b-e63ce403a5fd",
+      "name": "ACCUSED_BY",
+      "fact": "2023年，西贝29元三只蒸饺冲上热搜，引发价格争议。",
+      "fact_type": "ACCUSED_BY",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "f14c7494-97f0-4754-871a-680b6532fb57",
+      "source_node_name": "西贝",
+      "target_node_name": "消费者群体",
+      "attributes": {
+        "edge_type": "ACCUSED_BY",
+        "fact": "2023年，西贝29元三只蒸饺冲上热搜，引发价格争议。",
+        "reference_time": "2026-09-21 03:14:34.365000+00:00"
+      },
+      "created_at": "2026-09-21T03:14:35.923Z",
+      "valid_at": "2023-01-01T00:00:00Z",
+      "invalid_at": "2026-09-21T03:28:23.602Z",
+      "expired_at": "2026-09-21T03:29:50.696Z",
+      "episodes": [
+        "add65fc9-742c-47e8-82c2-3dac80ae2619",
+        "9c19cd21-adf6-4021-90e8-83e4a0e1747d"
+      ]
+    },
+    {
+      "uuid": "0f61702c-eb61-4621-98e3-df47cab735f9",
+      "name": "RESPONDS_TO",
+      "fact": "贾国龙回应了罗永浩对西贝的质疑，承认西贝第一反应是硬刚是错误的。",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "07383432-1c88-4b02-b192-6201fbc8de76",
+      "target_node_uuid": "9a7dbb80-ecf9-42af-8fbd-cd2dd4d24ef4",
+      "source_node_name": "贾国龙",
+      "target_node_name": "罗永浩",
+      "attributes": {
+        "edge_type": "RESPONDS_TO",
+        "fact": "贾国龙回应了罗永浩对西贝的质疑，承认西贝第一反应是硬刚是错误的。",
+        "reference_time": "2026-09-21 03:20:59.617000+00:00",
+        "response_tone": "承认错误"
+      },
+      "created_at": "2026-09-21T03:21:05.626Z",
+      "valid_at": "2026-09-21T03:20:59.617Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "781fa4c3-4ba2-480b-a54c-674da5fdfc0f",
+        "32ecdf49-55c3-41f1-91b6-c5ae9bcf78f8",
+        "ab3df595-3d96-4c5a-845e-16e5c535b569",
+        "d0fd21fb-1fbe-4d2f-9a5e-5351dfba78d3"
+      ]
+    },
+    {
+      "uuid": "0d6061c4-57d2-4a65-ba3a-a83d178dc792",
+      "name": "INVESTED_IN",
+      "fact": "新荣记作为新股东入股西贝。",
+      "fact_type": "INVESTED_IN",
+      "source_node_uuid": "4c53150f-1dc2-41d9-954e-4e3624fd5083",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "新荣记",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "INVESTED_IN",
+        "fact": "新荣记作为新股东入股西贝。",
+        "reference_time": "2026-09-21 03:14:34.371000+00:00"
+      },
+      "created_at": "2026-09-21T03:14:37.403Z",
+      "valid_at": "2026-09-21T03:14:34.371Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "566e3829-c335-44bb-ba78-c0f3f5fb57d8",
+        "9c19cd21-adf6-4021-90e8-83e4a0e1747d"
+      ]
+    },
+    {
+      "uuid": "0ceedba3-4937-4292-affd-39d0eafc832d",
+      "name": "WORKS_FOR",
+      "fact": "张丽平代表西贝餐饮集团表示，西贝坚持现炒和透明运营，所有菜品均在门店现场制作。",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "3442fda6-7c1d-49bf-98e0-ee01944b733e",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "张丽平",
+      "target_node_name": "西贝",
+      "attributes": {
+        "details": "张丽平代表西贝餐饮集团。西贝餐饮集团坚持现炒和透明运营，所有菜品均在门店现场制作。",
+        "edge_type": "WORKS_FOR",
+        "fact": "张丽平代表西贝餐饮集团表示，西贝坚持现炒和透明运营，所有菜品均在门店现场制作。",
+        "reference_time": "2026-09-21 11:26:00.564648+08:00"
+      },
+      "created_at": "2026-09-21T03:28:22.961Z",
+      "valid_at": "2026-09-21T03:26:00.564Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "162c1798-7d5d-4884-8b35-74f45b0c7125"
+      ]
+    },
+    {
+      "uuid": "0a32092d-c9cb-4bfb-a62f-3133a414a6eb",
+      "name": "AFFECTS",
+      "fact": "太二、海底捞和呷哺呷哺等餐饮品牌的营收都因西贝危机而下滑了9%至20%。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "3294f77c-1f6e-4748-a1b6-abbc732d17d5",
+      "source_node_name": "西贝",
+      "target_node_name": "海底捞",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "太二、海底捞和呷哺呷哺等餐饮品牌的营收都因西贝危机而下滑了9%至20%。",
+        "impact_type": "负面舆情",
+        "reference_time": "2026-09-21 03:20:59.617000+00:00"
+      },
+      "created_at": "2026-09-21T03:21:05.626Z",
+      "valid_at": "2026-09-21T03:20:59.617Z",
+      "invalid_at": "2026-09-21T03:25:54.712Z",
+      "expired_at": "2026-09-21T03:26:16.305Z",
+      "episodes": [
+        "781fa4c3-4ba2-480b-a54c-674da5fdfc0f",
+        "32ecdf49-55c3-41f1-91b6-c5ae9bcf78f8",
+        "fbafbaaf-c346-4929-b903-0281c0f57fc6",
+        "162c1798-7d5d-4884-8b35-74f45b0c7125"
+      ]
+    },
+    {
+      "uuid": "07de8f6f-f22b-492b-9a65-65181a91c889",
+      "name": "AFFECTS",
+      "fact": "消费者认为，全聚德、呷哺呷哺等同业营收下滑9%-20%，表明依赖预制和高估模式的餐饮行业面临信任危机。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "cf43eb6b-b91a-4084-bcfa-132558443301",
+      "target_node_uuid": "df7351fb-f03d-484f-a72b-6b1075f51508",
+      "source_node_name": "消费者",
+      "target_node_name": "全聚德",
+      "attributes": {
+        "edge_type": "AFFECTS",
+        "fact": "消费者认为，全聚德、呷哺呷哺等同业营收下滑9%-20%，表明依赖预制和高估模式的餐饮行业面临信任危机。",
+        "reference_time": "2026-09-21 03:25:54.712000+00:00"
+      },
+      "created_at": "2026-09-21T03:26:12.387Z",
+      "valid_at": "2026-09-21T03:25:54.712Z",
+      "invalid_at": "2026-09-21T03:26:00.564Z",
+      "expired_at": "2026-09-21T03:28:26.763Z",
+      "episodes": [
+        "fbafbaaf-c346-4929-b903-0281c0f57fc6",
+        "162c1798-7d5d-4884-8b35-74f45b0c7125"
+      ]
+    },
+    {
+      "uuid": "07b5bc81-0171-4a81-bfc1-b7b08f77ac56",
+      "name": "HAS_STORES_IN",
+      "fact": "截至2026年9月，西贝在郑州仅剩2家门店。",
+      "fact_type": "HAS_STORES_IN",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "f08b62a9-390b-47d5-bcf0-d0718c6687bf",
+      "source_node_name": "西贝",
+      "target_node_name": "郑州",
+      "attributes": {
+        "edge_type": "HAS_STORES_IN",
+        "fact": "截至2026年9月，西贝在郑州仅剩2家门店。",
+        "reference_time": "2026-09-21 03:14:34.361851+00:00"
+      },
+      "created_at": "2026-09-21T03:14:36.547Z",
+      "valid_at": "2026-09-01T00:00:00Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "54a90497-c331-4c7b-bf2a-9a6e1bb98c36"
+      ]
+    },
+    {
+      "uuid": "05356767-ea86-4623-875e-94d09984babe",
+      "name": "INVESTED_IN",
+      "fact": "林来嵘作为新股东入股西贝。",
+      "fact_type": "INVESTED_IN",
+      "source_node_uuid": "54f2b445-76ec-44a9-98b9-923078dcdcb7",
+      "target_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "source_node_name": "林来嵘",
+      "target_node_name": "西贝",
+      "attributes": {
+        "edge_type": "INVESTED_IN",
+        "fact": "林来嵘作为新股东入股西贝。",
+        "investment_stage": "新股东入股",
+        "reference_time": "2026-09-21 03:14:34.371358+00:00"
+      },
+      "created_at": "2026-09-21T03:14:37.403Z",
+      "valid_at": "2026-09-21T03:14:34.371Z",
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": [
+        "566e3829-c335-44bb-ba78-c0f3f5fb57d8",
+        "54a90497-c331-4c7b-bf2a-9a6e1bb98c36",
+        "efaf421c-0421-4af2-ac50-0acd1e8b4543",
+        "f6cfa6ed-e42c-475f-822b-b32d05aadc5d"
+      ]
+    },
+    {
+      "uuid": "0437894b-12c9-495b-b580-a91c1a543068",
+      "name": "RESPONDS_TO",
+      "fact": "西贝发布了关于预制菜争议的官方声明，否认被贴上预制菜标签，并承诺开放后厨、开展透明厨房直播和建立食材溯源平台。",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "74d579e0-bbcc-4b00-be0b-f528d3e80942",
+      "target_node_uuid": "9a7dbb80-ecf9-42af-8fbd-cd2dd4d24ef4",
+      "source_node_name": "西贝",
+      "target_node_name": "罗永浩",
+      "attributes": {
+        "edge_type": "RESPONDS_TO",
+        "fact": "西贝发布了关于预制菜争议的官方声明，否认被贴上预制菜标签，并承诺开放后厨、开展透明厨房直播和建立食材溯源平台。",
+        "reference_time": "2026-09-21 03:28:18.156000+00:00",
+        "response_tone": "澄清"
+      },
+      "created_at": "2026-09-21T03:28:30.301Z",
+      "valid_at": "2026-09-21T03:28:18.156Z",
+      "invalid_at": "2026-09-21T03:28:24.645Z",
+      "expired_at": "2026-09-21T03:34:05.815Z",
+      "episodes": [
+        "b6b1428e-11b4-4c49-bf87-90daf20a58b3",
+        "bfcceded-271d-42c0-8383-d400978e5272"
+      ]
+    }
+  ],
+  "node_count": 33,
+  "edge_count": 126
+}
